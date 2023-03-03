@@ -8,7 +8,7 @@ Meeting time 01:00 PM - 02:00 PM
 - Adi
 - Sumraish Hanif
 - Heshani
-- Mehdi 
+- Mehadi
 
 ## Meeting Minutes Bullets
 
