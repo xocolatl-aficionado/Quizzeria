@@ -6,7 +6,8 @@ export interface IStudent extends Document{
     lastname:string,
     username:string,
     email:string,
-    password:string
+    password:string,
+    admin: boolean
 }
 
 const StudentSchema:Schema = new Schema({
@@ -29,6 +30,10 @@ const StudentSchema:Schema = new Schema({
 
     password: {
         type: String
+    },
+
+    admin: {
+        type: Boolean
     }
 })
 

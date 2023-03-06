@@ -4,8 +4,7 @@ export interface IQuiz extends Document{
 
     quiztopic:string,
     question: string,
-    answer: string,
-    options?: string[]
+    answer: string
 }
 
 const QuizSchema:Schema = new Schema({
@@ -20,10 +19,6 @@ const QuizSchema:Schema = new Schema({
 
     answer: {
         type: String
-    },
-
-    options:{
-        type: []
     }
 })
 
