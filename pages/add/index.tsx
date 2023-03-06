@@ -5,13 +5,12 @@ export default function addPosts() {
     const router = useRouter()
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    
-    const title = e.target.title.value;
-    const content = e.target.content.value;
-
+    const title:string = e.target.title.value;
+    const content:string = e.target.content.value;
+    console.log(title)
     if (title && content) {
       try {
-        let response = await fetch("http://localhost:3000/api/addPosts", {
+        let response = await fetch(`/api/addPosts`, {
           method: "POST",
           body: JSON.stringify({
             title,

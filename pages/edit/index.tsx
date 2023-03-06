@@ -4,7 +4,7 @@ let id = 0
 export async function getServerSideProps (context) {
     try {
         id = context.query["id"]
-      let response = await fetch('http://localhost:3000/api/findPost?id=' + id);
+      let response = await fetch(`${process.env['HOST']}/api/findPost?id=${id}`);
       let posts = await response.json();
       return {
         props: { 
@@ -27,7 +27,7 @@ export default function editPosts(props : any) {
 
         if (title && content) {
           try {
-            let response = await fetch("http://localhost:3000/api/editPost?id=" + props.posts._id, {
+            let response = await fetch(`/api/editPost?id=${props.posts._id}`, {
               method: "POST",
               body: JSON.stringify({
                 title,

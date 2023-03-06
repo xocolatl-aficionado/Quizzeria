@@ -1,9 +1,11 @@
 import Link from 'next/link'
 
+const host = process.env['HOST'];
 
 export async function getServerSideProps() {
   try {
-    let response = await fetch('http://localhost:3000/api/getPosts');
+    
+    let response = await fetch(`${host}/api/getPosts`);
     let posts = await response.json();
     return {
       props: { 
@@ -15,10 +17,11 @@ export async function getServerSideProps() {
   }
 }
 
-const handleDeletePost = async (postId: string) => {
+export async function handleDeletePost (postId: string) {
+  
   try {
     let response = await fetch(
-      "http://localhost:3000/api/deletePost?id=" + postId,
+      `/api/deletePost?id=${postId}`,
       {
         method: "POST",
         headers: {
