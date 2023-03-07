@@ -87,7 +87,7 @@ export default function addPosts() {
               </Stack>
 
               <Stack spacing={28} mt={10} isInline>
-                <Checkbox ml={16} size='sm' color="gray.600" colorScheme={"facebook"} borderColor="gray.600" defaultChecked>Remember me</Checkbox>
+                <Checkbox ml={6} size='sm' color="gray.600" colorScheme={"facebook"} borderColor="gray.600" defaultChecked>Remember me</Checkbox>
                 <Link color="gray.600" fontSize={14} fontStyle={'italic'}>Forgot Password?</Link>
               </Stack>
 
