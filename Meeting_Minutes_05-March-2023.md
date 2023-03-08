@@ -20,6 +20,6 @@ Meeting time 03:15 PM - 05:15 PM
 - Moving further **Adi** has explained the flow of logging commits.
 - Team has agreed regarding the conflicts resolution explaind by **Adi**.
 - Team has agreed on the templets for **Features** and **Bugs** 
-- Technical discussion has held regarding Database schema for Quiz and Quiz Items class.
+- Technical discussion was held to discuss the Mongoose schema for the Student and Quiz collections.
 - Team has discussed two different approaches and everybody has agreed on the one approach.
 - **Majid** has gone through the Database schema for user and team has agreed upon it.
