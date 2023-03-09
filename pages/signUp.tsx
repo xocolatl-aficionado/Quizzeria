@@ -22,7 +22,7 @@ export default function signUp() {
         <>
             <Box mx="auto" h={"100vh"} bg={"yellow.100"}>
                 <Head>
-                    <title>Quiza | Home</title>
+                    <title>Quiz | Home</title>
                 </Head>
                 <SimpleGrid
                     columns={{ base: 1, md: 2 }}
@@ -45,7 +45,7 @@ export default function signUp() {
                         m="auto"
                     >
                         <chakra.h1
-                            fontSize={{ base: "4xl", sm: "5xl", md: "6xl" }}
+                            fontSize={{ base: "4xl", sm: "3xl", md: "4xl" }}
                             letterSpacing="tight"
                             lineHeight="short"
                             fontWeight="extrabold"
@@ -60,7 +60,7 @@ export default function signUp() {
                         </chakra.h1>
 
                         <Card bgColor='#E7DEEA'
-                            maxWidth='80vw' minHeight="44vh"
+                            maxWidth='80vw' minHeight="52vh"
                             borderRadius={'30px'} sx={cardStyle}
                             marginStart={20}
                             mt={10}
@@ -141,7 +141,7 @@ export default function signUp() {
                             <Button width={40} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
                                 textColor={"white"}  size="lg"
                                 leftIcon={<MdAppRegistration />}
-                                onClick={() => router.replace("/register")}
+                                onClick={() => router.replace("/")}
                                 _hover={{
                                     bg: "gray.500",
                                   }}
