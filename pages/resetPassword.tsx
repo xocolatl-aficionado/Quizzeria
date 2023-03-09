@@ -1,15 +1,16 @@
-import { useRouter } from 'next/router'
 import React from "react";
-import { InputGroup, Card, InputLeftElement, Input, Center, useToast } from "@chakra-ui/react";
-import { EmailIcon } from '@chakra-ui/icons'
+import { useRouter } from 'next/router'
+import { InputGroup, Card, InputLeftElement, Input, 
+        Center, useToast, Link,Text } from "@chakra-ui/react";
+import { LockIcon, TimeIcon } from '@chakra-ui/icons'
 import { Box,useColorModeValue,SimpleGrid,Button,Image,chakra,Stack } from "@chakra-ui/react";
 
-export default function forgotPassword() {
+export default function resetPassword() {
     const cardStyle = {
         opacity: 0.95
     }
-    const router = useRouter();
     const toast = useToast();
+    const router = useRouter();
 
 
     return (
@@ -47,7 +48,7 @@ export default function forgotPassword() {
                                 color={"gray.300"}
                                 ml={10}
                             >
-                                Forgot Password
+                                Reset Password
                             </chakra.span>
                         </chakra.h1>
 
@@ -60,14 +61,36 @@ export default function forgotPassword() {
                         <Stack spacing={6} mt={14} marginStart={8} marginEnd={8}
                         >
                             {/* <FormControl id="email"> */}
+
+                            <InputGroup>
+                                    <InputLeftElement
+                                        pointerEvents='none'
+                                        color='gray.300'
+                                        fontSize='1.4em'
+                                        children={<TimeIcon color='yellow.400' />}
+                                    />
+                                    <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='number' placeholder='Enter OTP' textColor={'white'} />
+                                </InputGroup>
+
+
                                 <InputGroup>
                                     <InputLeftElement
                                         pointerEvents='none'
                                         color='gray.300'
                                         fontSize='1.4em'
-                                        children={<EmailIcon color='yellow.400' />}
+                                        children={<LockIcon color='yellow.400' />}
                                     />
-                                    <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='email' placeholder='Email ID' textColor={'white'} />
+                                    <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='email' placeholder='New Password' textColor={'white'} />
+                                </InputGroup>
+
+                                <InputGroup>
+                                    <InputLeftElement
+                                        pointerEvents='none'
+                                        color='gray.300'
+                                        fontSize='1.4em'
+                                        children={<LockIcon color='yellow.400' />}
+                                    />
+                                    <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='email' placeholder='Confirm Password' textColor={'white'} />
                                 </InputGroup>
 
                             <Center h='50px' color='white'>
@@ -75,9 +98,9 @@ export default function forgotPassword() {
                                 textColor={"white"}  size="lg"
                                 onClick={() =>  toast({
                                     title: "Success",
-                                    description: "An email has been sent to your mailing address",
+                                    description: "Password Reset Successful",
                                     status: "success",
-                                    duration: 3000,
+                                    duration: 9000,
                                     isClosable: true,
                                     colorScheme: 'gray'
                                 })
@@ -86,30 +109,20 @@ export default function forgotPassword() {
                                     bg: "gray.500",
                                   }}
                             >
-                                Send Verification Code
+                                Confirm
                             </Button>
                             </Center>
 
-                            <Center h='50px' color='white'>
-                            <Button width={60} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
-                                textColor={"white"}  size="lg"
-                                onClick={() => router.push("/resetPassword")}
-                                _hover={{
-                                    bg: "gray.500",
-                                  }}
-                            >
-                                Continue
-                            </Button>
+                            <Center h='50px' color='white' mt={8}>
+                               <Link color="gray.600" fontSize={14} fontStyle={'italic'} onClick={() => router.push("/")}>Go back to Login</Link>
                             </Center>
-
-
                         </Stack>
                     </Card>
                     </Box>
                     <Box ml={20}>
 
                         <Image
-                            src="/img/forgot.avif"
+                            src="/img/password.png"
                             alt="quiz"
                             fit="cover"
                             h={"100vh"}
