@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import React from "react";
-import { InputGroup, Card, InputLeftElement, Input, Center, useToast } from "@chakra-ui/react";
-import { EmailIcon } from '@chakra-ui/icons'
-import { Box,useColorModeValue,SimpleGrid,Button,Image,chakra,Stack } from "@chakra-ui/react";
+import { InputGroup, Card, InputLeftElement, Input, Center, useToast, Link } from "@chakra-ui/react";
+import { EmailIcon, LockIcon } from '@chakra-ui/icons'
+import { Box, useColorModeValue, SimpleGrid, Button, Image, chakra, Stack } from "@chakra-ui/react";
 
 export default function forgotPassword() {
     const cardStyle = {
@@ -52,14 +52,14 @@ export default function forgotPassword() {
                         </chakra.h1>
 
                         <Card bgColor='#E7DEEA'
-                            maxWidth='80vw' minHeight="44vh"
+                            maxWidth='80vw' minHeight="54vh"
                             borderRadius={'30px'} sx={cardStyle}
                             marginStart={20}
                             mt={10}
                         >
-                        <Stack spacing={6} mt={14} marginStart={8} marginEnd={8}
-                        >
-                            {/* <FormControl id="email"> */}
+                            <Stack spacing={6} mt={14} marginStart={8} marginEnd={8}
+                            >
+                                {/* <FormControl id="email"> */}
                                 <InputGroup>
                                     <InputLeftElement
                                         pointerEvents='none'
@@ -69,42 +69,85 @@ export default function forgotPassword() {
                                     />
                                     <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='email' placeholder='Email ID' textColor={'white'} />
                                 </InputGroup>
-                           
-                            <Center h='50px' color='white'>
-                            <Button width={60} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
-                                textColor={"white"}  size="lg"
-                                onClick={() =>  toast({
-                                    title: "Success",
-                                    description: "An email has been sent to your mailing address",
-                                    status: "success",
-                                    duration: 3000,
-                                    isClosable: true,
-                                    colorScheme: 'gray'
-                                })
-                            }
-                                _hover={{
-                                    bg: "gray.500",
-                                  }}
-                            >
-                                Send Verification Code
-                            </Button>
-                            </Center>
 
-                            <Center h='50px' color='white'>
-                            <Button width={60} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
-                                textColor={"white"}  size="lg"
-                                onClick={() => router.push("/resetPassword")}
-                                _hover={{
-                                    bg: "gray.500",
-                                  }}
-                            >
-                                Continue
-                            </Button>
-                            </Center>
+                                {/* <FormControl id="email"> */}
+                                <InputGroup>
+                                    <InputLeftElement
+                                        pointerEvents='none'
+                                        color='gray.300'
+                                        fontSize='1.4em'
+                                        children={<LockIcon color='yellow.400' />}
+                                    />
+                                    <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='email' placeholder='New Password' textColor={'white'} />
+                                </InputGroup>
 
-                        
-                        </Stack>
-                    </Card>
+                                <InputGroup>
+                                    <InputLeftElement
+                                        pointerEvents='none'
+                                        color='gray.300'
+                                        fontSize='1.4em'
+                                        children={<LockIcon color='yellow.400' />}
+                                    />
+                                    <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='email' placeholder='Confirm Password' textColor={'white'} />
+                                </InputGroup>
+
+                                {/* <Center h='50px' color='white'> */}
+                                {/* <Button width={60} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
+                                    textColor={"white"}  size="lg"
+                                    onClick={() =>  toast({
+                                        title: "Success",
+                                        description: "An email has been sent to your mailing address",
+                                        status: "success",
+                                        duration: 3000,
+                                        isClosable: true,
+                                        colorScheme: 'gray'
+                                    })
+                                }
+                                    _hover={{
+                                        bg: "gray.500",
+                                    }}
+                                >
+                                    Send Verification Code
+                                </Button> */}
+                                {/* </Center> */}
+
+                                {/* <Center h='50px' color='white'>
+                                <Button width={60} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
+                                    textColor={"white"}  size="lg"
+                                    onClick={() => router.push("/resetPassword")}
+                                    _hover={{
+                                        bg: "gray.500",
+                                    }}
+                                >
+                                    Continue
+                                </Button>
+                                </Center> */}
+                                <Center h='50px' color='white'>
+
+                                    <Button width={60} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
+                                        textColor={"white"} size="lg"
+                                        onClick={() => toast({
+                                            title: "Success",
+                                            description: "Password Reset Successful",
+                                            status: "success",
+                                            duration: 9000,
+                                            isClosable: true,
+                                            colorScheme: 'gray'
+                                        })
+                                        }
+                                        _hover={{
+                                            bg: "gray.500",
+                                        }}
+                                    >
+                                        Confirm
+                                    </Button>
+                                </Center>
+
+                                <Center h='50px' color='white' mt={8}>
+                                    <Link color="gray.600" fontSize={14} fontStyle={'italic'} onClick={() => router.push("/")}>Go back to Login</Link>
+                                </Center>
+                            </Stack>
+                        </Card>
                     </Box>
                     <Box ml={20}>
 

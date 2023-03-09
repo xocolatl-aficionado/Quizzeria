@@ -70,7 +70,7 @@ const signPage: NextPage = () => {
           <Container maxWidth='44vw' minHeight="20vh" ></Container>
           <Container >
             <Card bgColor='#E7DEEA'
-              maxWidth='80vw' minHeight="44vh"
+              maxWidth='30vw' minHeight="44vh"
               borderRadius={'30px'} sx={cardStyle}
               marginStart={16}
             >
