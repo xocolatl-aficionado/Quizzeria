@@ -9,7 +9,7 @@ import Router from "next/router";
 import {
   Container, InputGroup, Card, CardBody, Img, Stack, Flex,
   InputRightElement, InputLeftElement, Input, Checkbox, Link, Button, extendTheme,
-  useColorModeValue, FormControl, Center, IconButton, Text, FormErrorMessage
+  useColorModeValue, FormControl, Center, IconButton, Text, useToast
 } from "@chakra-ui/react";
 import { LockIcon, EmailIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
@@ -20,6 +20,7 @@ const signPage: NextPage = () => {
 
   const [showPass, setShowPass] = useState(false);
   const handleShowPass = () => setShowPass(!showPass);
+  const toast = useToast();
 
   const router = useRouter();
 
@@ -39,6 +40,15 @@ const signPage: NextPage = () => {
     console.log(res)
     if (res?.status == 200){
       router.push("/home")
+    }else{
+      toast({
+        title: "Error",
+        description: "Please enter the valid credientials",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        colorScheme: 'gray'
+    })
     }
   }
 
@@ -57,10 +67,10 @@ const signPage: NextPage = () => {
             opacity: 0.25
         }}
         >
-          <Container maxWidth='50vw' minHeight="20vh" ></Container>
+          <Container maxWidth='44vw' minHeight="20vh" ></Container>
           <Container >
             <Card bgColor='#E7DEEA'
-              maxWidth='80vw' minHeight="44vh"
+              maxWidth='30vw' minHeight="44vh"
               borderRadius={'30px'} sx={cardStyle}
               marginStart={16}
             >
@@ -118,7 +128,7 @@ const signPage: NextPage = () => {
     
                   <Stack spacing={28} mt={10} isInline>
                     <Checkbox ml={6} size='sm' color="gray.600" colorScheme={"facebook"} borderColor="gray.600" defaultChecked>Remember me</Checkbox>
-                    <Link color="gray.600" fontSize={14} fontStyle={'italic'}>Forgot Password?</Link>
+                    <Link color="gray.600" fontSize={14} fontStyle={'italic'} onClick={() => router.push("/forgotPassword")}>Forgot Password?</Link>
                   </Stack>
     
                   <Container maxWidth='50vw' minH={4} ></Container>
@@ -131,7 +141,7 @@ const signPage: NextPage = () => {
                   
                 </form>    
                 <Center h='50px' color='white' mt={8}>
-                  <Text textColor={"gray.600"}>Not a Member?</Text><Link color="gray.600" fontSize={14} fontStyle={'italic'} onClick={() => router.replace("/signUp")}>Register here</Link>
+                  <Text textColor={"gray.600"}>Not a Member?</Text><Link color="gray.600" fontSize={14} fontStyle={'italic'} onClick={() => router.push("/signUp")}>Register here</Link>
                 </Center>
               </CardBody>
             </Card>
