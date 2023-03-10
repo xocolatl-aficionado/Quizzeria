@@ -1,6 +1,12 @@
 /**
  * Defining NavBar for all the student pages using Chakra UI Framwork for react
  */
+import { useSession, signOut } from 'next-auth/react';
+
+import Router from "next/router";
+import { useEffect } from "react";
+
+
 import { ReactNode } from 'react';
 import {
   Box,
@@ -50,6 +56,9 @@ const NavLink = ({ children }: { children: ReactNode }) => (
  */
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { data: session, status } = useSession()
+  const user = session?.user;
+  console.log(session?.user?.name)
 
   return (
     <>
@@ -82,7 +91,7 @@ export default function Navbar() {
                 variant={'link'}
                 href={'#'}
                 margin={5}>
-                Student Name
+                {session?.user?.name}
             </Button>
             <Button
               variant={'solid'}
