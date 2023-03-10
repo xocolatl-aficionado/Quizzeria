@@ -3,6 +3,10 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from "../../../lib/mongodb"
 
+/**
+  Authentication options for NextAuth.JS
+*/
+
 const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
@@ -13,6 +17,13 @@ const authOptions: NextAuthOptions = {
     CredentialsProvider({
       type: "credentials",
       credentials: {},
+      /**
+       * Authorize callback function. It checks the DB connection and checks the user ID and password for validation.
+       * @param {Object} credentials - User credentials
+       * @param {Object} req - Request object
+       * @returns {Promise<Object>} - User object
+      */
+
       async authorize(credentials, req) {        
         const client = await clientPromise;
         const db = client.db("test");
@@ -28,26 +39,29 @@ const authOptions: NextAuthOptions = {
         
         console.log("user found " ,user)
         if (user) {
-          // Any object returned will be saved in `user` property of the JWT
+          // The user object that we have received from the DB
           return user
         } else {
-          // If you return null then an error will be displayed advising the user to check their details.
+          // If no user found then return null
           return null
-  
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
       }
     })
   ],
   pages: {
-    signIn: '/',
-    signOut: '/',
-    error: '/auth/error', // Error code passed in query string as ?error=
-    verifyRequest: '/auth/verify-request', // (used for check email message)
-    newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
+    signIn: '/', // Sign in page
+    signOut: '/', // Sign Out page
   },
   
   callbacks: {
+    /**
+      * JWT callback function which we can access
+      * @param {Object} params - Callback parameters
+      * @param {Object} params.user - User object
+      * @param {Object} params.token - JWT token object
+      * @returns {Object} Updated JWT token
+      */
+
     jwt(params) {
       // update token
       if (params.user?.role) {
