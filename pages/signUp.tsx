@@ -1,3 +1,6 @@
+/**
+ * Defined SignUp functionality.
+ */
 import React, { useState } from "react";
 import { useRouter } from 'next/router'
 import Head from "next/head"
@@ -7,6 +10,11 @@ import { LockIcon, EmailIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { Box,useColorModeValue,SimpleGrid,Button,Image,chakra,Stack } from "@chakra-ui/react";
 import { MdSupervisorAccount, MdPerson, MdAppRegistration } from 'react-icons/md'
 
+/**
+ * Creates a User interface for Sign up.
+ * A form will appear asking for user input i.e. username, email, password and role.
+ * If success it will direct to the login page.
+*/
 export default function signUp() {
     const cardStyle = {
         opacity: 0.95

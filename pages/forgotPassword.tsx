@@ -1,9 +1,17 @@
+/**
+ * Defined Forgot Password functionality.
+ */
 import { useRouter } from 'next/router'
 import React from "react";
 import { InputGroup, Card, InputLeftElement, Input, Center, useToast } from "@chakra-ui/react";
 import { EmailIcon } from '@chakra-ui/icons'
 import { Box,useColorModeValue,SimpleGrid,Button,Image,chakra,Stack } from "@chakra-ui/react";
 
+/**
+ * Creates a User interface for Forgot Password.
+ * Ask for email address.
+ * If success it will direct to the reset password page.
+*/
 export default function forgotPassword() {
     const cardStyle = {
         opacity: 0.95

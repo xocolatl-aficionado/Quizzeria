@@ -1,11 +1,18 @@
+/**
+ * Login Module.
+ * @module index
+ * @see module:react
+ * @see module:next
+ * @see module:next-auth/react
+ * @see module:chakra-ui/react
+ * @see module:chakra-ui/icons
+ */
 import React, { useState } from "react";
-import { useRouter } from "next/router";
-
-import type { NextPage } from "next";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from 'next/router'
+import type { NextPage } from 'next'
+import { useSession, signIn, signOut } from "next-auth/react"
 import { useEffect } from "react";
 import Router from "next/router";
-
 import {
   Container, InputGroup, Card, CardBody, Img, Stack, Flex,
   InputRightElement, InputLeftElement, Input, Checkbox, Link, Button, extendTheme,
@@ -13,6 +20,13 @@ import {
 } from "@chakra-ui/react";
 import { LockIcon, EmailIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
+
+/**
+ * Creates a User interface for Login.
+ * Allow user to login using email and password.
+ * If successit directs to the homepage else
+ * it will generate a toaste message for user
+*/
 const signPage: NextPage = () => {
   const cardStyle = {
     opacity: 0.95,
