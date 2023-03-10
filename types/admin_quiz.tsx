@@ -1,4 +1,6 @@
-
+/**
+ * Defining types for the fields of a Quiz of Admins
+ */
 export interface Quiz {
     id: number;
     name: string;
