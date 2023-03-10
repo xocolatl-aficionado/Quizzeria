@@ -14,6 +14,31 @@ interface QuizProps {
   quizzes: Array<Quiz>;
 }
 
+
+export async function updateMarks(postId: number, marks: number) {
+  try {
+    const options:any = {
+      method: "POST",
+      
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+
+      body: `{"marks": ${marks}}`
+    }
+
+    let response = await fetch(`/api/quizes/post?id=${postId}`,options)
+    .then (response => response.json())
+    .then (response => console.log(response))
+    .catch(err => console.error(err));
+    
+    window.location.reload();
+  } catch (error) {
+    console.log("An error occured while updating marks ", error);
+  }
+}
+
 export default function QuizTable({ quizzes }: QuizProps) {
   return (
     <Table variant="striped">
@@ -28,13 +53,15 @@ export default function QuizTable({ quizzes }: QuizProps) {
       </Thead>
       <Tbody>
         {quizzes.map((quiz) => (
-          <Tr key={quiz.id}>
+          <Tr key={quiz._id}>
             <Td>{quiz.name}</Td>
             <Td>{quiz.subject}</Td>
             <Td>{quiz.type}</Td>
             <Td>{quiz.marks}</Td>
             <Td textAlign={"right"}>
-              <Button colorScheme="orange">Retake Quiz</Button>
+              <Button colorScheme="orange" onClick={() => updateMarks(quiz._id as Number, -1)}>Retake Quiz
+              
+              </Button>
             </Td>
           </Tr>
         ))}
