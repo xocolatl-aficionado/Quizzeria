@@ -1,42 +1,20 @@
-import { Table, Thead, Tbody, Tr, Th, Td, Button, Center } from "@chakra-ui/react";
-import { Quiz } from "../types/student_quiz";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Button,
+  Center,
+} from "@chakra-ui/react";
+import Quiz from "../src/models/Quiz";
 
-interface Props {
-  quizzes: Quiz[];
+interface QuizProps {
+  quizzes: Array<Quiz>;
 }
-const quizzes: Quiz[] = [
-  {
-    id: 1,
-    name: "Quiz 1",
-    subject: "Math",
-    type: "Multiple Choice",
-    marks:"16/20"
-  },
-  {
-    id: 2,
-    name: "Quiz 2",
-    subject: "English",
-    type: "True or False",
-    marks:"80%"
-  },
-  {
-    id: 3,
-    name: "Quiz 8",
-    subject: "Science",
-    type: "Fill in the Blanks",
-    marks:"30%"
-  },
-  {
-    id: 4,
-    name: "Quiz 15",
-    subject: "IQ",
-    type: "Short Answer",
-    marks:"90/100"
-  },
-  // Add more quizzes as needed
-];
 
-const QuizTable = ({ quizzes }: Props) => {
+export default function QuizTable({ quizzes }: QuizProps) {
   return (
     <Table variant="striped">
       <Thead>
@@ -63,10 +41,5 @@ const QuizTable = ({ quizzes }: Props) => {
       </Tbody>
     </Table>
   );
-};
+}
 
-const TableView2 = () => {
-  return <QuizTable quizzes={quizzes} />;
-};
-
-export default TableView2;
