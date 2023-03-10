@@ -8,44 +8,13 @@ import {
   Button,
   Center,
 } from "@chakra-ui/react";
-import { Quiz } from "../src/models/Quiz";
+import Quiz from "../src/models/Quiz";
 
 interface QuizProps {
-  quizzes: Quiz[];
+  quizzes: Array<Quiz>;
 }
-// const quizzes: Quiz[] = [
-//   {
-//     id: 1,
-//     name: "Quiz 1",
-//     subject: "Math",
-//     type: "Multiple Choice",
-//     marks: "16/20",
-//   },
-//   {
-//     id: 2,
-//     name: "Quiz 2",
-//     subject: "English",
-//     type: "True or False",
-//     marks: "80%",
-//   },
-//   {
-//     id: 3,
-//     name: "Quiz 8",
-//     subject: "Science",
-//     type: "Fill in the Blanks",
-//     marks: "30%",
-//   },
-//   {
-//     id: 4,
-//     name: "Quiz 15",
-//     subject: "IQ",
-//     type: "Short Answer",
-//     marks: "90/100",
-//   },
-//   // Add more quizzes as needed
-// ];
 
-export default function QuizTable({ quizes }: QuizProps) {
+export default function QuizTable({ quizzes }: QuizProps) {
   return (
     <Table variant="striped">
       <Thead>
@@ -58,7 +27,7 @@ export default function QuizTable({ quizes }: QuizProps) {
         </Tr>
       </Thead>
       <Tbody>
-        {quizes.map((quiz) => (
+        {quizzes.map((quiz) => (
           <Tr key={quiz.id}>
             <Td>{quiz.name}</Td>
             <Td>{quiz.subject}</Td>
@@ -74,8 +43,3 @@ export default function QuizTable({ quizes }: QuizProps) {
   );
 }
 
-// const TableView2 = () => {
-//   return <QuizTable quizzes={quizes} />;
-// };
-
-// export default TableView2;
