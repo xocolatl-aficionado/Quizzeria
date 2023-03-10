@@ -6,27 +6,27 @@ import Card from "../../components/Card";
 import QuizTable from "../../components/studentHomeTable";
 import { Box } from "@chakra-ui/react";
 import clientPromise from "../../lib/mongodb";
-
+import Quiz from "../../src/models/Quiz";
 export async function getServerSideProps() {
   try {
     const client = await clientPromise;
     const db = client.db("test");
 
-    const quizes = await db
+    const quizzes = await db
       .collection("quizes")
       .find({})
       .sort({ marks: -1 })
       .toArray();
 
     return {
-      props: { quizes: JSON.parse(JSON.stringify(quizes)) },
+      props: { quizzes: JSON.parse(JSON.stringify(quizzes)) },
     };
   } catch (e) {
     console.error(e);
   }
 }
 
-export default function StudentHome({ quizes }) {
+export default function StudentHome({ quizzes }) {
   return (
     <>
       <Head>
@@ -42,7 +42,7 @@ export default function StudentHome({ quizes }) {
             <Card />
           </Box>
           <Box flex="1" width="80%" mx="auto" justifyContent="center">
-            <QuizTable quizes={quizes} />
+            <QuizTable quizzes={quizzes} />
           </Box>
           <Footer />
         </Box>
