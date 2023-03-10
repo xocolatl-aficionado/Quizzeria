@@ -1,3 +1,6 @@
+/**
+ * Designing a table view for students to display their current quizzes
+ */
 import {
   Table,
   Thead,
@@ -10,6 +13,9 @@ import {
 } from "@chakra-ui/react";
 import Quiz from "../src/models/Quiz";
 
+/**
+ * Interface props to define the Quiz
+ */
 interface QuizProps {
   quizzes: Array<Quiz>;
 }
@@ -39,6 +45,11 @@ export async function updateMarks(postId: number, marks: number) {
   }
 }
 
+/**
+ * To define the table and map it with the quiz data object
+ * @param param0 : Quiz object created with the types for loading data
+ * @returns a table of quiz data related to the student/quiztaker
+ */
 export default function QuizTable({ quizzes }: QuizProps) {
   return (
     <Table variant="striped">
@@ -69,4 +80,5 @@ export default function QuizTable({ quizzes }: QuizProps) {
     </Table>
   );
 }
+
 
