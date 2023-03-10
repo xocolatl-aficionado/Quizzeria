@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 import Card from "../../components/Card";
 import QuizTable from "../../components/studentHomeTable";
 import { Box } from "@chakra-ui/react";
-import clientPromise from "../../lib/mongodb";
+import clientPromise from "../../src/lib/mongodb";
 import Quiz from "../../src/models/Quiz";
 export async function getServerSideProps() {
   try {

@@ -27,6 +27,7 @@ import { LockIcon, EmailIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
  * If successit directs to the homepage else
  * it will generate a toaste message for user
 */
+
 const signPage: NextPage = () => {
   const cardStyle = {
     opacity: 0.95,
