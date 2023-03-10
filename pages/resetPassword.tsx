@@ -1,3 +1,6 @@
+/**
+ * Defined Reset Password functionality.
+ */
 import React from "react";
 import { useRouter } from 'next/router'
 import { InputGroup, Card, InputLeftElement, Input, 
@@ -5,6 +8,11 @@ import { InputGroup, Card, InputLeftElement, Input,
 import { LockIcon, TimeIcon } from '@chakra-ui/icons'
 import { Box,useColorModeValue,SimpleGrid,Button,Image,chakra,Stack } from "@chakra-ui/react";
 
+/**
+ * Creates a User interface for Reset Password.
+ * Ask for OTP, new Password and confirm Password.
+ * If success it will re-direct to the login page.
+*/
 export default function resetPassword() {
     const cardStyle = {
         opacity: 0.95
