@@ -1,5 +1,8 @@
 # Meeting Minutes H-Team 23-Feb-2023
 
+Scrum Master: Adi
+Note Taker: Majid
+
 Team meeting held in person at the library.
 
 Meeting time 01:30 PM - 04:00 PM

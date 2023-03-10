@@ -1,10 +1,14 @@
 # Meeting Minutes H-Team 05-March-2023
 
+Scrum Master: Majid
+Note Taker: Sumrish
+
 Team meeting held online on Discord.
 
 Meeting time 03:15 PM - 05:15 PM
 
-# Attendees
+## Attendees
+
 - Majid Khan Burki
 - Adi
 - Sumrish Hanif

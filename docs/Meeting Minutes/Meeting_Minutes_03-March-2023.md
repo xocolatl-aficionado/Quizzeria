@@ -1,5 +1,8 @@
 # Meeting Minutes H-Team 03-March-2023
 
+Scrum Master: Heshani
+Note Taker: Adi
+
 Team meeting held on 03-March-2023 on Discord.
 
 Meeting time 01:00 PM - 02:00 PM
