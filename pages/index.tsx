@@ -39,8 +39,9 @@ const signPage: NextPage = () => {
 
   const router = useRouter();
 
-  const session = useSession();
-
+  const { data: session, status } = useSession()
+  const user = session?.user;
+  
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const email: string = e.target.email.value;
@@ -53,7 +54,10 @@ const signPage: NextPage = () => {
     })
     console.log(res)
     if (res?.status == 200){
-      router.push("/student")
+      if(user.admin){
+        router.replace("/admin")
+      }
+      router.replace("/student")
     }else{
       toast({
         title: "Error",
