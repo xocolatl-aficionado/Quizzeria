@@ -19,5 +19,23 @@ const QuizSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.models.Quiz ||
-  mongoose.model("Quiz", QuizSchema, { collection: "quizes" });
+export default interface Quiz {
+  id: {
+    type: Number
+  }
+  name: {
+    type: String;
+  };
+  subject: {
+    type: String;
+  };
+  type: {
+    type: String;
+  };
+  marks: {
+    type: Number;
+  };
+}
+
+// export default mongoose.models.Quiz ||
+//   mongoose.model("Quiz", QuizSchema, { collection: "quizes" });
