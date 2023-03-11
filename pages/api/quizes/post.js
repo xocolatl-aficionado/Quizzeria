@@ -8,7 +8,7 @@ Updates the marks of a quiz in the MongoDB database.
 
 */
 
-import clientPromise from "../../../lib/mongodb";
+import clientPromise from "../../../src/lib/mongodb";
 import { ObjectId } from "mongodb";
 
 export default async (req, res) => {
