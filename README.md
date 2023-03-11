@@ -120,7 +120,13 @@ The individual contributions for each team member can be found here:
 
 ## How To Run
 
-To run the code, you’ll need to define your environment variables through the `.env.local` file or creating a `.env` file first. For a sample `.env` file, refer to `.env.example`.
+### On the cloud
+
+Simply visit our [codesandbox deployment](https://0nz1td-3000.csb.app/) and use [these](#credentials-to-use) credentials. 
+
+### Locally
+
+To run the code locally, you’ll need to define your environment variables through the `.env.local` file or creating a `.env` file first. For a sample `.env` file, refer to `.env.example`. Use the same mongodb url (since it is set to the team mongodb instance url) and use your appropriate localhost url for the nextauth and host keys.
 
 Once done, go to your console and run the following commands in the order specified.
 
