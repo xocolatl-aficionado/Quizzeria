@@ -54,22 +54,26 @@ const authOptions: NextAuthOptions = {
   },
   
   callbacks: {
-    /**
-      * JWT callback function which we can access
-      * @param {Object} params - Callback parameters
-      * @param {Object} params.user - User object
-      * @param {Object} params.token - JWT token object
-      * @returns {Object} Updated JWT token
-      */
+    async signIn({ user, account, profile, email, credentials }) {
+      return user;
+    },
+    //   jwt callback is only called when token is created
+    async jwt({ token, user }) {
 
-    jwt(params) {
-      // update token
-      if (params.user?.role) {
-        params.token.role = params.user.role;
+      if (user) {
+        token.user = user;
       }
+      console.log(token);
+      return Promise.resolve(token);
+    },
+
+    session: async ({ session, token }) => {
+
+      // session callback is called whenever a session for that particular user is checked
       
-      // return final_token
-      return params.token;
+      session.user = token.user;
+      session.user.role = token.user.role;
+      return Promise.resolve(session);
     },
   },
 };
