@@ -17,7 +17,7 @@ function adminHome() {
   return (
     <>
       <Head>
-        <title>Quiz App Title</title>
+        <title>Quiz App 1.1</title>
         <meta name="description" content="Quiz App Home for Admin" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
