@@ -38,9 +38,7 @@ const signPage: NextPage = () => {
   const toast = useToast();
 
   const router = useRouter();
-
-  const { data: session, status } = useSession()
-  const user = session?.user;
+  const { data: session, status } = useSession();
   
   const handleSubmit = async (e: any) => {
     const userRole = (session: any) => {
