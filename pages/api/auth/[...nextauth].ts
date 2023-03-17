@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
-import clientPromise from "../../../src/lib/mongodb"
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
+import clientPromise from "../../../src/lib/mongodb";
 
 /**
   Authentication options for NextAuth.JS
@@ -22,9 +22,9 @@ const authOptions: NextAuthOptions = {
        * @param {Object} credentials - User credentials
        * @param {Object} req - Request object
        * @returns {Promise<Object>} - User object
-      */
+       */
 
-      async authorize(credentials, req) {        
+      async authorize(credentials, req) {
         const client = await clientPromise;
         const db = client.db("test");
         const { email, password } = credentials as {
@@ -34,25 +34,25 @@ const authOptions: NextAuthOptions = {
 
         const user = await db.collection("users").findOne({
           email: email,
-          password : password
+          password: password,
         });
-        
-        console.log("user found " ,user)
+
+        console.log("user found ", user);
         if (user) {
           // The user object that we have received from the DB
-          return user
+          return user;
         } else {
           // If no user found then return null
-          return null
+          return null;
         }
-      }
-    })
+      },
+    }),
   ],
   pages: {
-    signIn: '/', // Sign in page
-    signOut: '/', // Sign Out page
+    signIn: "/", // Sign in page
+    signOut: "/", // Sign Out page
   },
-  
+
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
       return user;
