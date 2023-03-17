@@ -28,7 +28,7 @@ function adminHome() {
           <Box justifyContent="center">
             <Card />
           </Box>
-          <Box flex="1" width="80%" mx="auto" justifyContent="center">
+          <Box flex="1" width="60%" mx="auto" justifyContent="center">
             <TableView />
           </Box>
           <Footer />
