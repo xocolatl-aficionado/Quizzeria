@@ -43,6 +43,11 @@ const signPage: NextPage = () => {
   const user = session?.user;
   
   const handleSubmit = async (e: any) => {
+    const userRole = (session: any) => {
+      let role = session?.user?.role;
+      if (role) return role;
+      return null;
+    };
     e.preventDefault();
     const email: string = e.target.email.value;
     const pass: string = e.target.pass.value;
@@ -71,8 +76,11 @@ const signPage: NextPage = () => {
   };
 
   useEffect(() => {
-    if (session.status === "authenticated") Router.replace("/student");
-  }, [session.status]);
+    const userRole = (session: any) => {
+      let role = session?.user?.role;
+      if (role) return role;
+      return null;
+    };
 
   if (session.status === "unauthenticated")
     return (
