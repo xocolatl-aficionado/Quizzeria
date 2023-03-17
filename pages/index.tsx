@@ -56,11 +56,12 @@ const signPage: NextPage = () => {
       email: email,
       password: pass,
       redirect: false,
-    })
-    console.log(res)
-    if (res?.status == 200){
-      if(user.admin){
-        router.replace("/admin")
+    if (res?.status == 200) {
+      var role: any = userRole(session);
+      if (role == "admin") {
+        router.replace("/admin");
+      } else if (role == "student") {
+        router.replace("/student");
       }
       router.replace("/student")
     }else{
@@ -82,7 +83,15 @@ const signPage: NextPage = () => {
       return null;
     };
 
-  if (session.status === "unauthenticated")
+    if (status === "authenticated") {
+      var role: any = userRole(session);
+      if (role == "admin") {
+        router.replace("/admin");
+      } else if (role == "student") {
+        router.replace("/student");
+      }
+    }
+  }, [status]);
     return (
       <>
         <Container
