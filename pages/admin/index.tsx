@@ -33,7 +33,7 @@ function adminHome() {
     if (status === "authenticated"){
       var role: any = userRole(session);
       if (role == "student") {
-        router.replace("/studnet");
+        router.replace("/student");
       } else if (role == "admin") {
       return (
           <>

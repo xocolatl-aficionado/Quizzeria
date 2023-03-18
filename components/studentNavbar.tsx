@@ -57,8 +57,6 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { data: session, status } = useSession()
-  const user = session?.user;
-  console.log(session?.user?.name)
 
   return (
     <>

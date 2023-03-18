@@ -18,6 +18,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon} from '@chakra-ui/icons';
+import { useSession, signOut } from 'next-auth/react';
 
 /**
  * Defining the Menu links in an array for easy customization
@@ -50,6 +51,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
  */
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { data: session, status } = useSession()
 
   return (
     <>
@@ -82,7 +84,7 @@ export default function Navbar() {
                 variant={'link'}
                 href={'#'}
                 margin={5}>
-                Admin Name
+                {session?.user?.name}
             </Button>
             <Button
               variant={'solid'}
