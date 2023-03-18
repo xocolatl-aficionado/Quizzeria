@@ -144,4 +144,37 @@ gitGraph
     commit id: "I"
 ```
 
-As can be seen above, using a rebase keeps git history mostly linear and simple. It also helps resolve conflicts as and when the master branch has conflicting changes compared to the dev branch. Thus it is essential team members get confortable doing rebases. 
+As can be seen above, using a rebase keeps git history mostly linear and simple. It also helps resolve conflicts as and when the master branch has conflicting changes compared to the dev branch. Thus it is essential team members get comfortable doing rebases. 
+
+### How to work with Git + CodeSandbox.io
+1. Check out the latest master branch.
+```
+git checkout master
+git pull
+```
+2. Make a new branch off master.
+```
+git checkout -b "<name>/<issue#>/<issue-description>"
+```
+3. 
+```
+git push <name-of-remote-public-repo>
+```
+4. Head over to codesandbox.io and open the sandbox correspondig to the public repo. 
+5. Choose the correct dev branch name from the top panel. 
+6. Make your code edits!
+7. Once ready to commit, commit only the relevant changes from the left side git panel on codesandbox.io. This will make the commits on the remote version of your public repo's dev branch. 
+8. Do the following to get those commits to your local machine: 
+```
+git pull <name-of-remote-public-repo> "<name>/<issue#>/<issue-description>" --rebase
+```
+9. 
+```
+git push origin 
+```
+- If you get back a prompt that encourages the following, then run that. It will push the local branch to your private h-team repo for the first time. Thereafter, step 9 alone would be enough. 
+```
+git push --set-upstream origin <name>/<issue#>/<issue-description>
+```
+
+10. Make further edits on codesandbox.io directly, commit them as mentioned in Step 7. Repeat steps 8 and 9. Observe that the commits appear on the private h-team Git repo. 
