@@ -105,3 +105,30 @@ I adhered to SOLID priciples while reviewing PRs and making code changes. The te
 ## Code Review Process
 
 I insisted on codesandbox links from team members so that the code was sure to run, irrespective of our local machines. The team had also agreed to wait until everyone approved before any PR was merged.
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+    branch adi/25/fix-admin-page-routing
+    checkout adi/25/fix-admin-page-routing
+    commit id: "D"
+    commit id: "E"
+    checkout main
+    commit id: "F"
+    commit id: "G"
+    checkout adi/25/fix-admin-page-routing
+    commit id: "H"
+    checkout main
+    merge adi/25/fix-admin-page-routing
+    commit id: "I"
+```
