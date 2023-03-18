@@ -106,14 +106,11 @@ I adhered to SOLID priciples while reviewing PRs and making code changes. The te
 
 I insisted on codesandbox links from team members so that the code was sure to run, irrespective of our local machines. The team had also agreed to wait until everyone approved before any PR was merged.
 
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
+## Git flow to suit codesandbox.io
+The problem with our prior strategy around using codesandbox.io was that team members ended up only uploading/pushing their code onto codesandbox.io when they were done developing locally. This is non ideal for two reasons: codesandbox.io offers the ability to develop code online directly, which can reduce development time and encourage frequent testing. By making the git process around this convoluted, I inadvertently pushed the team away from codesandbox.io for development. As team facilitator, I also did not get around to writing a full fledged wiki on the git process, which probably made the process daunting for more than 1 team member. Therefore, this warrants a re-think and a detailed walkthrough of how to approach codesabox.io with git. The following explanation is supposed to solve this problem:
 
+### Why the need for a rebase?
+- Without a rebase: 
 ```mermaid
 gitGraph
     commit id: "A"
@@ -132,3 +129,19 @@ gitGraph
     merge adi/25/fix-admin-page-routing
     commit id: "I"
 ```
+
+- After a rebase: 
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+    commit id: "F"
+    commit id: "G"
+    commit id: "D*"  type: HIGHLIGHT
+    commit id: "E*"  type: HIGHLIGHT
+    commit id: "H*"  type: HIGHLIGHT
+    commit id: "I"
+```
+
+As can be seen above, using a rebase keeps git history mostly linear and simple. It also helps resolve conflicts as and when the master branch has conflicting changes compared to the dev branch. Thus it is essential team members get confortable doing rebases. 
