@@ -1,16 +1,24 @@
 /**
- * To create title card for QuizBank Page
+ * To create title card for the whole site as a reusable component
  */
-import { Box, Heading, chakra } from "@chakra-ui/react";
+import { Box,chakra } from "@chakra-ui/react";
 
 /**
- * Creating the title card for the quizbank page
- * @returns the title of quizbank page
+ * Creating the title card for the dashboard pages for students ans admins
+ * @returns the title of the tables in both dashboard pages
  */
 export default function Card() {
   return (
-    <Box textAlign={"center"} width={"100%"} margin={"auto"} paddingTop={'2vh'}>
-      <Heading fontSize={'4xl'}>Quiz Bank</Heading>
+    <Box textAlign={"center"} width={"100%"} margin={"auto"}>
+      <chakra.h1
+        py={5}
+        fontSize={48}
+        fontFamily={"Work Sans"}
+        fontWeight={"bold"}
+        color={"gray.800"}
+      >
+        Quiz Bank
+      </chakra.h1>
     </Box>
   );
 }
