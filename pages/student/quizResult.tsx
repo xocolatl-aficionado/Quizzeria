@@ -25,6 +25,10 @@ import Quiz from "../../src/models/Quiz";
 //   }
 // }
 
+/**
+ * Function to build the Student Quiz Result page with components
+ * @returns the Quiz Result page for students build with the components Navigation Bar, Report Card, anf optionns to switch to various views and the footer. 
+ */
 export default function QuizResult() {
     let value='100'
   return (
