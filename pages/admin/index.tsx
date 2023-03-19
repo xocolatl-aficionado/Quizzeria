@@ -3,10 +3,10 @@
  */
 import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
-import NavBar  from '../components/adminNavbar'
-import Footer  from '../components/Footer'
-import Card  from '../components/Card'
-import TableView  from '../components/adminHomeTable'
+import NavBar  from '../../components/adminNavbar'
+import Footer  from '../../components/Footer'
+import Card  from '../../components/Card'
+import TableView  from '../../components/adminHomeTable'
 import { Box } from "@chakra-ui/react";
 
 /**

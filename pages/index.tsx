@@ -8,25 +8,41 @@
  * @see module:chakra-ui/icons
  */
 import React, { useState } from "react";
-import { useRouter } from 'next/router'
-import type { NextPage } from 'next'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useRouter } from "next/router";
+import type { NextPage } from "next";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect } from "react";
 import Router from "next/router";
 import {
-  Container, InputGroup, Card, CardBody, Img, Stack, Flex,
-  InputRightElement, InputLeftElement, Input, Checkbox, Link, Button, extendTheme,
-  useColorModeValue, FormControl, Center, IconButton, Text, useToast
+  Container,
+  InputGroup,
+  Card,
+  CardBody,
+  Img,
+  Stack,
+  Flex,
+  InputRightElement,
+  InputLeftElement,
+  Input,
+  Checkbox,
+  Link,
+  Button,
+  extendTheme,
+  useColorModeValue,
+  FormControl,
+  Center,
+  IconButton,
+  Text,
+  useToast,
 } from "@chakra-ui/react";
 import { LockIcon, EmailIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-
 
 /**
  * Creates a User interface for Login.
  * Allow user to login using email and password.
  * If successit directs to the homepage else
  * it will generate a toaste message for user
-*/
+ */
 
 const signPage: NextPage = () => {
   const cardStyle = {
@@ -38,10 +54,15 @@ const signPage: NextPage = () => {
   const toast = useToast();
 
   const router = useRouter();
-
-  const session = useSession();
+  const { data: session, status } = useSession();
 
   const handleSubmit = async (e: any) => {
+    const userRole = (session: any) => {
+      let role = session?.user?.role;
+      if (role) return role;
+      return null;
+    };
+
     e.preventDefault();
     const email: string = e.target.email.value;
     const pass: string = e.target.pass.value;
@@ -50,27 +71,45 @@ const signPage: NextPage = () => {
       email: email,
       password: pass,
       redirect: false,
-    })
-    console.log(res)
-    if (res?.status == 200){
-      router.push("/student")
-    }else{
+    });
+
+    if (res?.status == 200) {
+      var role: any = userRole(session);
+      if (role == "admin") {
+        router.replace("/admin");
+      } else if (role == "student") {
+        router.replace("/student");
+      }
+    } else {
       toast({
         title: "Error",
         description: "Please enter the valid credientials",
         status: "error",
         duration: 3000,
         isClosable: true,
-        colorScheme: 'gray'
-    })
+        colorScheme: "gray",
+      });
     }
   };
 
   useEffect(() => {
-    if (session.status === "authenticated") Router.replace("/student");
-  }, [session.status]);
+    const userRole = (session: any) => {
+      let role = session?.user?.role;
+      if (role) return role;
+      return null;
+    };
 
-  if (session.status === "unauthenticated")
+    if (status === "authenticated") {
+      var role: any = userRole(session);
+      if (role == "admin") {
+        router.replace("/admin");
+      } else if (role == "student") {
+        router.replace("/student");
+      }
+    }
+  }, [status]);
+
+  if (status === "unauthenticated")
     return (
       <>
         <Container
@@ -82,11 +121,14 @@ const signPage: NextPage = () => {
             opacity: 0.25,
           }}
         >
-          <Container maxWidth='44vw' minHeight="20vh" ></Container>
-          <Container >
-            <Card bgColor='#E7DEEA'
-              maxWidth='30vw' minHeight="44vh"
-              borderRadius={'30px'} sx={cardStyle}
+          <Container maxWidth="44vw" minHeight="20vh"></Container>
+          <Container>
+            <Card
+              bgColor="#E7DEEA"
+              maxWidth="30vw"
+              minHeight="44vh"
+              borderRadius={"30px"}
+              sx={cardStyle}
               marginStart={16}
             >
               <Img
@@ -162,8 +204,24 @@ const signPage: NextPage = () => {
                   </Stack>
 
                   <Stack spacing={28} mt={10} isInline>
-                    <Checkbox ml={6} size='sm' color="gray.600" colorScheme={"facebook"} borderColor="gray.600" defaultChecked>Remember me</Checkbox>
-                    <Link color="gray.600" fontSize={14} fontStyle={'italic'} onClick={() => router.push("/forgotPassword")}>Forgot Password?</Link>
+                    <Checkbox
+                      ml={6}
+                      size="sm"
+                      color="gray.600"
+                      colorScheme={"facebook"}
+                      borderColor="gray.600"
+                      defaultChecked
+                    >
+                      Remember me
+                    </Checkbox>
+                    <Link
+                      color="gray.600"
+                      fontSize={14}
+                      fontStyle={"italic"}
+                      onClick={() => router.push("/forgotPassword")}
+                    >
+                      Forgot Password?
+                    </Link>
                   </Stack>
 
                   <Container maxWidth="50vw" minH={4}></Container>
@@ -182,10 +240,17 @@ const signPage: NextPage = () => {
                       LOGIN
                     </Button>
                   </Center>
-                  
-                </form>    
-                <Center h='50px' color='white' mt={8}>
-                  <Text textColor={"gray.600"}>Not a Member?</Text><Link color="gray.600" fontSize={14} fontStyle={'italic'} onClick={() => router.push("/signUp")}>Register here</Link>
+                </form>
+                <Center h="50px" color="white" mt={8}>
+                  <Text textColor={"gray.600"}>Not a Member?</Text>
+                  <Link
+                    color="gray.600"
+                    fontSize={14}
+                    fontStyle={"italic"}
+                    onClick={() => router.push("/signUp")}
+                  >
+                    Register here
+                  </Link>
                 </Center>
               </CardBody>
             </Card>

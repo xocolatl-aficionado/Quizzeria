@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
-import clientPromise from "../../../src/lib/mongodb"
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
+import clientPromise from "../../../src/lib/mongodb";
 
 /**
   Authentication options for NextAuth.JS
@@ -22,9 +22,9 @@ const authOptions: NextAuthOptions = {
        * @param {Object} credentials - User credentials
        * @param {Object} req - Request object
        * @returns {Promise<Object>} - User object
-      */
+       */
 
-      async authorize(credentials, req) {        
+      async authorize(credentials, req) {
         const client = await clientPromise;
         const db = client.db("test");
         const { email, password } = credentials as {
@@ -34,42 +34,46 @@ const authOptions: NextAuthOptions = {
 
         const user = await db.collection("users").findOne({
           email: email,
-          password : password
+          password: password,
         });
-        
-        console.log("user found " ,user)
+
+        console.log("user found ", user);
         if (user) {
           // The user object that we have received from the DB
-          return user
+          return user;
         } else {
           // If no user found then return null
-          return null
+          return null;
         }
-      }
-    })
+      },
+    }),
   ],
   pages: {
-    signIn: '/', // Sign in page
-    signOut: '/', // Sign Out page
+    signIn: "/", // Sign in page
+    signOut: "/", // Sign Out page
   },
-  
-  callbacks: {
-    /**
-      * JWT callback function which we can access
-      * @param {Object} params - Callback parameters
-      * @param {Object} params.user - User object
-      * @param {Object} params.token - JWT token object
-      * @returns {Object} Updated JWT token
-      */
 
-    jwt(params) {
-      // update token
-      if (params.user?.role) {
-        params.token.role = params.user.role;
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      return user;
+    },
+    //   jwt callback is only called when token is created
+    async jwt({ token, user }) {
+
+      if (user) {
+        token.user = user;
       }
+      console.log(token);
+      return Promise.resolve(token);
+    },
+
+    session: async ({ session, token }) => {
+
+      // session callback is called whenever a session for that particular user is checked
       
-      // return final_token
-      return params.token;
+      session.user = token.user;
+      session.user.role = token.user.role;
+      return Promise.resolve(session);
     },
   },
 };
