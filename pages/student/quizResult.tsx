@@ -4,27 +4,6 @@ import NavBar from "../../components/ResultHeader";
 import Footer from "../../components/Footer";
 import Result from "../../components/Result";
 import { Box, Container, Card, Text, Button, Stack} from "@chakra-ui/react";
-import clientPromise from "../../src/lib/mongodb";
-import Quiz from "../../src/models/Quiz";
-// export async function getServerSideProps() {
-//   try {
-//     const client = await clientPromise;
-//     const db = client.db("test");
-
-//     const quizzes = await db
-//       .collection("quizes")
-//       .find({})
-//       .sort({ marks: -1 })
-//       .toArray();
-
-//     return {
-//       props: { quizzes: JSON.parse(JSON.stringify(quizzes)) },
-//     };
-//   } catch (e) {
-//     console.error(e);
-//   }
-// }
-
 /**
  * Function to build the Student Quiz Result page with components
  * @returns the Quiz Result page for students build with the components Navigation Bar, Report Card, anf optionns to switch to various views and the footer. 
