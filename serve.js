@@ -1,7 +1,7 @@
 import { createServer } from "http";
 import { spawn, exec } from "child_process";
 
-import getAllQuestions from "./quizbank.mjs";
+import {Quiz, QuizItem, getAllQuestionsForSingleQuiz } from "./quizbank.mjs";
 import qs from "querystring";
 
 var bigString = `<!DOCTYPE HTML>
@@ -36,7 +36,7 @@ var bigString = `<!DOCTYPE HTML>
 </body>
 </html>`;
 
-var questions = await getAllQuestions();
+var questions = await getAllQuestionsForSingleQuiz();
 const qArray = [];
 
 questions.map(function (o) {
@@ -46,11 +46,25 @@ questions.map(function (o) {
 console.log("Questions array is: ", qArray);
 questions = qArray;
 
+//TODO
 // var questions = [
 //   ["What HTML tag starts a javascript element?", "script"],
 //   ["What is the capital of Canada?", "Ottawa"],
 //   ["What is 2+2?", "4"],
 // ];
+
+//needs to make use of imported Quiz and QuizItem classes
+
+//
+// var questions = [
+//   Quiz1, --> Quiz item type should be defined in Quizbank.mjs. Also Quiz object must have an array of 'QuizItem's in it. 
+//   Quiz2,
+//   Quiz3
+// ];
+
+
+//TODO:
+//Update UI below to use the new format of questions above. 
 var question_index = 0;
 
 //create a server object:
