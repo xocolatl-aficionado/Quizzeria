@@ -49,7 +49,7 @@ export async function updateMarks(postId: number, marks: number) {
  * @param param0 : Quiz object created with the types for loading data
  * @returns a table of quiz data related to the student/quiztaker
  */
-export default function QuizTable({ quizzes }: QuizProps) {
+export default function QuizTable({ quizzes }) {
   return (
     <Table variant="striped">
       <Thead>
