@@ -13,17 +13,26 @@ import { useEffect } from "react";
 
 export async function getServerSideProps() {
   try {
+
+    const { data: session, status } = useSession();
     const client = await clientPromise;
     const db = client.db("test");
 
-    const quizzes = await db
-      .collection("quizes")
-      .find({})
-      .sort({ marks: -1 })
-      .toArray();
+    const dbUser = getUserName(session);
+    const user = await db
+      .collection("users")
+      .findOne({ "name": dbUser })
 
+    console.log(dbUser)
+    const quizzes = user?.quizzes;
+
+    const userQuizzes = await db.collection("quizes")
+      .find({})
+      .toArray()
+
+    console.log(quizzes)
     return {
-      props: { quizzes: JSON.parse(JSON.stringify(quizzes)) },
+      props: { quizzes: JSON.parse(JSON.stringify(userQuizzes)) },
     };
   } catch (e) {
     console.error(e);
