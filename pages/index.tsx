@@ -79,6 +79,7 @@ const signPage: NextPage = () => {
         router.replace("/admin");
       } else if (role == "student") {
         router.replace("/student");
+        //console.log()
       }
     } else {
       toast({
