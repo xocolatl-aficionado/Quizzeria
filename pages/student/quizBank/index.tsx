@@ -1,3 +1,6 @@
+/**
+ * Import required reusable components for creating the quizbank UI
+ */
 import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
 import NavBar from "../../../components/studentNavbar";
@@ -5,7 +8,7 @@ import Footer from "../../../components/Footer";
 import Card from "../../../components/QuizBankTitle";
 import QuizBankView from "../../../components/QuizBankTable";
 import Card from "../../../components/Card";
-import QuizTable from "../../../components/pagination";
+import QuizTable from "../../../components/QuizBankTable";
 import { Box } from "@chakra-ui/react";
 import clientPromise from "../../../src/lib/mongodb";
 
@@ -26,6 +29,10 @@ export async function getServerSideProps() {
     console.error(e);
   }
 }
+/**
+ * Creating the QuizBank UI using reusable components
+ * @returns 
+ */
 export default function QuizBank({ quizzes }) {
   return (
     <>
