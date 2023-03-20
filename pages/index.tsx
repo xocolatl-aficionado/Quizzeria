@@ -7,6 +7,7 @@
  * @see module:chakra-ui/react
  * @see module:chakra-ui/icons
  */
+
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
@@ -79,7 +80,6 @@ const signPage: NextPage = () => {
         router.replace("/admin");
       } else if (role == "student") {
         router.replace("/student");
-        //console.log()
       }
     } else {
       toast({
