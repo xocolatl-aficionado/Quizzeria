@@ -1,8 +1,8 @@
-import { createServer } from 'http';
-import { spawn, exec } from 'child_process';
+import { createServer } from "http";
+import { spawn, exec } from "child_process";
 
-import getAllQuestions from './quizbank.mjs'
-import qs from 'querystring';
+import getAllQuestions from "./quizbank.mjs";
+import qs from "querystring";
 
 var bigString = `<!DOCTYPE HTML>
 <html>
@@ -34,59 +34,65 @@ var bigString = `<!DOCTYPE HTML>
     </form>
 </div>
 </body>
-</html>`
+</html>`;
 
-console.log("TEST")
-//const getAllQs = async () => { return await getAllQuestions()}
-var questions = await getAllQuestions()
-console.log(typeof questions)
-questions.map((q) => {console.log("TEST from serve.js")})
+var questions = await getAllQuestions();
+const qArray = [];
 
-//console.log( res)
+questions.map(function (o) {
+  qArray.push([o.Question, o.Answer]);
+});
 
-var questions = [
-    ["What HTML tag starts a javascript element?", "script"],
-    ["What is the capital of Canada?", "Ottawa"],
-    ["What is 2+2?", "4"]
-];
+console.log("Questions array is: ", qArray);
+questions = qArray;
+
+// var questions = [
+//   ["What HTML tag starts a javascript element?", "script"],
+//   ["What is the capital of Canada?", "Ottawa"],
+//   ["What is 2+2?", "4"],
+// ];
 var question_index = 0;
 
 //create a server object:
 createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/html' }); // http header
-    var url = req.url;
-    
-    if (url === '/quiz') {
-        let data = '';
-        req.on('data', chunk => {
-          data += chunk;
-        })
-        req.on('end', () => {        
-          let post = qs.parse(data);
-          let answer = post['qanswer'];
-          let qnum = parseInt(post['qnumber']);
-          let correctness = questions[qnum][1] == answer ? "CORRECT" : "INCORRECT"; 
-          
-          let introString = `<p><mark>${correctness}</mark> The answer is ${questions[qnum][1]}</p>`;
-          let newString = bigString.replace('<!-- INTRO -->', introString );
+  res.writeHead(200, { "Content-Type": "text/html" }); // http header
+  var url = req.url;
 
-          question_index = (question_index +1) % questions.length;
+  if (url === "/quiz") {
+    let data = "";
+    req.on("data", (chunk) => {
+      data += chunk;
+    });
+    req.on("end", () => {
+      let post = qs.parse(data);
+      let answer = post["qanswer"];
+      let qnum = parseInt(post["qnumber"]);
+      let correctness = questions[qnum][1] == answer ? "CORRECT" : "INCORRECT";
 
-          newString = newString.replace("QNUMBER PLACEHOLDER", question_index);
-          newString = newString.replace("QUESTION PLACEHOLDER", questions[question_index][0]);
+      let introString = `<p><mark>${correctness}</mark> The answer is ${questions[qnum][1]}</p>`;
+      let newString = bigString.replace("<!-- INTRO -->", introString);
 
-          res.write(newString);
+      question_index = (question_index + 1) % questions.length;
 
-          res.end();
-        })
+      newString = newString.replace("QNUMBER PLACEHOLDER", question_index);
+      newString = newString.replace(
+        "QUESTION PLACEHOLDER",
+        questions[question_index][0]
+      );
 
-    } else {
+      res.write(newString);
 
-        let newString = bigString.replace("QNUMBER PLACEHOLDER", question_index);
-        newString = newString.replace("QUESTION PLACEHOLDER", questions[question_index][0]);
-        res.write(newString); //write a response
-        res.end(); //end the response
-    }
+      res.end();
+    });
+  } else {
+    let newString = bigString.replace("QNUMBER PLACEHOLDER", question_index);
+    newString = newString.replace(
+      "QUESTION PLACEHOLDER",
+      questions[question_index][0]
+    );
+    res.write(newString); //write a response
+    res.end(); //end the response
+  }
 }).listen(3000, function () {
-    console.log("server start at port 3000"); //the server object listens on port 3000
+  console.log("server start at port 3000"); //the server object listens on port 3000
 });
