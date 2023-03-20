@@ -6,7 +6,7 @@ export default async (req, res) => {
   try {
     const client = await clientPromise;
     const db = client.db("test");
-//console.log
+
     const quizes = await db
       .collection("quizes")
       .find({ marks: { $exists: true } })
