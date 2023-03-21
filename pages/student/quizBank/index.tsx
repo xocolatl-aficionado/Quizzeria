@@ -50,8 +50,6 @@ export default function QuizBank({ quizzes }) {
             <Card />
           </Box>
           <Box flex="1" width="80%" mx="auto" justifyContent="center" display={"inline-block"} marginTop={"10"}>
-            <QuizBankView quizzes={quizzes} />
-          <Box flex="1" width="80%" mx="auto" justifyContent="center" display={"inline-block"}>
             <QuizTable quizzes={quizzes} />
           </Box>
           <Footer />
