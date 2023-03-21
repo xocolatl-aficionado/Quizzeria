@@ -25,7 +25,10 @@ export async function getServerSideProps() {
     console.error(e);
   }
 }
-
+/**
+ * Function to return Take a Quiz UI for students
+ * @returns Attempt a Quiz UI for students
+ */
 export default function takeAQuiz({ quizzes }) {
   return (
     <>

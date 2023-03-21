@@ -1,3 +1,6 @@
+/**
+ * Creating the component for displaying short answer quiz with pagination
+ */
 import { useState } from "react";
 import {
   Heading,
@@ -23,6 +26,9 @@ type Answer = {
   value: string;
 };
 
+/**
+ * Adding sample data to the quiz, this will be replaced by the database data
+ */
 const questions: Question[] = [
   {
     id: "1",
@@ -70,17 +76,33 @@ const questions: Question[] = [
   },
 ];
 
+/**
+ * define question items per page for pagination
+ */
 const PAGE_SIZE = 3;
 
+/**
+ * 
+ * @returns returns a UI with short answer quizz containing quiz items(question and input for ander) and pagination for easy navigation
+ */
 export default function shortAnswerQuestions() {
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+  /**
+   * Handling form submission
+   * @param event form event to handle form submission
+   */
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Answers:", answers);
   };
 
+  /**
+   * handle pagination
+   * @param event React.ChangeEvent<HTMLInputElement> to handle pagination and checking answers
+   * @param questionId id of a certain quizitem
+   */
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     questionId: string
@@ -97,20 +119,35 @@ export default function shortAnswerQuestions() {
     }
   };
 
+  /**
+   * Determining number of pages in total for pagination
+   */
   const totalPages = Math.ceil(questions.length / PAGE_SIZE);
 
+  /**
+   * handle next button in pagination
+   */
   const handleNextClick = () => {
     if (currentPage < totalPages) {
       setCurrentPage((prev) => prev + 1);
     }
   };
 
+  /**
+   * handle previous button in pagination
+   */
   const handlePrevClick = () => {
     if (currentPage > 1) {
       setCurrentPage((prev) => prev - 1);
     }
   };
 
+  /**
+   * Define other necessary values for pagination
+   * Adding global css with react emotion since chakra ui does not provide default pagination styles
+   * maping quizitems with form items
+   * And display data with pagination
+   */
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
   const currentQuestions = questions.slice(startIndex, endIndex);

@@ -1,11 +1,11 @@
 /**
- * To create title card for the whole site as a reusable component
+ * To create title card component for take a quiz UI
  */
 import { Box, Heading, chakra } from "@chakra-ui/react";
 
 /**
- * Creating the title card for the dashboard pages for students ans admins
- * @returns the title of the tables in both dashboard pages
+ * Creating the title card for the Quiz Title and an indecator for quiz time
+ * @returns the title of the Quiz as a header and an indecator for quiz time
  */
 export default function Card() {
   return (
