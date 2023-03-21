@@ -75,7 +75,6 @@ export default function signUp() {
                         >
                         <Stack spacing={6} mt={14} marginStart={8} marginEnd={8}
                         >
-                            {/* <FormControl id="name"> */}
                                 <InputGroup>
                                     <InputLeftElement
                                         pointerEvents='none'
@@ -85,9 +84,7 @@ export default function signUp() {
                                     />
                                     <Input id="name" bg='yellow.400' marginLeft={10} marginEnd={10} type='text' placeholder='Full Name' textColor={'white'} />
                                 </InputGroup>
-                            {/* </FormControl> */}
-
-                            {/* <FormControl id="email"> */}
+                           
                                 <InputGroup>
                                     <InputLeftElement
                                         pointerEvents='none'
@@ -97,9 +94,7 @@ export default function signUp() {
                                     />
                                     <Input id="email" bg='yellow.400' marginLeft={10} marginEnd={10} type='email' placeholder='Email ID' textColor={'white'} />
                                 </InputGroup>
-                            {/* </FormControl> */}
-                            {/* <FormControl id="password"> */}
-
+                        
                                 <InputGroup>
                                     <InputLeftElement
                                         pointerEvents='none'
@@ -154,10 +149,6 @@ export default function signUp() {
                                     </InputRightElement>
                                 </InputGroup>
 
-                            {/* </FormControl> */}
-
-                            {/* <FormControl id="role"> */}
-
                             <InputGroup>
                                 <InputLeftElement
                                     pointerEvents='none'
@@ -165,13 +156,11 @@ export default function signUp() {
                                     fontSize='1.2em'
                                     children={<MdSupervisorAccount color='yellow.400' />}
                                 />
-                                {/* <Input bg='yellow.400' marginLeft={10} marginEnd={10} type={showPass ? "text" : "password"} placeholder='Password' textColor={'white'} /> */}
                                 <Select id="role" bg='yellow.400' marginLeft={10} marginEnd={10} textColor={'gray.500'} placeholder='Select Role'>
                                 <option value='option1'>Student</option>
                                 <option value='option2'>Admin</option>
                                 </Select>
                             </InputGroup>
-                            {/* </FormControl> */}
                            
                             <Center h='50px' color='white'>
                             <Button width={40} height={10} bg={useColorModeValue("yellow.400", "yellow.400") } 
