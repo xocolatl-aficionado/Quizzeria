@@ -68,7 +68,7 @@ export default function signUp() {
                         </chakra.h1>
 
                         <Card bgColor='#E7DEEA'
-                            maxWidth='80vw' minHeight="52vh"
+                            maxWidth='80vw' minHeight="68vh"
                             borderRadius={'30px'} sx={cardStyle}
                             marginStart={20}
                             mt={10}
@@ -83,7 +83,7 @@ export default function signUp() {
                                         fontSize='1.4em'
                                         children={<MdPerson color='yellow.400' />}
                                     />
-                                    <Input id="name" bg='yellow.400' marginLeft={10} marginEnd={10} type='text' placeholder='User Name' textColor={'white'} />
+                                    <Input id="name" bg='yellow.400' marginLeft={10} marginEnd={10} type='text' placeholder='Full Name' textColor={'white'} />
                                 </InputGroup>
                             {/* </FormControl> */}
 
@@ -126,6 +126,34 @@ export default function signUp() {
                                         />
                                     </InputRightElement>
                                 </InputGroup>
+
+                                <InputGroup>
+                                    <InputLeftElement
+                                        pointerEvents='none'
+                                        color='gray.300'
+                                        fontSize='1.2em'
+                                        children={<LockIcon color='yellow.400' />}
+                                    />
+                                    <Input id="confirmPassword" bg='yellow.400' marginLeft={10} marginEnd={10} type={showPass ? "text" : "password"} placeholder='Confirm Password' textColor={'white'} />
+                                    <InputRightElement>
+                                        <IconButton
+                                            size={"sm"}
+                                            aria-label={"password"}
+                                            marginEnd={20}
+                                            icon={
+                                                showPass ? <ViewIcon /> : <ViewOffIcon />
+                                            }
+                                            _hover={{
+                                                bg: "gray.800",
+                                            }}
+                                            color='gray.500'
+                                            isRound
+                                            onClick={handleShowPass}
+                                            bg={'yellow.400'}
+                                        />
+                                    </InputRightElement>
+                                </InputGroup>
+
                             {/* </FormControl> */}
 
                             {/* <FormControl id="role"> */}
@@ -146,8 +174,8 @@ export default function signUp() {
                             {/* </FormControl> */}
                            
                             <Center h='50px' color='white'>
-                            <Button width={40} height={10} bg={useColorModeValue("yellow.400", "yellow.400")}
-                                textColor={"white"}  size="lg"
+                            <Button width={40} height={10} bg={useColorModeValue("yellow.400", "yellow.400") } 
+                                textColor={"white"}  size="lg"  marginBottom={6} marginTop={4}
                                 leftIcon={<MdAppRegistration />}
                                 onClick={() => router.replace("/")}
                                 _hover={{
