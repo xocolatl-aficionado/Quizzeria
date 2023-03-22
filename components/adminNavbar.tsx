@@ -91,6 +91,7 @@ export default function Navbar() {
               colorScheme={'orange'}
               size={'sm'}
               mr={4}
+              onClick={() => signOut()}
               >
               Log Out
             </Button>
