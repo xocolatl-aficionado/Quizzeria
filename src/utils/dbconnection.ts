@@ -1,28 +1,49 @@
-import mongoose, { Model } from "mongoose";
+import { MongoClient } from "mongodb";
 
-const { MONGODB_URI } = process.env;
+// Replace the uri string with your MongoDB deployment's connection string.
+const uri = process.env.MONGODB_URI;
 
-export const connect = async () => {
-  const conn = await mongoose
-    .connect(MONGODB_URI as string)
-    .then(() => {
-      console.log("MongoDB connected!!");
-    })
-    .catch((err) => console.log(err));
+/**
+ * Get a quiz by it's subject
+ */
+export async function findQuiz(id) {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
 
-  const QuizItemSchema = new mongoose.Schema({
-    quiztopic: String,
-    question: String,
-    answer: String,
-  });
+    const database = client.db("test");
+    const quizzes = database.collection("quizes");
 
-  const QuizSchema = new mongoose.Schema({
-    name: String,
-    subject: String,
-    type: String,
-    marks: Number,
-  });
+    // Query for a movie that has the title 'The Room'
+    const query = { subject: id };
 
-  const Quiz = mongoose.models.Quiz || mongoose.model("Quiz", QuizSchema);
-  return { conn, Quiz };
-};
+    const result = await quizzes.findOne(query);
+    return JSON.parse(JSON.stringify(result));
+  } catch (err) {
+    console.error(err);
+  } finally {
+    await client.close();
+  }
+}
+
+/**
+ * Get all quizzes
+ */
+export default async function findAllQuizzes() {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+
+    const result = await client
+      .db("test")
+      .collection("quizes")
+      .find({})
+      .toArray();
+
+    return result;
+  } catch (err) {
+    console.error(err);
+  } finally {
+    await client.close();
+  }
+}
