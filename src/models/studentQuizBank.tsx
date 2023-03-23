@@ -7,4 +7,5 @@ export interface Quiz {
     subject: string;
     type: string;
     time:number;
+    marks:number;
 }
