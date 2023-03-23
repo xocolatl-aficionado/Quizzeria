@@ -14,26 +14,27 @@ import clientPromise from "../../../src/lib/mongodb";
 
 export async function getServerSideProps() {
   try {
+   
     const client = await clientPromise;
     const db = client.db("test");
-
-    const quizzes = await db
-      .collection("quizes")
-      .find({})
-      .toArray();
-
+    const quiz =  await db.collection("quizes").find({}).toArray();
+   
     return {
-      props: { quizzes: JSON.parse(JSON.stringify(quizzes)) },
+      props: { 
+        quiz: JSON.parse(JSON.stringify(quiz)) 
+      },
     };
   } catch (e) {
+    console.log("IN ERROR")
     console.error(e);
   }
 }
+
 /**
  * Creating the QuizBank UI using reusable components
  * @returns 
  */
-export default function QuizBank({ quizzes }) {
+export default function QuizBank({ quiz }) {
   return (
     <>
       <Head>
@@ -50,7 +51,7 @@ export default function QuizBank({ quizzes }) {
             <Card />
           </Box>
           <Box flex="1" width="80%" mx="auto" justifyContent="center" display={"inline-block"} marginTop={"10"}>
-            <QuizTable quizzes={quizzes} />
+            <QuizTable data={quiz}/>
           </Box>
           <Footer />
         </Box>
