@@ -115,7 +115,7 @@ const forgotPassword: NextPage = () => {
                     <Box ml={20}>
 
                         <Image
-                            src="/img/forgot.avif"
+                            src="/img/forgot.png"
                             alt="quiz"
                             fit="cover"
                             h={"100vh"}
