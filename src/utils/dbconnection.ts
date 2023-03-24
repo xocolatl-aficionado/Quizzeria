@@ -4,9 +4,13 @@ import { MongoClient } from "mongodb";
 const uri = process.env.MONGODB_URI;
 
 /**
- * Get a quiz by it's subject
+ * The interface that all quiz data sources will adhere to
  */
-export async function findQuiz(id) {
+interface IGetQuizData {
+  findQuiz: (id: string) => Promise<Quiz | null>;
+  findAllQuizzes: () => Promise<Quiz[] | null>;
+  findQuizzesTakenByUser: (name: string) => Promise<Quiz[] | null>;
+}
   const client = new MongoClient(uri);
   try {
     await client.connect();
