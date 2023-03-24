@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
-import Quiz, { UserQuiz } from "../../src/models/Quiz";
-import Student from "../../src/models/Student";
+import Quiz, { UserQuiz } from "../domain/models/Quiz";
+import Student from "../domain/models/Student";
 
 const uri: string = process.env.MONGODB_URI ?? "";
 

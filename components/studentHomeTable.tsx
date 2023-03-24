@@ -11,7 +11,7 @@ import {
   Button,
   Center,
 } from "@chakra-ui/react";
-import Quiz, { UserQuiz } from "../src/models/Quiz";
+import Quiz, { UserQuiz } from "../src/domain/models/Quiz";
 
 /**
  * Interface props to define the Quiz
