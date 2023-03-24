@@ -1,29 +1,25 @@
 /**
  * Creating the component for displaying short answer quiz with pagination
  */
-import { useState } from "react";
+import { useState } from "react"; //for pagination
 import {
-  Heading,
   VStack,
   FormControl,
   FormLabel,
   Input,
   Button,
   Box,
-  Flex,
-  Stack,
+  Flex
 } from "@chakra-ui/react";
 import ReactPaginate from "react-paginate";
-import { Global } from "@emotion/react";
+/**
+ * to load css styles to the page since there are no default pagination in Chakra UI
+ */
+import GlobalStyles from "./globalStyles"
 
 type Question = {
   id: string;
   text: string;
-};
-
-type Answer = {
-  questionId: string;
-  value: string;
 };
 
 /**
@@ -79,135 +75,37 @@ const questions: Question[] = [
 /**
  * define question items per page for pagination
  */
-const PAGE_SIZE = 3;
+const ITEMS_PER_PAGE = 3;
 
 /**
  * 
  * @returns returns a UI with short answer quizz containing quiz items(question and input for ander) and pagination for easy navigation
  */
 export default function shortAnswerQuestions() {
-  const [answers, setAnswers] = useState<Answer[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-
-  /**
-   * Handling form submission
-   * @param event form event to handle form submission
-   */
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log("Answers:", answers);
-  };
-
-  /**
-   * handle pagination
-   * @param event React.ChangeEvent<HTMLInputElement> to handle pagination and checking answers
-   * @param questionId id of a certain quizitem
-   */
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    questionId: string
-  ) => {
-    const newAnswer = { questionId, value: event.target.value };
-    const existingAnswer = answers.find((a) => a.questionId === questionId);
-
-    if (existingAnswer) {
-      setAnswers((prevState) =>
-        prevState.map((a) => (a.questionId === questionId ? newAnswer : a))
-      );
-    } else {
-      setAnswers((prevState) => [...prevState, newAnswer]);
-    }
-  };
+  const [currentPage, setCurrentPage] = useState(0);
 
   /**
    * Determining number of pages in total for pagination
    */
-  const totalPages = Math.ceil(questions.length / PAGE_SIZE);
-
-  /**
-   * handle next button in pagination
-   */
-  const handleNextClick = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prev) => prev + 1);
-    }
+  const totalPages = Math.ceil(questions.length / ITEMS_PER_PAGE);
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    setCurrentPage(selected);
   };
-
-  /**
-   * handle previous button in pagination
-   */
-  const handlePrevClick = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prev) => prev - 1);
-    }
-  };
-
   /**
    * Define other necessary values for pagination
    * Adding global css with react emotion since chakra ui does not provide default pagination styles
    * maping quizitems with form items
    * And display data with pagination
    */
-  const startIndex = (currentPage - 1) * PAGE_SIZE;
-  const endIndex = startIndex + PAGE_SIZE;
+  const startIndex = currentPage * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
   const currentQuestions = questions.slice(startIndex, endIndex);
   return (
+    
     <Flex>
-      <Global
-        styles={`
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            pointer-events: auto;
-            cursor: pointer;
-            list-style:none;s
-          }
-          
-          ::marker {
-            list-style: none;
-            display:none;
-          }
-
-          .pagination li a{
-            display: inline-block;
-            margin: 0 10px;
-            border: 1px solid orange;
-            padding: 10px;
-            border-radius:5px;
-            background-color:#FFFFCE;
-            cursor: pointer;
-            pointer-events: auto;
-            font-weight:bold;
-          }
-
-
-          .pagination li a.active{
-            color: black;
-            bg-color:orange;
-          }
-
-          .pagination li.hover{
-            background-color:orange;
-          }
-
-          .pagination li.clicked{
-            background-color:orange;
-            color:orange;
-          }
-
-          .pagination__link--active {
-            color: #DD6B20;
-          }
-
-          .pagination__link--disabled {
-            opacity: 0.5;
-            pointer-events: none;
-          }
-        `}
-      />
+      <GlobalStyles/>
       <VStack spacing={10} align={"stretch"} justify={"center"}>
-        <form onSubmit={handleSubmit}>
+        <form>
           {currentQuestions.map((q) => (
             <Box
               key={q.id}
@@ -222,15 +120,6 @@ export default function shortAnswerQuestions() {
                 <FormLabel>
                   Question {q.id}: {q.text}
                 </FormLabel>
-                <Input
-                  bgColor={"white"}
-                  type="text"
-                  width={"250px"}
-                  value={
-                    answers.find((a) => a.questionId === q.id)?.value || ""
-                  }
-                  onChange={(e) => handleChange(e, q.id)}
-                />
               </FormControl>
             </Box>
           ))}
@@ -239,7 +128,7 @@ export default function shortAnswerQuestions() {
               previousLabel={"Previous"}
               nextLabel={"Next"}
               pageCount={totalPages}
-              onPageChange={({ selected }) => setCurrentPage(selected + 1)}
+              onPageChange={handlePageClick}
               containerClassName={"pagination"}
               previousLinkClassName={"pagination__link"}
               nextLinkClassName={"pagination__link"}
@@ -248,9 +137,6 @@ export default function shortAnswerQuestions() {
             />
           </Flex>
           <Flex justifyContent="center" mt={10}>
-            <Button type="submit" colorScheme="orange" mt={4} mr={5}>
-              Save
-            </Button>
             <Button type="submit" colorScheme="orange" mt={4}>
               Submit
             </Button>
