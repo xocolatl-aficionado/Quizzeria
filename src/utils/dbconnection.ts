@@ -18,37 +18,37 @@ interface IGetQuizData {
  */
 export default class MongoQuizData implements IGetQuizData {
   async findQuiz(id: string) {
-  const client = new MongoClient(uri);
+    const client = new MongoClient(uri);
     var quiz: Quiz | null = null;
-  try {
-    await client.connect();
+    try {
+      await client.connect();
 
-    const database = client.db("test");
-    const quizzes = database.collection("quizes");
+      const database = client.db("test");
+      const quizzes = database.collection("quizes");
 
-    const query = { subject: id };
+      const query = { subject: id };
 
-    const result = await quizzes.findOne(query);
+      const result = await quizzes.findOne(query);
       quiz = JSON.parse(JSON.stringify(result));
-  } catch (err) {
-    console.error(err);
-  } finally {
-    await client.close();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
       return quiz;
+    }
   }
-}
 
   async findAllQuizzes() {
-  const client = new MongoClient(uri);
+    const client = new MongoClient(uri);
     var quizzes: Quiz[] | null = null;
-  try {
-    await client.connect();
+    try {
+      await client.connect();
 
       quizzes = await client
-      .db("test")
+        .db("test")
         .collection<Quiz>("quizes")
-      .find({})
-      .toArray();
+        .find({})
+        .toArray();
     } catch (err) {
       console.error(err);
     } finally {
@@ -97,10 +97,10 @@ export default class MongoQuizData implements IGetQuizData {
           marks: user.quizzes[q].marks,
         } as UserQuiz);
       }
-  } catch (err) {
-    console.error(err);
-  } finally {
-    await client.close();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
       return userQuizzes;
     }
   }
