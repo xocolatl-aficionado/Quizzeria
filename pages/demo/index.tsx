@@ -1,4 +1,4 @@
-import MongoQuizData from "../../src/utils/dbconnection";
+import MongoQuizData from "../../src/data/dbconnection";
 
 export async function getServerSideProps() {
   var qd = new MongoQuizData();
