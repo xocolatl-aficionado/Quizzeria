@@ -1,19 +1,11 @@
 import { MongoClient } from "mongodb";
 import Quiz, { UserQuiz } from "../business/models/Quiz";
 import Student from "../business/models/Student";
+import IGetQuizData from "../business/interfaces/IGetQuizData";
 
 const uri: string = process.env.MONGODB_URI ?? "";
 
-/**
- * The interface that all quiz data sources will adhere to
- */
-interface IGetQuizData {
-  findQuiz: (id: string) => Promise<Quiz | null>;
-  findAllQuizzes: () => Promise<Quiz[] | null>;
-  findQuizzesTakenByUser: (name: string) => Promise<Quiz[] | null>;
-}
-
-/**
+/*
  * Concrete class that implements IGetQuizData and serves up data from MongoDB
  */
 export default class MongoQuizData implements IGetQuizData {
