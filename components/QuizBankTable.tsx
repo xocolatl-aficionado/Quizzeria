@@ -6,7 +6,7 @@ import {Quiz} from "../src/models/studentQuizBank";
 /**
  * to load css styles to the page since there are no default pagination in Chakra UI
  */
-import { Global } from '@emotion/react';
+import GlobalStyles from "./globalStyles"
 
 interface Props {
   quizzes: Quiz[];
@@ -98,7 +98,7 @@ const ITEMS_PER_PAGE = 5;
  * to map  data to the table view and to handle pagination
  * @returns table with provided data and pagination
  */
-const QuizTable = ({ quizzes }: Props) => {
+const QuizBankTable = ({ quizzes }: Props) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const handlePageClick = ({ selected }: { selected: number }) => {
@@ -153,70 +153,16 @@ const QuizTable = ({ quizzes }: Props) => {
     </>
   );
 };
-
 /**
- * To load data to the designed QuizTable and to load css styles to the quiz table since there is no styles for pagination in Chakra UI
+ * To load data to the designed Quiz Bank Table and to load css styles to the quiz table since there is no styles for pagination in Chakra UI
  * @returns data for the quiz table
  */
 const quizBankView = () => {
   return (
     <>
-      <Global
-        styles={`
-          .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            pointer-events: auto;
-            cursor: pointer;
-            list-style:none;s
-          }
-          
-          ::marker {
-            list-style: none;
-            display:none;
-          }
-
-          .pagination li a{
-            display: inline-block;
-            margin: 0 10px;
-            border: 1px solid orange;
-            padding: 10px;
-            border-radius:5px;
-            background-color:#FFFFCE;
-            cursor: pointer;
-            pointer-events: auto;
-            font-weight:bold;
-          }
-
-
-          .pagination li a.active{
-            color: black;
-            bg-color:orange;
-          }
-
-          .pagination li.hover{
-            background-color:orange;
-          }
-
-          .pagination li.clicked{
-            background-color:orange;
-            color:orange;
-          }
-
-          .pagination__link--active {
-            color: #DD6B20;
-          }
-
-          .pagination__link--disabled {
-            opacity: 0.5;
-            pointer-events: none;
-          }
-        `}
-      />
-      <QuizTable quizzes={quizzes} />
+      <GlobalStyles/>
+      <QuizBankTable quizzes={quizzes} />
     </>
   );
 };
-
 export default quizBankView;
