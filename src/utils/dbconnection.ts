@@ -1,7 +1,8 @@
 import { MongoClient } from "mongodb";
+import Quiz, { UserQuiz } from "../../src/models/Quiz";
+import Student from "../../src/models/Student";
 
-// Replace the uri string with your MongoDB deployment's connection string.
-const uri = process.env.MONGODB_URI;
+const uri: string = process.env.MONGODB_URI ?? "";
 
 /**
  * The interface that all quiz data sources will adhere to
