@@ -6,7 +6,7 @@ import Card from "../../components/Card";
 import QuizTable from "../../components/studentHomeTable";
 import { Box } from "@chakra-ui/react";
 import clientPromise from "../../src/lib/mongodb";
-import Quiz from "../../src/models/Quiz";
+import Quiz from "../../src/business/models/Quiz";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
