@@ -12,7 +12,11 @@ export async function getServerSideProps() {
   };
 }
 
-
 export default function DemoHome() {
-  return <h1>My Page</h1>;
+  return (
+    <h1>
+      This page was created to demo that the data layer works. Pls check the
+      console for proof.{" "}
+    </h1>
+  );
 }
