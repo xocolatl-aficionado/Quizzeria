@@ -18,7 +18,6 @@ export async function getServerSideProps() {
     const quizzes = await db
       .collection("quizes")
       .find({})
-      .sort({ marks: -1 })
       .toArray();
 
     return {
