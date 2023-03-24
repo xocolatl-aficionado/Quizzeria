@@ -99,8 +99,11 @@ const ITEMS_PER_PAGE = 5;
  * @returns table with provided data and pagination
  */
 const QuizBankTable = ({ quizzes }: Props) => {
-  const [currentPage, setCurrentPage] = useState(0);
 
+  /**
+   * calculations for pagination: currentpage, selected page, offset, number of pages and the set of queries listed in a single page.
+   */
+  const [currentPage, setCurrentPage] = useState(0);
   const handlePageClick = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);
   };
