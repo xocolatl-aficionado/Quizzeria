@@ -105,8 +105,8 @@ const QuizBankTable = ({ quizzes }: Props) => {
     setCurrentPage(selected);
   };
   const offset = currentPage * ITEMS_PER_PAGE;
-
   const pagedQuizzes = quizzes.slice(offset, offset + ITEMS_PER_PAGE);
+  const noOfPages = (quizzes.length / ITEMS_PER_PAGE);
 
   return (
     <>
@@ -140,7 +140,7 @@ const QuizBankTable = ({ quizzes }: Props) => {
           <ReactPaginate
             previousLabel={"Previous"}
             nextLabel={"Next"}
-            pageCount={Math.ceil(quizzes.length / ITEMS_PER_PAGE)}
+            pageCount={noOfPages}
             onPageChange={handlePageClick}
             containerClassName={"pagination"}
             previousLinkClassName={"pagination__link"}
