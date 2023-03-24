@@ -6,5 +6,5 @@ export interface Quiz {
     name: string;
     subject: string;
     type: string;
-    time:string;
+    time:number;
 }

@@ -21,70 +21,70 @@ const quizzes: Quiz[] = [
     name: "Quiz 1",
     subject: "Math",
     type: "Multiple Choice",
-    time:"60 min"
+    time: 60
   },
   {
     id: 2,
     name: "Quiz 2",
     subject: "English",
     type: "True or False",
-    time:"60 min"
+    time: 50
   },
   {
     id: 3,
     name: "Quiz 8",
     subject: "Science",
     type: "Fill in the Blanks",
-    time:"60 min"
+    time: 60
   },
   {
     id: 4,
     name: "Quiz 15",
     subject: "IQ",
     type: "Short Answer",
-    time:"60 min"
+    time:40
   },
   {
     id: 5,
     name: "Quiz 16",
     subject: "IQ",
     type: "Short Answer",
-    time:"60 min"
+    time:20
   },
   {
     id: 6,
     name: "Quiz 17",
     subject: "IQ",
     type: "Short Answer",
-    time:"60 min"
+    time:50
   },
   {
     id: 7,
     name: "Quiz 18",
     subject: "IQ",
     type: "Short Answer",
-    time:"60 min"
+    time:60
   },
   {
     id: 8,
     name: "Quiz 19",
     subject: "IQ",
     type: "Short Answer",
-    time:"60 min"
+    time:40
   },
   {
     id: 9,
     name: "Quiz 20",
     subject: "IQ",
     type: "Short Answer",
-    time:"60 min"
+    time:20
   },
   {
     id: 10,
     name: "Quiz 21",
     subject: "IQ",
     type: "Short Answer",
-    time:"60 min"
+    time:30
   }
   // Add more quizzes as needed
 ];
@@ -116,7 +116,7 @@ const QuizBankTable = ({ quizzes }: Props) => {
             <Th>Quiz Name</Th>
             <Th>Subject</Th>
             <Th>Quiz Type</Th>
-            <Th>Time</Th>
+            <Th>Time (Minutes)</Th>
             <Th textAlign={"right"}></Th>
           </Tr>
         </Thead>
