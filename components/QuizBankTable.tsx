@@ -158,7 +158,7 @@ const QuizTable = ({ quizzes }: Props) => {
  * To load data to the designed QuizTable and to load css styles to the quiz table since there is no styles for pagination in Chakra UI
  * @returns data for the quiz table
  */
-const TableView2 = () => {
+const quizBankView = () => {
   return (
     <>
       <Global
@@ -219,4 +219,4 @@ const TableView2 = () => {
   );
 };
 
-export default TableView2;
+export default quizBankView;
