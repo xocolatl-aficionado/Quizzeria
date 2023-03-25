@@ -120,6 +120,7 @@ export default function shortAnswerQuestions() {
                 <FormLabel>
                   Question {q.id}: {q.text}
                 </FormLabel>
+                  <Input backgroundColor={"white"} width="50%"/>
               </FormControl>
             </Box>
           ))}
