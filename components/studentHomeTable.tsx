@@ -20,6 +20,9 @@ interface QuizProps {
   quizzes: Array<UserQuiz>;
 }
 
+
+import { ObjectId } from "mongodb";
+
 export async function updateMarks(postId: number, marks: number) {
   try {
     const options: any = {
@@ -38,6 +41,11 @@ export async function updateMarks(postId: number, marks: number) {
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
 
+    let response = await fetch(`/api/quizes/post?id=${postId}`, options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+
     window.location.reload();
   } catch (error) {
     console.log("An error occured while updating marks ", error);
@@ -49,7 +57,15 @@ export async function updateMarks(postId: number, marks: number) {
  * @param param0 : Quiz object created with the types for loading data
  * @returns a table of quiz data related to the student/quiztaker
  */
-export default function QuizTable({ quizzes }) {
+
+type QuizTableInterface = {
+  quizzes: Array<{
+    [key in string]: string;
+  }>;
+};
+
+export default function QuizTable({ quizzes }: QuizTableInterface) {
+
   return (
     <Table variant="striped">
       <Thead>
