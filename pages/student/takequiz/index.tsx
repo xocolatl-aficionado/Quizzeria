@@ -3,7 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import NavBar from "../../../components/studentNavbar";
 import Footer from "../../../components/Footer";
 import Card from "../../../components/ExamTitleCard";
-import QuestionList from "../../../components/shortAnswerQuestions";
+import ShortAnswerQuestionList from "../../../components/shortAnswerQuestions";
 import { Box } from "@chakra-ui/react";
 import clientPromise from "../../../src/lib/mongodb";
 
@@ -44,7 +44,7 @@ export default function takeAQuiz() {
             <Card />
           </Box>
           <Box flex="1" mx="auto" justifyContent="center" alignContent={"center"}>
-            <QuestionList/>
+            <ShortAnswerQuestionList/>
           </Box>
           <Footer />
         </Box>
