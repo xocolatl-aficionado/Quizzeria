@@ -18,59 +18,19 @@ import ReactPaginate from "react-paginate";
 import GlobalStyles from "./globalStyles"
 
 type Question = {
-  id: string;
+  id: number;
   text: string;
 };
 
 /**
- * Adding sample data to the quiz, this will be replaced by the database data
+ * defining the set of question sets
  */
-const questions: Question[] = [
-  {
-    id: "1",
-    text: "What is your name before the marriage if you are married ?",
-  },
-  {
-    id: "2",
-    text: "What is your favorite color?",
-  },
-  {
-    id: "3",
-    text: "What is your favorite food?",
-  },
-  {
-    id: "4",
-    text: "What is your favorite animal?",
-  },
-  {
-    id: "5",
-    text: "What is your favorite book?",
-  },
-  {
-    id: "6",
-    text: "What is your favorite book when you were in high school and still willing to read?",
-  },
-  {
-    id: "7",
-    text: "What is your favorite animal?",
-  },
-  {
-    id: "8",
-    text: "What is your favorite book?",
-  },
-  {
-    id: "6",
-    text: "What is your favorite food?",
-  },
-  {
-    id: "9",
-    text: "What is your favorite animal?",
-  },
-  {
-    id: "10",
-    text: "What is your favorite book?",
-  },
-];
+let texts = ["What is your name before the marriage if you are married ?","What is your favorite color?","What is your favorite food?","What is your favorite animal?","What is your favorite book?","What is your favorite book when you were in high school and still willing to read?"]
+/**
+ * Adding sample data to the quiz, this will be replaced by the database data
+ * id will be auto incremented as the mapping loop index in order to provide a rerialized question id to the questions in the quizz
+ */
+const questions: Question[] = texts.map((text, index) => ({ id: index + 1, text }));
 
 /**
  * define question items per page for pagination
@@ -90,6 +50,7 @@ export default function shortAnswerQuestions() {
   const totalPages = Math.ceil(questions.length / ITEMS_PER_PAGE);
   const handlePageClick = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);
+  
   };
   /**
    * Define other necessary values for pagination
@@ -106,24 +67,25 @@ export default function shortAnswerQuestions() {
       <GlobalStyles/>
       <VStack spacing={10} align={"stretch"} justify={"center"}>
         <form>
-          {currentQuestions.map((q) => (
-            <Box
-              key={q.id}
-              bg="#F2F2E4"
-              p={4}
-              borderRadius="lg"
-              borderWidth="1px"
-              borderColor="gray.200"
-              marginTop={"3"}
-            >
-              <FormControl>
-                <FormLabel>
-                  Question {q.id}: {q.text}
-                </FormLabel>
-                  <Input backgroundColor={"white"} width="50%"/>
-              </FormControl>
-            </Box>
-          ))}
+            {currentQuestions.map((q) => (
+              <Box
+                key={q.id}
+                bg="#F2F2E4"
+                p={4}
+                borderRadius="lg"
+                borderWidth="1px"
+                borderColor="gray.200"
+                marginTop={"3"}
+              >
+                <FormControl>
+                  <FormLabel>
+                    Question {q.id}: {q.text}
+                  </FormLabel>
+                    <Input backgroundColor={"white"} width="50%"/>
+                </FormControl>
+              </Box>
+            ))}
+          
           <Flex justifyContent="center" mt={10}>
             <ReactPaginate
               previousLabel={"Previous"}
