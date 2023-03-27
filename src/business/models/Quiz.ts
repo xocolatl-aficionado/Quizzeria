@@ -4,6 +4,7 @@
 export default interface Quiz {
   id: number;
   name: string;
+  type: string;
   subject: string;
   maxMarks: number;
   time: number;
