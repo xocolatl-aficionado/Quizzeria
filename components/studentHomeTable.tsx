@@ -57,7 +57,7 @@ export default function QuizTable({ quizzes }: QuizProps) {
           <Th>Quiz Name</Th>
           <Th>Subject</Th>
           <Th>Quiz Type</Th>
-          <Th>Marks</Th>
+          <Th>Max Marks</Th>
           <Th textAlign={"right"}></Th>
         </Tr>
       </Thead>
@@ -66,7 +66,8 @@ export default function QuizTable({ quizzes }: QuizProps) {
           <Tr key={userQuiz._id}>
             <Td>{userQuiz.name}</Td>
             <Td>{userQuiz.subject}</Td>
-            <Td>{userQuiz.marks}</Td>
+            <Td>{userQuiz.type}</Td>
+            <Td>{userQuiz.maxMarks}</Td>
             <Td textAlign={"right"}>
               <Button
                 colorScheme="orange"
