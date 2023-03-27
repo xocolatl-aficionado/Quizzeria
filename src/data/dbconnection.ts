@@ -71,7 +71,7 @@ export default class MongoQuizData implements IGetQuizData {
 
       var dummyQuiz = {
         id: 0,
-        name: "TheMathQuiz",
+        name: "DummyMathQuiz",
         subject: "Math",
       };
       var user: Student =
