@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import passWordCheck from '../src/business/validation/PasswordCheck/passCheck.js';
+import passWordCheck from '../src/business/validation/passCheck.js';
 
 describe('passWordCheck', () => {
   describe('checkCases', () => {
