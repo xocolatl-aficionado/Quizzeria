@@ -99,4 +99,23 @@ export default class MongoQuizData implements IGetQuizData {
       return userQuizzes;
     }
   }
+  
+  async findUser(email:string) {
+    const client = new MongoClient(uri);
+    var user: Student[] | null = null;
+    try {
+      await client.connect();
+      user = await client
+        .db("test")
+        .collection<Student>("users")
+        .findOne({ email });
+        } 
+    catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
+      return user;
+    }
+  }
+
 }
