@@ -11,34 +11,33 @@ import {
   Button,
   Center,
 } from "@chakra-ui/react";
-import Quiz from "../src/models/Quiz";
+import Quiz, { UserQuiz } from "../src/business/models/Quiz";
 
 /**
  * Interface props to define the Quiz
  */
 interface QuizProps {
-  quizzes: Array<Quiz>;
+  quizzes: Array<UserQuiz>;
 }
-
 
 export async function updateMarks(postId: number, marks: number) {
   try {
-    const options:any = {
+    const options: any = {
       method: "POST",
-      
+
       headers: {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
 
-      body: `{"marks": ${marks}}`
-    }
+      body: `{"marks": ${marks}}`,
+    };
 
-    let response = await fetch(`/api/quizes/post?id=${postId}`,options)
-    .then (response => response.json())
-    .then (response => console.log(response))
-    .catch(err => console.error(err));
-    
+    let response = await fetch(`/api/quizes/post?id=${postId}`, options)
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+
     window.location.reload();
   } catch (error) {
     console.log("An error occured while updating marks ", error);
@@ -58,20 +57,23 @@ export default function QuizTable({ quizzes }: QuizProps) {
           <Th>Quiz Name</Th>
           <Th>Subject</Th>
           <Th>Quiz Type</Th>
-          <Th>Marks</Th>
+          <Th>Max Marks</Th>
           <Th textAlign={"right"}></Th>
         </Tr>
       </Thead>
       <Tbody>
-        {quizzes.map((quiz) => (
-          <Tr key={quiz._id}>
-            <Td>{quiz.name}</Td>
-            <Td>{quiz.subject}</Td>
-            <Td>{quiz.type}</Td>
-            <Td>{quiz.marks}</Td>
+        {quizzes.map((userQuiz) => (
+          <Tr key={userQuiz._id}>
+            <Td>{userQuiz.name}</Td>
+            <Td>{userQuiz.subject}</Td>
+            <Td>{userQuiz.type}</Td>
+            <Td>{userQuiz.maxMarks}</Td>
             <Td textAlign={"right"}>
-              <Button colorScheme="orange" onClick={() => updateMarks(quiz._id as Number, -1)}>Retake Quiz
-              
+              <Button
+                colorScheme="orange"
+                onClick={() => updateMarks(userQuiz._id as Number, -1)}
+              >
+                Retake Quiz
               </Button>
             </Td>
           </Tr>
@@ -80,5 +82,3 @@ export default function QuizTable({ quizzes }: QuizProps) {
     </Table>
   );
 }
-
-
