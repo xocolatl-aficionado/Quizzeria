@@ -9,5 +9,5 @@ export default interface IGetQuizData {
   findAllQuizzes: () => Promise<Quiz[] | null>;
   findQuizzesTakenByUser: (name: string) => Promise<Quiz[] | null>;
   findUser: (email: string) => Promise<Student | null>;
-  // checkQuesAns: (subject: string , question: string , userAns: string) => boolean;
+  checkQuesAns: (subject: string , question: string , userAns: string) => Promise<boolean>;
 }
