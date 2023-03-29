@@ -16,6 +16,8 @@ As per the discussion with the team, I was assigned the following tasks. The iss
 
 - **[Implemented Backend for QuizBank](#implemented-backend-for-quizbank) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/104) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/109)):** Added the backend functionality for the UI to show DB data.
 
+- **[Integrate Student Dashboard and Quizbank with the backend](#integrate-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/120) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/135)):** Rebase the  integration branch with the master.
+
 - **[Password Checker](#password-checker) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** A separate class to check the user password and to make sure all the proper conventions are followed.
 
 - **[Added methods in the data layer](#added-methods-in-the-data-layer) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** Added new functions in the data layer to enhance functionality.
@@ -35,6 +37,10 @@ From the previous sprint the session were not added properly and as a result any
 ### [Implemented Backend for QuizBank](https://github.com/MUN-COMP6905/project-hteam/pull/109)
 
 The UI for the list of quizzes were made but there were no backend for that page. I worked on getting the data from the database form `getServerSideProps` and passed the value to the quizbank. From their the value was passed to quizTable and saved as an array which interfaced `Quiz`. Modified the UI code for better readability as well. Also added a new column to display the marks of each quiz. Necessary changes have been made on the UI code as well as DB and backend code. Furthermore, it needed to added in a [integration brach and a PR](https://github.com/MUN-COMP6905/project-hteam/pull/119) to make it compatible with the data layer.
+
+### [Integrate Student Dashboard and Quizbank with the backend](https://github.com/MUN-COMP6905/project-hteam/pull/135)
+
+Rebased the Student dashboard and the quizbank page with the master once the data layer was merged. There were lot of conflicts that required solving. As all the PR(s) were working simultaneously obvious conflicts were there. Required detailed understanding of all the codebase and all the other developers coding tasks to resolve the conflicts.
 
 ### [Password Checker](https://github.com/MUN-COMP6905/project-hteam/pull/134)
 
@@ -67,6 +73,10 @@ The session has been added completly on all the pages with added feature of user
 ### [Implemented Backend for QuizBank](#implemented-backend-for-quizbank)
 
 The backend functionality to show the list of quizzes has been properly completed. All the quiz that are on the MongoDB database shows correctly. However, we still do not have the option to attempt the quiz in this sprint and it will be worked on the next sprint.
+
+### [Integrate Student Dashboard and Quizbank with the backend](#integrate-student-dashboard-and-quizbank-with-the-backend)
+
+The codebase has been successfully merged to the master branch after rebasing and resolving all the conflicts.
 
 ### [Password Checker](#password-checker)
 
