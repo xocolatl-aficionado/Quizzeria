@@ -205,13 +205,28 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td>[Heshani](#)</td>
-        <td>Issue 1</td>
+        <td>Heshani</td>
+        <td>Design wireframes for Take a Quiz UI (https://github.com/MUN-COMP6905/project-hteam/issues/76)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Issue 2</td>
+        <td>Implement Quiz Bank UI for students (https://github.com/MUN-COMP6905/project-hteam/issues/45)</td>
+        <td>Yes</td>
+    </tr>
+     <tr>
+        <td></td>
+        <td>Implement Take a Quiz UI for students (https://github.com/MUN-COMP6905/project-hteam/issues/77)</td>
+        <td>Yes</td>
+    </tr>
+     <tr>
+        <td></td>
+        <td>Add Pagination for Student Dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/116)</td>
+        <td>Yes</td>
+    </tr>
+     <tr>
+        <td></td>
+        <td>Test Cases for UI in Student Screens (https://github.com/MUN-COMP6905/project-hteam/issues/129)</td>
         <td>Yes</td>
     </tr>
 </table>
