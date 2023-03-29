@@ -118,6 +118,84 @@ The individual contributions for each team member can be found here:
 - [Heshani](docs/Individual%20Contributions/Heshani_Hattiarachchi.md)
 - [Sumrish](docs/Individual%20Contributions/Sumrish_Hanif.md)
 
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Issue</td>
+        <td>Merged to Master?</td>
+    </tr>
+    <tr>
+        <td>[Adi](#)</td>
+        <td>Issue 1</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Issue 2</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Issue 3</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>[Majid](#)</td>
+        <td>Issue 1</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Issue 2</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Issue 3</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td>[Mehadi](#)</td>
+        <td>[Implement User Session](https://github.com/MUN-COMP6905/project-hteam/issues/87)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>[Adding backend functionalities for &quot;Quiz Bank&quot;](https://github.com/MUN-COMP6905/project-hteam/issues/104)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>[Integration Branch for Student Dashboard and Quizbank](https://github.com/MUN-COMP6905/project-hteam/issues/120)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>[Wrting Unit Test for DB Connection and Other Classes](https://github.com/MUN-COMP6905/project-hteam/issues/126)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>[Sumrish](#)</td>
+        <td>Issue 1</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Issue 2</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>[Heshani](#)</td>
+        <td>Issue 1</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Issue 2</td>
+        <td>Yes</td>
+    </tr>
+</table>
+
 ## How To Run
 
 ### On the cloud
