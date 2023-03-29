@@ -249,7 +249,11 @@ Sign in with the credentials: `username: Adi@Adi.com` and  `password: 4321`.
 
 ## UML Diagrams
 
-![UML Diagram](docs/UML/UML.png)
+Previous UML diagram for Sprint 02 
+![UML Diagram Sprint 01](docs/UML/UML_Sprint_1.png)
+
+Previous UML diagram for Sprint 02
+![UML Diagram Sprint 02](docs/UML/UML_Sprint_2.png)
 
 ## What works?
 
