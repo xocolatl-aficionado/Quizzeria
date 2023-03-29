@@ -151,19 +151,39 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td>[Majid](#)</td>
-        <td>Issue 1</td>
-        <td>No</td>
+        <td>[Majid](docs/Individual%20Contributions/Assignment%203/Majid_Khan_Burki.md)</td>
+        <td>Add Test Cases for Question Data (https://github.com/MUN-COMP6905/project-hteam/issues/139)</td>
+        <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Issue 2</td>
-        <td>No</td>
+        <td>Support for Multiple Choice and Multiple Answer Questions (https://github.com/MUN-COMP6905/project-hteam/issues/130)
+        </td>
+        <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Issue 3</td>
-        <td>No</td>
+        <td>Connect Users to their Own Quiz (https://github.com/MUN-COMP6905/project-hteam/issues/78)
+        </td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Add Email Check (https://github.com/MUN-COMP6905/project-hteam/issues/128)
+        </td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>UML Diagram (https://github.com/MUN-COMP6905/project-hteam/issues/127)
+        </td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Issues with Student Dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/94)
+        </td>
+        <td>Yes</td>
     </tr>
     <tr>
         <td>Mehadi</td>
@@ -183,6 +203,11 @@ The individual contributions for each team member can be found here:
     <tr>
         <td></td>
         <td>Wrting Unit Test for DB Connection and Other Classes (https://github.com/MUN-COMP6905/project-hteam/issues/126)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Updated the Readme File of the project (https://github.com/MUN-COMP6905/project-hteam/issues/136)</td>
         <td>Yes</td>
     </tr>
     <tr>
