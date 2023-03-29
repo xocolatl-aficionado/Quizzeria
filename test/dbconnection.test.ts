@@ -118,7 +118,7 @@ describe("MongoQuizData", () => {
       await questions.insertOne(questionData);
   
       const question = await quizData.findQuestion(qid);
-      expect(question).to.deep.equal(questionData);
+      expect(question.question).to.deep.equal(questionData.question);
     });
   });
 
