@@ -37,6 +37,7 @@ The following is the list of technologies that have been used in building this p
 - Javascript
 - React
 - Chakra UI
+- Mocha
 
 ## Team Members & Roles
 
@@ -51,8 +52,7 @@ The following is the list of technologies that have been used in building this p
    </td>
   </tr>
   <tr>
-   <td>Adithya 
-   </td>
+   <td>Adithya</td>
    <td><strong>202292768</strong>
    </td>
    <td><strong>Team Facilitator</strong>
