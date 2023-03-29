@@ -298,7 +298,7 @@ To run the test cases
 
 ```javascript
 
-npm run test
+npm test
 
 ```
 
