@@ -48,6 +48,14 @@ describe("MongoQuizData", () => {
         { subject: "Science", marks: 90 },
       ],
     });
+    
+    await db.collection("questions").insertOne({
+      question: "What is the capital of Canada?",
+      answer: "Ottawa",
+      subject: "Geography",
+      type: "SingleAnswer",
+    });
+
   });
 
   after(async () => {
@@ -93,4 +101,40 @@ describe("MongoQuizData", () => {
       expect(userQuizzes[1].marks).to.deep.equal(90);
     });
   });
+
+  describe("findUser", () => {
+    it("should return a user objects when given a valid email", async () => {
+      const user = await quizData.findUser("john@example.com");
+
+      expect(user.name).to.deep.equal("John");
+      expect(user.lastname).to.deep.equal("Doe");
+      expect(user.username).to.deep.equal("johndoe");
+      expect(user.role).to.deep.equal("student");
+      
+    });
+
+    it("should return NotFound when given a wrong email", async () => {
+      const user = await quizData.findUser("wrongEmail@example.com");
+      expect(user.name).to.deep.equal("NotFound");
+      expect(user.lastname).to.deep.equal("NotFound");
+      expect(user.username).to.deep.equal("NotFound");
+      expect(user.role).to.deep.equal("NotFound");
+      
+    });
+
+  });
+
+  describe("checkQuesAns", () => {
+    it("should return true when given a correct answer", async () => {
+      const quesAns = await quizData.checkQuesAns("Geography" , "What is the capital of Canada?" , "Ottawa");
+      expect(quesAns).to.deep.equal(true);
+    });
+
+    it("should return false when given a wrong answer", async () => {
+      const quesAns = await quizData.checkQuesAns("Geography" , "What is the capital of Canada?" , "St. John's");
+      expect(quesAns).to.deep.equal(false);
+    });
+
+  });
+
 });

@@ -2,6 +2,7 @@ import { MongoClient } from "mongodb";
 import Quiz, { UserQuiz } from "../business/models/Quiz";
 import Student from "../business/models/Student";
 import IGetQuizData from "../business/interfaces/IGetQuizData";
+import Questions from "../business/models/question";
 
 /*
  * Concrete class that implements IGetQuizData and serves up data from MongoDB
@@ -97,6 +98,74 @@ export default class MongoQuizData implements IGetQuizData {
     } finally {
       await client.close();
       return userQuizzes;
+    }
+  }
+
+  async findUser(email: string) {
+    const client = new MongoClient(this.uri);
+    var dummyUser = {
+      id: 0,
+      name: "NotFound",
+      lastname: "NotFound",
+      username: "NotFound",
+      email: "NotFound",
+      password: "NotFound",
+      role: "NotFound",
+      quizzes: [{ subject: "NotFound", marks: 100 }],
+    };
+
+    var user: Student = dummyUser
+    try {
+      await client.connect();
+      //first get the quiz subjects that the user has taken. Refer: https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/read-operations/project/
+      
+
+      user =
+        (await client
+          .db("test")
+          .collection<Student>("users")
+          .findOne({ email: email })) ?? dummyUser;
+    }catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
+      return user;
+    }
+  }
+
+  async checkQuesAns(subject: string , question: string , userAns: string) {
+    
+    const client = new MongoClient(this.uri);
+    var dummyQuestion = {
+      id: 0,
+      question: "NotFound",
+      answer: "NotFound",
+      subject: "NotFound",
+      type: "NotFound",
+    };
+    
+    var _question: Questions = dummyQuestion
+    
+    try {
+      await client.connect();
+      //first get the quiz subjects that the user has taken. Refer: https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/read-operations/project/
+
+      _question  =
+        (await client
+          .db("test")
+          .collection<Questions>("questions")
+          .findOne({ subject: subject , question: question })) ?? dummyQuestion;
+    }catch (err) {
+      console.error(err);
+      return false
+    } finally {
+      await client.close();
+      if (_question.answer == userAns){
+        return true
+      }
+      else{
+        return false
+      }
     }
   }
 }
