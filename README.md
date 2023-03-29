@@ -155,23 +155,23 @@ The individual contributions for each team member can be found here:
         <td>No</td>
     </tr>
     <tr>
-        <td>[Mehadi](#)</td>
-        <td>[Implement User Session](https://github.com/MUN-COMP6905/project-hteam/issues/87)</td>
+        <td>Mehadi </td>
+        <td>Implement User Session (https://github.com/MUN-COMP6905/project-hteam/issues/87)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>[Adding backend functionalities for &quot;Quiz Bank&quot;](https://github.com/MUN-COMP6905/project-hteam/issues/104)</td>
+        <td>Adding backend functionalities for &quot;Quiz Bank&quot; (https://github.com/MUN-COMP6905/project-hteam/issues/104)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>[Integration Branch for Student Dashboard and Quizbank](https://github.com/MUN-COMP6905/project-hteam/issues/120)</td>
+        <td>Integration Branch for Student Dashboard and Quizbank (https://github.com/MUN-COMP6905/project-hteam/issues/120)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>[Wrting Unit Test for DB Connection and Other Classes](https://github.com/MUN-COMP6905/project-hteam/issues/126)</td>
+        <td>Wrting Unit Test for DB Connection and Other Classes (https://github.com/MUN-COMP6905/project-hteam/issues/126)</td>
         <td>Yes</td>
     </tr>
     <tr>
