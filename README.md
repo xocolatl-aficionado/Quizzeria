@@ -137,17 +137,22 @@ The individual contributions for each team member can be found here:
     </tr>
     <tr>
         <td><a href = './docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md'>Adithya</a>
-        <td>Issue 1</td>
+        <td>Admin page routing (https://github.com/MUN-COMP6905/project-hteam/issues/61)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Issue 2</td>
+        <td>Git + codesandbox strategy (https://github.com/MUN-COMP6905/project-hteam/issues/84)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Issue 3</td>
+        <td>Data layer (https://github.com/MUN-COMP6905/project-hteam/issues/65)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Add unit tests (https://github.com/MUN-COMP6905/project-hteam/issues/131)</td>
         <td>Yes</td>
     </tr>
     <tr>
