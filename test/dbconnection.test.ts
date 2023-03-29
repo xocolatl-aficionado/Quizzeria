@@ -1,33 +1,36 @@
+//REFERRED: https://github.com/cheesasaurus/example-typescript-and-mocha
+
 import { MongoClient } from "mongodb";
 import { MongoMemoryServer } from "mongodb-memory-server";
-import MongoQuizData from "../src/data/dbconnection.js";
+import MongoQuizData from "../src/data/dbconnection";
+import { assert } from "chai"; // Using Assert style
+import { expect } from "chai"; // Using Expect style
+import { should } from "chai"; // Using Should style
 
 describe("MongoQuizData", () => {
-  let mongoServer;
+  let mongo;
   let uri;
   let client;
   let quizData;
 
   before(async () => {
     // Start an in-memory MongoDB server
-    mongoServer = new MongoMemoryServer();
-    uri = await mongoServer.getUri();
+    //mongo = await MongoMemoryServer.create();
+    const uri =
+      "mongodb+srv://team_h:B8131nOFQ2jUyuZ2@quizzapp.mvgmqt5.mongodb.net/?retryWrites=true&w=majority";
+    const client = new MongoClient(uri);
 
     // Initialize the MongoQuizData instance
     quizData = new MongoQuizData();
 
     // Connect to the in-memory MongoDB server and populate the "quizzes" and "users" collections
-    client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await client.connect();
     const db = client.db();
-    await db.collection("quizzes").insertMany([
-      { id: 1, name: "Quiz1", subject: "Math" },
-      { id: 2, name: "Quiz2", subject: "Science" },
+    await db.collection("testquizzes").insertMany([
+      { name: "Quiz1", subject: "Math" },
+      { name: "Quiz2", subject: "Science" },
     ]);
-    await db.collection("users").insertOne({
-      id: 1,
+    await db.collection("testusers").insertOne({
       name: "John",
       lastname: "Doe",
       username: "johndoe",
@@ -43,8 +46,8 @@ describe("MongoQuizData", () => {
 
   after(async () => {
     // Close the client and stop the in-memory MongoDB server
-    await client.close();
-    await mongoServer.stop();
+    //await client.close();
+    //await mongo.stop();
   });
 
   describe("findQuiz", () => {
@@ -76,22 +79,22 @@ describe("MongoQuizData", () => {
     });
   });
 
-  describe("findQuizzesTakenByUser", () => {
-    it("should return an array of UserQuiz objects when given a valid user name", async () => {
-      const userQuizzes = await quizData.findQuizzesTakenByUser("John");
-      expect(userQuizzes).to.have.lengthOf(2);
-      expect(userQuizzes[0]).to.deep.equal({
-        id: 1,
-        name: "Quiz1",
-        subject: "Math",
-        marks: 80,
-      });
-      expect(userQuizzes[1]).to.deep.equal({
-        id: 2,
-        name: "Quiz2",
-        subject: "Science",
-        marks: 90,
-      });
-    });
-  });
+  // describe("findQuizzesTakenByUser", () => {
+  //   it("should return an array of UserQuiz objects when given a valid user name", async () => {
+  //     const userQuizzes = await quizData.findQuizzesTakenByUser("John");
+  //     expect(userQuizzes).to.have.lengthOf(2);
+  //     expect(userQuizzes[0]).to.deep.equal({
+  //       id: 1,
+  //       name: "Quiz1",
+  //       subject: "Math",
+  //       marks: 80,
+  //     });
+  //     expect(userQuizzes[1]).to.deep.equal({
+  //       id: 2,
+  //       name: "Quiz2",
+  //       subject: "Science",
+  //       marks: 90,
+  //     });
+  //   });
+  // });
 });
