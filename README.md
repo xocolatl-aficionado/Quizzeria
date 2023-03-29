@@ -175,13 +175,33 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td>[Sumrish](#)</td>
-        <td>Issue 1</td>
+        <td>Sumrish</td>
+        <td>Create a Figma UI for Quiz Results Screen (https://github.com/MUN-COMP6905/project-hteam/issues/81)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Issue 2</td>
+        <td>Implementation of Quiz Result UI for students (https://github.com/MUN-COMP6905/project-hteam/issues/83)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Modification of SignUp Page and Forgot Password Pages. Added documentation for user flow UI. (https://github.com/MUN-COMP6905/project-hteam/issues/99)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Add tests for Sign Up page (https://github.com/MUN-COMP6905/project-hteam/issues/110)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Add tests for Login Page (https://github.com/MUN-COMP6905/project-hteam/issues/111)</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Add tests for forgot password flow (https://github.com/MUN-COMP6905/project-hteam/issues/113)</td>
         <td>Yes</td>
     </tr>
     <tr>
