@@ -151,7 +151,7 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td>[Majid](docs/Individual%20Contributions/Assignment%203/Majid_Khan_Burki.md)</td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%203/Majid_Khan_Burki.md'>Majid</a></td>
         <td>Add Test Cases for Question Data (https://github.com/MUN-COMP6905/project-hteam/issues/139)</td>
         <td>Yes</td>
     </tr>
