@@ -308,7 +308,7 @@ Sign in with the credentials: `username: Adi@Adi.com` and  `password: 4321`.
 
 ## UML Diagrams
 
-Previous UML diagram for Sprint 02 
+Previous UML diagram for Sprint 01
 ![UML Diagram Sprint 01](docs/UML/UML_Sprint_1.png)
 
 Previous UML diagram for Sprint 02
