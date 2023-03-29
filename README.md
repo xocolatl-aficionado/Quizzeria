@@ -123,11 +123,11 @@ Details regarding the team contributions and team processes can be found [here](
 
 The individual contributions for each team member can be found here:
 
-- [Adithya](docs/Individual%20Contributions/Adithya_Sudhan.md)
-- [Mehadi](docs/Individual%20Contributions/Mehadi_Hassan.md)
-- [Majid](docs/Individual%20Contributions/Majid_Khan_Burki.md)
-- [Heshani](docs/Individual%20Contributions/Heshani_Hattiarachchi.md)
-- [Sumrish](docs/Individual%20Contributions/Sumrish_Hanif.md)
+- [Adithya](docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md)
+- [Mehadi](docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md)
+- [Majid](docs/Individual%20Contributions/Assignment%203/Majid_Khan_Burki.md)
+- [Heshani](docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md)
+- [Sumrish](docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md)
 
 <table>
     <tr>
@@ -266,6 +266,14 @@ This command will run the project in dev mode:
 ```javascript
 
 npm run dev
+
+```
+
+To run the test cases
+
+```javascript
+
+npm run test
 
 ```
 
