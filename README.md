@@ -98,7 +98,7 @@ The following is the list of technologies that have been used in building this p
 
 The following are links to the meeting minutes.
 
-### Sprint 2
+### Sprint 1
 
 - [23 Feb 2023](docs/Meeting%20Minutes/Meeting_Minutes_23-Feb-2023.md)
 - [03 Mar 2023](docs/Meeting%20Minutes/Meeting_Minutes_03-March-2023.md)
@@ -106,7 +106,7 @@ The following are links to the meeting minutes.
 - [07 Mar 2023](docs/Meeting%20Minutes/Meeting_Minutes_07-March-2023.md)
 - [10 Mar 2023](docs/Meeting%20Minutes/Meeting_Minutes_10-March-2023.md)
 
-### Sprint 3
+### Sprint 2
 
 - [14 Mar 2023](docs/Meeting%20Minutes/Meeting_Minutes_14-March-2023.md)
 - [16 Mar 2023](docs/Meeting%20Minutes/Meeting_Minutes_16-March-2023.md)
