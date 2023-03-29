@@ -136,7 +136,7 @@ The individual contributions for each team member can be found here:
         <td>Merged to Master?</td>
     </tr>
     <tr>
-        <td>[Adi](#)</td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md'>Adithya</a>
         <td>Issue 1</td>
         <td>Yes</td>
     </tr>
@@ -186,7 +186,7 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td>Mehadi</td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%203/Meahdi_Hassan.md'>Mehadi</a></td>
         <td>Implement User Session (https://github.com/MUN-COMP6905/project-hteam/issues/87)</td>
         <td>Yes</td>
     </tr>
@@ -211,7 +211,7 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td>Sumrish</td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md'>Sumrish</a></td>
         <td>Create a Figma UI for Quiz Results Screen (https://github.com/MUN-COMP6905/project-hteam/issues/81)</td>
         <td>Yes</td>
     </tr>
@@ -241,7 +241,7 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td>Heshani</td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md'>Heshani</a>
         <td>Design wireframes for Take a Quiz UI (https://github.com/MUN-COMP6905/project-hteam/issues/76)</td>
         <td>Yes</td>
     </tr>
