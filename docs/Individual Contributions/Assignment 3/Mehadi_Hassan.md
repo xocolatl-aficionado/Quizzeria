@@ -1,0 +1,87 @@
+# [Mehadi Hassan 202287115](https://github.com/mehadihn)
+
+This document highlights the individual tasks done, the approaches that were used, the state of completion, the design principles used, and how the code was reviewed. This document also highlights any issues that arose and how they were addressed personally and through the team.
+
+- [Individual Tasks Done](#individual-tasks-done)
+- [Approaches](#approaches)
+- [State of Completion](#state-of-completion)
+- [Design Principles](#design-principles)
+- [Code Review Process](#code-review-process)
+
+## Individual Tasks Done
+
+As per the discussion with the team, I was assigned the following tasks. The issue links are also embedded in the headlines.
+
+- **[Implemented User Session](#implemented-user-session) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/87) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/88)):** Adds the functionality to prevent unwanted access to protected page with correctly logged in.
+
+- **[Implemented Backend for QuizBank](#implemented-backend-for-quizbank) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/104) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/109)):** Added the backend functionality for the UI to show DB data.
+
+- **[Password Checker](#password-checker) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** A separate class to check the user password and to make sure all the proper conventions are followed.
+
+- **[Added methods in the data layer](#added-methods-in-the-data-layer) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** Added new functions in the data layer to enhance functionality.
+
+- **[Unit Testing](#unit-testing) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** Wrote unit test for differnet compopent of data layer and other classes.
+
+- **[Participated in solving issues and code review](#participated-in-solving-issues-and-code-review)**
+
+## Approaches
+
+### [Implemented User Session](https://github.com/MUN-COMP6905/project-hteam/pull/88)
+
+From the previous sprint the session were not added properly and as a result anyone could access the pages specially new pages with the direct link without being logged in. I added the user session as a result a user has to be logged in to access protected pages and unwanted access to unauthorized pages have been prevented as well.
+
+### [Implemented Backend for QuizBank](https://github.com/MUN-COMP6905/project-hteam/pull/109)
+
+The UI for the list of quizzes were made but there were no backend for that page. I worked on getting the data from the database form `getServerSideProps` and passed the value to the quizbank. From their the value was passed to quizTable and saved as an array which interfaced `Quiz`. Modified the UI code for better readability as well. Also added a new column to display the marks of each quiz. Necessary changes have been made on the UI code as well as DB and backend code. Furthermore, it needed to added in a [integration brach and a PR](https://github.com/MUN-COMP6905/project-hteam/pull/119) to make it compatible with the data layer.
+
+### [Password Checker](https://github.com/MUN-COMP6905/project-hteam/pull/134)
+
+Added a class to check the password that user writes to sign up to ensure all the convention are there. It checks if the user has inputted 8 characters or not, contains numeric and special characters and so on. Also wrote unit testing for that as well with mocha will all the test cases.
+
+### [Added methods in the data layer](https://github.com/MUN-COMP6905/project-hteam/pull/134)
+
+Added multiple methods in the data layer like finding user to check if the user exists or not. The purpose is to make sure if there is a user with the same email to prevent it from creating another account. Another method to find answer for the question and return a boolean value to check the answers with the user answer.
+
+### [Unit Testing](https://github.com/MUN-COMP6905/project-hteam/pull/134)
+
+Added unit testing for different components. But there were a lot of issues to do unit testing with mocha as it doesn't directly support TypeScript code off the book. I worked with [Adithya](https://github.com/xocolatl-aficionado) on one of his PR's called [Add tests for data layer](https://github.com/MUN-COMP6905/project-hteam/pull/132) to make the mocha working by adding runner classes and so on.
+
+After the mocha was properly working all the other back end developers could focus on writing there own unit testing. I worked on writing the unit test for the [password checker](#password-checker) to ensure it passes all the test cases. Furthermore, wrote test cases for few of the functions in the [data layer](#added-methods-in-the-data-layer) such as `finduser`, `checkQuesAns` and so on.
+
+### Participated in solving issues and code review
+
+When there were new issues created by other developers with help-wanted. I tried to solve them from my expertise ([Issue 1](https://github.com/MUN-COMP6905/project-hteam/issues/94), [Issue 2](https://github.com/MUN-COMP6905/project-hteam/issues/123), [Issue 3](https://github.com/MUN-COMP6905/project-hteam/issues/90)) and also commented on developers code bases when they created a new Pull Request and asked for changes when necessary.
+
+## State of Completion
+
+### [Implemented User Session](#implemented-user-session):
+
+The session has been added completly on all the pages with added feature of user role. It can be safely said that the pages cannot be accessed directly without logged in. Even after logged in a student will not be allowed to access a page for admin and vice versa.
+
+### [Implemented Backend for QuizBank](#implemented-backend-for-quizbank)
+
+The backend functionality to show the list of quizzes has been properly completed. All the quiz that are on the MongoDB database shows correctly. However, we still do not have the option to attempt the quiz in this sprint and it will be worked on the next sprint.
+
+### [Password Checker](#password-checker)
+
+This is a stand alone class which takes the string input and checks whether all the cases are up to the convention or not. We still do not have the sign up functionality ready but it will be used on the sign up to ensure strong password is given.
+
+### [Added methods in the data layer](#added-methods-in-the-data-layer)
+
+The data layer contains a lot of functionalities that all the developer wrote individually. Most of the functionalities are being used in the project to separate the DB code with the UI code. There are few functions which are currently not being used.
+
+### [Unit Testing](#unit-testing)
+
+All the unit tests are properly working and passing all the test cases. There were few issues to run the unit tests with the data layer as it uses TypeScript and MongoDB but it has been overcome and successful test cases have been written to ensure the functions works what they are supposed to perform.
+
+### [Participated in solving issues and code review](#participated-in-solving-issues-and-code-review)
+
+I have tried my level best to help the other developers with there queries in the `help-wanted` issues. Most of them were successful in solving the problems. Also, did extensive code as well as functionality reviews on all the PR's asked for clarification and changes when necessary. The developers made all the necessary changes when requested.
+
+## Design Principles
+
+As I mostly worked on the backend with user auth the user part was the center of the design. To make user access more convenient, the credential provider was used. NextJS by default forces the SOLID methodoloy where all the files are in the pages file and have to put the API in a specific folder. The auth part has been decoupled by using middleware and custom authintication. The session provider was added to the app to make sure all the pages are properly authenticated on the app structure. Also, the scalability was kept in mind as we will be going to add other login methodologies in the later sprints.
+
+## Code Review Process
+
+All the working modules were first tested on the local machine and then were put on Codesandbox so that it could be assured that the code would work on other devices. The codesandbox URL were shared on the PR(s) for other developers to check, After that, the pull requests were made and the other project members reviewed the codes, and only after everyone's approval was it merged into the main branch. For this sprint there were unit tests to ensure the codes functionalities as well.
