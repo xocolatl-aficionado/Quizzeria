@@ -3,14 +3,14 @@ import Quiz, { UserQuiz } from "../business/models/Quiz";
 import Student from "../business/models/Student";
 import IGetQuizData from "../business/interfaces/IGetQuizData";
 
-const uri: string = process.env.MONGODB_URI ?? "";
-
 /*
  * Concrete class that implements IGetQuizData and serves up data from MongoDB
  */
 export default class MongoQuizData implements IGetQuizData {
+  uri = process.env.MONGODB_URI ?? "";
+
   async findQuiz(id: string) {
-    const client = new MongoClient(uri);
+    const client = new MongoClient(this.uri);
     var quiz: Quiz | null = null;
     try {
       await client.connect();
@@ -31,7 +31,7 @@ export default class MongoQuizData implements IGetQuizData {
   }
 
   async findAllQuizzes() {
-    const client = new MongoClient(uri);
+    const client = new MongoClient(this.uri);
     var quizzes: Quiz[] | null = null;
     try {
       await client.connect();
@@ -50,7 +50,7 @@ export default class MongoQuizData implements IGetQuizData {
   }
 
   async findQuizzesTakenByUser(name: string) {
-    const client = new MongoClient(uri);
+    const client = new MongoClient(this.uri);
     //use an array to populate UserQuizes
     var userQuizzes = Array<UserQuiz>();
 
@@ -73,6 +73,9 @@ export default class MongoQuizData implements IGetQuizData {
         id: 0,
         name: "DummyMathQuiz",
         subject: "Math",
+        type: "DummyType",
+        maxMarks: 0,
+        time: 0,
       };
       var user: Student =
         (await client
