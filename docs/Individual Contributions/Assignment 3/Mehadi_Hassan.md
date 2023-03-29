@@ -22,6 +22,8 @@ As per the discussion with the team, I was assigned the following tasks. The iss
 
 - **[Unit Testing](#unit-testing) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** Wrote unit test for differnet compopent of data layer and other classes.
 
+- **[Update the Readme File](#update-the-readme-file) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/136) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/137)):** Updated the group readme file for sprint 2 and assignment 3.
+
 - **[Participated in solving issues and code review](#participated-in-solving-issues-and-code-review)**
 
 ## Approaches
@@ -51,6 +53,10 @@ After the mocha was properly working all the other back end developers could foc
 ### Participated in solving issues and code review
 
 When there were new issues created by other developers with help-wanted. I tried to solve them from my expertise ([Issue 1](https://github.com/MUN-COMP6905/project-hteam/issues/94), [Issue 2](https://github.com/MUN-COMP6905/project-hteam/issues/123), [Issue 3](https://github.com/MUN-COMP6905/project-hteam/issues/90)) and also commented on developers code bases when they created a new Pull Request and asked for changes when necessary.
+
+### Update the Readme file
+
+Updated the main readme file for this sprint and documented all the links and changes. 
 
 ## State of Completion
 
