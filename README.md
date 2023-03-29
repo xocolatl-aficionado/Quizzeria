@@ -155,7 +155,7 @@ The individual contributions for each team member can be found here:
         <td>No</td>
     </tr>
     <tr>
-        <td>Mehadi </td>
+        <td>Mehadi</td>
         <td>Implement User Session (https://github.com/MUN-COMP6905/project-hteam/issues/87)</td>
         <td>Yes</td>
     </tr>
@@ -166,7 +166,7 @@ The individual contributions for each team member can be found here:
     </tr>
     <tr>
         <td></td>
-        <td>Integration Branch for Student Dashboard and Quizbank (https://github.com/MUN-COMP6905/project-hteam/issues/120)</td>
+        <td>Integrate Student Dashboard and Quizbank with the backend (https://github.com/MUN-COMP6905/project-hteam/issues/120)</td>
         <td>Yes</td>
     </tr>
     <tr>
