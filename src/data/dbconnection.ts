@@ -5,6 +5,8 @@ import Student from "../business/models/Student";
 import IGetQuizData from "../business/interfaces/IGetQuizData";
 import IGetQuestionData from "../business/interfaces/IGetQuestionData";
 
+import Questions from "../business/models/question";
+
 /*
  * Concrete class that implements IGetQuizData and serves up data from MongoDB
  */
