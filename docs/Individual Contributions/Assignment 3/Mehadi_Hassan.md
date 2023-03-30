@@ -76,7 +76,7 @@ The backend functionality to show the list of quizzes has been properly complete
 
 ### [Integrate Student Dashboard and Quizbank with the backend](#integrate-student-dashboard-and-quizbank-with-the-backend)
 
-The codebase has been successfully merged to the master branch after rebasing and resolving all the conflicts.
+The codebase has not been successfully merged to the master branch as I have tried to merge the branch but there were a lot to conflicts that could not allow me merge. Due to time constraint as I couldn't solve all the conflicts, I will do it on the next sprint.
 
 ### [Password Checker](#password-checker)
 
