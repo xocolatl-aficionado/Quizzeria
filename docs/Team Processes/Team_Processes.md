@@ -25,6 +25,7 @@ Once all the suggestions/reviews are done, than **Approved** status is given to 
 Below is the rough draft of what's happening actually in terms of github.
 
 ![PR Process](/public/img/pr_process.png)
+(The figure has been collected from [here](https://www.swarmia.com/blog/a-complete-guide-to-code-reviews/))
 
 ## Code Guidlines
 To maintain code review standards across developers, it's a good idea to have guidelines for what to focus on in code reviews. Here's what we recommend focusing on:
