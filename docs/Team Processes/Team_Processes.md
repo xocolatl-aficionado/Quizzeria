@@ -62,10 +62,10 @@ Developers shouldn't spend their time reviewing things that can be automatically
 
 ## Problems Faced
 
+- Since the technology stack was new for all team members, all members were involved in their own tasks most of the time and reviewing and integrating each other's work posed a challenge.
+- **Resolving the conflicts between team members code combined with our rigorous standards around testing (A codesandbox link for each PR) meant that we could not merge in new functionalities that are mostly complete on the frontend and backend. We will need to try to resolve such git conflicts earlier on the next sprint.**
 - Bottlenecks because of the approval process as all team members weren't available all the time.
-- Due to the lack of a code skeleton at the beginning of the project, concrete work couldn't be started by all members of the team concurrently.
 - Lack of experience in Javascript and Typescript made debugging very difficult and since Typescript has a steep learning curve, that didn't help either.
 - Some difficulty around using the free version of Code Sandbox as it doesn't allow private repos to be deployed and the free version has a CPU limitation as well.
 - The free server of MongoDB Atlas has limited space which caused a bit problems for testing purposes.
 - Lack of experience around Git for most team members caused problems as Git has its own learning curve.
-- Since the technology stack was new for all team members, all members were involved in their own tasks most of the time and reviewing and integrating each other's work posed a challenge.
