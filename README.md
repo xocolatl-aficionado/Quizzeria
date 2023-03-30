@@ -203,7 +203,7 @@ The individual contributions for each team member can be found here:
     <tr>
         <td></td>
         <td>Integrate Student Dashboard and Quizbank with the backend (https://github.com/MUN-COMP6905/project-hteam/issues/120)</td>
-        <td>Yes</td>
+        <td>No</td>
     </tr>
     <tr>
         <td></td>
@@ -263,7 +263,7 @@ The individual contributions for each team member can be found here:
      <tr>
         <td></td>
         <td>Add Pagination for Student Dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/116)</td>
-        <td>Yes</td>
+        <td>No</td>
     </tr>
      <tr>
         <td></td>
