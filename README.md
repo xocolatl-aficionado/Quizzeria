@@ -343,6 +343,13 @@ Previous UML diagram for Sprint 02
 - The default quiz contains short answer questions. <br/>
 ![student take a quiz](docs/UI_Screenshots/Students/student-take-a-quiz.png)
 
+3. [Student - Login Signin, signup, forgot Pages](/docs/Figma%20UI%20Wireframes/Figma_SignUp_SignIn_ForgotPassword_UI.pdf)
+
+4. [Student - Quiz Result](/docs/Figma%20UI%20Wireframes/Quiz_Result_Figma_UI.pdf)
+
+5. [Screens for student section](/docs/Figma%20UI%20Wireframes/Quizzeria%20UI%20prototype%20for%20students%20-%20take%20a%20quiz.pdf)
+
+All the wireframes can be found [here](/docs/Figma%20UI%20Wireframes/).
 
 ## Performance Review
 
