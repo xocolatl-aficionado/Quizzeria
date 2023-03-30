@@ -191,7 +191,7 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td><a href = './docs/Individual%20Contributions/Assignment%203/Meahdi_Hassan.md'>Mehadi</a></td>
+        <td><a href = 'docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md'>Mehadi</a></td>
         <td>Implement User Session (https://github.com/MUN-COMP6905/project-hteam/issues/87)</td>
         <td>Yes</td>
     </tr>
