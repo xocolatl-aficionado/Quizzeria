@@ -125,7 +125,7 @@ The individual contributions for each team member can be found here:
 
 - [Adithya](docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md)
 - [Mehadi](docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md)
-- [Majid](docs/Individual%20Contributions/Assignment%203/Majid_Khan_Burki.md)
+- [Majid](docs/Individual%20Contributions/Assignment%203/Majid_Burki.md)
 - [Heshani](docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md)
 - [Sumrish](docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md)
 
