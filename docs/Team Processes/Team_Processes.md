@@ -58,14 +58,14 @@ Developers shouldn't spend their time reviewing things that can be automatically
 ## Deadlines
 
 - The team agreed on weekly deadlines to merge code so that bottlenecks due to certain work item scould be avoided.
-- However, these deadlines turned out to be too optimistic since there were several problems getting a working skeleton with a connected workflow. The code deadlines were tentatively set to 25th Feb, 5th March, 7th March and 10th March.
+- These deadlines were followed except in some minor cases due to issues resolving conflicts in Git. **The code deadlines were set to 19th March, 24th March, 28th March.**
 
 ## Problems Faced
 
+- Since the technology stack was new for all team members, all members were involved in their own tasks most of the time and reviewing and integrating each other's work posed a challenge.
+- **Resolving the conflicts between team members code combined with our rigorous standards around testing (A codesandbox link for each PR) meant that we could not merge in new functionalities that are mostly complete on the frontend and backend. We will need to try to resolve such git conflicts earlier on the next sprint.**
 - Bottlenecks because of the approval process as all team members weren't available all the time.
-- Due to the lack of a code skeleton at the beginning of the project, concrete work couldn't be started by all members of the team concurrently.
 - Lack of experience in Javascript and Typescript made debugging very difficult and since Typescript has a steep learning curve, that didn't help either.
 - Some difficulty around using the free version of Code Sandbox as it doesn't allow private repos to be deployed and the free version has a CPU limitation as well.
 - The free server of MongoDB Atlas has limited space which caused a bit problems for testing purposes.
 - Lack of experience around Git for most team members caused problems as Git has its own learning curve.
-- Since the technology stack was new for all team members, all members were involved in their own tasks most of the time and reviewing and integrating each other's work posed a challenge.

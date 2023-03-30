@@ -40,7 +40,7 @@ The UI for the list of quizzes were made but there were no backend for that page
 
 ### [Integrate Student Dashboard and Quizbank with the backend](https://github.com/MUN-COMP6905/project-hteam/pull/135)
 
-Rebased the Student dashboard and the quizbank page with the master once the data layer was merged. There were lot of conflicts that required solving. As all the PR(s) were working simultaneously obvious conflicts were there. Required detailed understanding of all the codebase and all the other developers coding tasks to resolve the conflicts.
+Rebased the Student dashboard and the quizbank page with the master once the data layer was merged. There were lot of conflicts that required solving. As all the PR(s) were working simultaneously obvious conflicts were there. Required detailed understanding of all the codebase and all the other developers coding tasks to resolve the conflicts. I have tried to merge the brach but there were a lot to conflicts that could not allow me merge. We will do it on the next sprint.
 
 ### [Password Checker](https://github.com/MUN-COMP6905/project-hteam/pull/134)
 
