@@ -276,7 +276,7 @@ The individual contributions for each team member can be found here:
 
 ### On the cloud
 
-Simply visit our [codesandbox deployment](https://0nz1td-3000.csb.app/) and use [these](#credentials-to-use) credentials. 
+Simply visit our [codesandbox deployment](https://0mj3mq-3000.csb.app/) and use [these](#credentials-to-use) credentials. 
 
 ### Locally
 
