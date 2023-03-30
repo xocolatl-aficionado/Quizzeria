@@ -276,8 +276,8 @@ The individual contributions for each team member can be found here:
 
 ### On the cloud
 
-Simply visit our [codesandbox deployment](https://0mj3mq-3000.csb.app/) and use [these](#credentials-to-use) credentials. 
-To view the code on CodeSandbox - [Click Here](https://codesandbox.io/p/github/mehadihn/software-engineering-project/master)
+Simply visit our [codesandbox deployment](https://0mj3mq-3000.csb.app/) and use [these](#credentials-to-use) credentials.<br>
+To view the sprint 2 codebase on CodeSandbox - [Click Here](https://codesandbox.io/p/github/mehadihn/software-engineering-project/master)
 ### Locally
 
 To run the code locally, you’ll need to define your environment variables through the `.env.local` file or creating a `.env` file first. For a sample `.env` file, refer to `.env.example`. Use the same mongodb url (since it is set to the team mongodb instance url) and use your appropriate localhost url for the nextauth and host keys.
@@ -309,7 +309,9 @@ npm test
 
 ### Credentials to Use
 
-Sign in with the credentials: `username: Adi@Adi.com` and  `password: 4321`.
+Sign in with the credentials:
+- Admin: `username: mehadi@mehadi.com` and  `password: 1234`.
+- Student: `username: Adi@Adi.com` and  `password: 4321`.
 
 ## UML Diagrams
 
@@ -329,9 +331,8 @@ Current UML diagram for Sprint 02
 ## What works?
 
 - The user starts at the landing page.
-- Signs in with the credentials: `username: Adi@Adi.com` and  `password: 4321`.
-- User will arrive at the `/Students` page where scored quizzes will be visible.
-- Clicking the `Retake Quiz` button will reset the score to -1.
+- Signs in with the credentials. If you log in using the Admin credentials (`username: mehadi@mehadi.com` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`username: Adi@Adi.com` and  `password: 4321`) the user will be redirected to the studnet dashboard.
+- Clicking the `Retake Quiz` button will no longer reset the score as we will change the architecture around that button in the next sprint.
 - Although we have a few new UI pages as well as backend for them we are yet to merge some of this changes to the master due to git conflict resolutions that are still pending.
 
 
