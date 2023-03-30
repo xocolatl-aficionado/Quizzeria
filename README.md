@@ -316,8 +316,15 @@ Sign in with the credentials: `username: Adi@Adi.com` and  `password: 4321`.
 Previous UML diagram for Sprint 01
 ![UML Diagram Sprint 01](docs/UML/UML_Sprint_1.png)
 
-Previous UML diagram for Sprint 02
+Current UML diagram for Sprint 02
 ![UML Diagram Sprint 02](docs/UML/UML_Sprint_2.png)
+
+- A data layer was added to separate the UI code from the backend. 
+- UI layer now needs to import a concrete MongoQuizData obejct to reach the database. Therefore, the db code has been removed from the UI code. 
+- The data layer implements two interfaces so that in the future we can replace mongo with another db client which implements the same interface.
+- Quiz, Questions and User collection has been used in the MongoDB to support the application.
+- Unit tests were written for the data layer as well as other business class that yet to be integrated end to end.
+
 
 ## What works?
 
@@ -325,6 +332,8 @@ Previous UML diagram for Sprint 02
 - Signs in with the credentials: `username: Adi@Adi.com` and  `password: 4321`.
 - User will arrive at the `/Students` page where scored quizzes will be visible.
 - Clicking the `Retake Quiz` button will reset the score to -1.
+- Although we have a few new UI pages as well as backend for them we are yet to merge some of this changes to the master due to git conflict resolutions that are still pending.
+
 
 ## Available Screens for students
 

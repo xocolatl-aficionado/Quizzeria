@@ -58,7 +58,7 @@ Developers shouldn't spend their time reviewing things that can be automatically
 ## Deadlines
 
 - The team agreed on weekly deadlines to merge code so that bottlenecks due to certain work item scould be avoided.
-- However, these deadlines turned out to be too optimistic since there were several problems getting a working skeleton with a connected workflow. The code deadlines were tentatively set to 25th Feb, 5th March, 7th March and 10th March.
+- These deadlines were followed except in some minor cases due to issues resolving conflicts in Git. **The code deadlines were set to 19th March, 24th March, 28th March.**
 
 ## Problems Faced
 
