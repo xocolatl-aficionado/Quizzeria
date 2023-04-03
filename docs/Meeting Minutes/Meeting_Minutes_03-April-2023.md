@@ -1,10 +1,10 @@
 # Meeting Minutes H-Team 03-April-2023
 
-*Scrum Master*: Adi
-*Note Taker*: Mehadi
-*Meeting Place*: Discord (Virtual)
-*Meeting time*: 08:00 PM - 09:00 PM
-*Members:
+**Scrum Master**: Adi<br>
+**Note Taker**: Mehadi<br>
+**Meeting Place**: Discord (Virtual)<br>
+**Meeting time**: 08:00 PM - 09:00 PM<br>
+**Members**:
 - Majid Khan Burki
 - Adi
 - Sumrish Hanif
