@@ -93,7 +93,8 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData {
           id: quiz.id,
           subject: quiz.subject,
           name: quiz.name,
-          marks: user.quizzes[q].marks,
+          maxMarks: user.quizzes[q].marks,
+          type: quiz.type
         } as UserQuiz);
       }
     } catch (err) {

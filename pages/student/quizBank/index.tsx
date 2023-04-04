@@ -16,15 +16,18 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
+import MongoQuizData from "../../../src/data/dbconnection";
+
+
 export async function getServerSideProps() {
   try {
 
-    const client = await clientPromise;
-    const db = client.db("test");
-    const quiz = await db.collection("quizes").find({}).toArray();
+    var qd = new MongoQuizData();
+    let quizzes = await qd.findAllQuizzes();
+
     return {
       props: {
-        quiz: JSON.parse(JSON.stringify(quiz))
+        quiz: JSON.parse(JSON.stringify(quizzes))
       },
     };
   } catch (e) {

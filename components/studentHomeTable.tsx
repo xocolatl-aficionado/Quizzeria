@@ -41,10 +41,10 @@ export async function updateMarks(postId: number, marks: number) {
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
 
-    let response = await fetch(`/api/quizes/post?id=${postId}`, options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+    // let response = await fetch(`/api/quizes/post?id=${postId}`, options)
+    //   .then(response => response.json())
+    //   .then(response => console.log(response))
+    //   .catch(err => console.error(err));
 
     window.location.reload();
   } catch (error) {
