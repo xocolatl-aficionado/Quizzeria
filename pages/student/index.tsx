@@ -7,17 +7,19 @@ import QuizTable from "../../components/studentHomeTable";
 import { Box } from "@chakra-ui/react";
 import clientPromise from "../../src/lib/mongodb";
 import Quiz from "../../src/business/models/Quiz";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, getSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 import MongoQuizData from "../../src/data/dbconnection";
 
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
   try {
     var qd = new MongoQuizData();
-    let quizzes = await qd.findQuizzesTakenByUser('Adi');
+    const session = await getSession({ req });
+    const dbUser = session?.user?.name;
+    let quizzes = await qd.findQuizzesTakenByUser(dbUser);
     console.log(quizzes)
     return {
       props: { quizzes: JSON.parse(JSON.stringify(quizzes)) },
