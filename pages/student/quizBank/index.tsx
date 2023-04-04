@@ -18,6 +18,9 @@ import { useEffect } from "react";
 
 import MongoQuizData from "../../../src/data/dbconnection";
 
+interface QuizBankProps {
+  quizzes: Array<Quiz>;
+}
 
 export async function getServerSideProps() {
   try {
@@ -40,7 +43,7 @@ export async function getServerSideProps() {
  * @returns 
  */
 
-export default function QuizBank(quizzes: Array<Quiz>) {
+export default function QuizBank(quizzes: QuizBankProps) {
   const router = useRouter();
   const { data: session, status } = useSession();
 

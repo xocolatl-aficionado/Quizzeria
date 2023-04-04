@@ -50,13 +50,7 @@ export async function updateMarks(postId: number, marks: number) {
  * @returns a table of quiz data related to the student/quiztaker
  */
 
-type QuizTableInterface = {
-  quizzes: Array<{
-    [key in string]: string;
-  }>;
-};
-
-export default function QuizTable({ quizzes }: QuizTableInterface) {
+export default function QuizTable({ quizzes }: QuizProps) {
 
   return (
     <Table variant="striped">
