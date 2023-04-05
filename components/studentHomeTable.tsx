@@ -49,7 +49,9 @@ export async function updateMarks(postId: number, marks: number) {
  * @param param0 : Quiz object created with the types for loading data
  * @returns a table of quiz data related to the student/quiztaker
  */
+
 export default function QuizTable({ quizzes }: QuizProps) {
+
   return (
     <Table variant="striped">
       <Thead>
@@ -57,7 +59,7 @@ export default function QuizTable({ quizzes }: QuizProps) {
           <Th>Quiz Name</Th>
           <Th>Subject</Th>
           <Th>Quiz Type</Th>
-          <Th>Max Marks</Th>
+          <Th>Marks</Th>
           <Th textAlign={"right"}></Th>
         </Tr>
       </Thead>
@@ -67,7 +69,7 @@ export default function QuizTable({ quizzes }: QuizProps) {
             <Td>{userQuiz.name}</Td>
             <Td>{userQuiz.subject}</Td>
             <Td>{userQuiz.type}</Td>
-            <Td>{userQuiz.maxMarks}</Td>
+            <Td>{userQuiz.marks}</Td>
             <Td textAlign={"right"}>
               <Button
                 colorScheme="orange"

@@ -69,6 +69,7 @@ const authOptions: NextAuthOptions = {
 
       session.user = token.user;
       session.user.role = token.user.role;
+      session.user.name = token.user.name;
       return Promise.resolve(session);
     },
   },

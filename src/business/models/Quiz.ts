@@ -6,7 +6,7 @@ export default interface Quiz {
   name: string;
   type: string;
   subject: string;
-  maxMarks: number;
+  marks: number;
   time: number;
 }
 
