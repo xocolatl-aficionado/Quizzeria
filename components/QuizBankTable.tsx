@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Table, Thead, Tbody, Tr, Th, Td, Button, Center, Flex, HStack, Box, cookieStorageManager } from "@chakra-ui/react";
-import {Quiz} from "../src/models/studentQuizBank";
+import Quiz from "../src/business/models/Quiz";
 /**
  * to load css styles to the page since there are no default pagination in Chakra UI
  */

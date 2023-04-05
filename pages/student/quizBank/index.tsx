@@ -6,11 +6,10 @@ import { ChakraProvider } from "@chakra-ui/react";
 import NavBar from "../../../components/studentNavbar";
 import Footer from "../../../components/Footer";
 import Card from "../../../components/QuizBankTitle";
-import {Quiz} from "../../../src/models/studentQuizBank";
+import Quiz from "../../../src/business/models/Quiz";
 
 import QuizTable from "../../../components/QuizBankTable";
 import { Box } from "@chakra-ui/react";
-import clientPromise from "../../../src/lib/mongodb";
 
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
