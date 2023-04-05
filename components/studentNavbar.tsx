@@ -22,7 +22,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon} from '@chakra-ui/icons';
 
-let Links = [
+const Links = [
   { name: 'Home', url: '/' },
   { name: 'Take a Quiz', url: '/student/quizBank' }
 ];
