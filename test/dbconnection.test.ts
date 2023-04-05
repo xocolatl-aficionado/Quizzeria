@@ -95,11 +95,11 @@ describe("MongoQuizData", () => {
       expect(userQuizzes).to.have.lengthOf(2);
       expect(userQuizzes[0].name).to.deep.equal("Quiz1");
       expect(userQuizzes[0].subject).to.deep.equal("Math");
-      expect(userQuizzes[0].maxMarks).to.deep.equal(80);
+      expect(userQuizzes[0].marks).to.deep.equal(80);
 
       expect(userQuizzes[1].name).to.deep.equal("Quiz2");
       expect(userQuizzes[1].subject).to.deep.equal("Science");
-      expect(userQuizzes[1].maxMarks).to.deep.equal(90);
+      expect(userQuizzes[1].marks).to.deep.equal(90);
     });
   });
 

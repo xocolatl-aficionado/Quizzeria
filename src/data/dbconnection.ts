@@ -78,7 +78,7 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData {
         name: "DummyMathQuiz",
         subject: "Math",
         type: "DummyType",
-        maxMarks: 0,
+        marks: 0,
         time: 0,
       };
       var user: Student =
@@ -93,7 +93,7 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData {
           id: quiz.id,
           subject: quiz.subject,
           name: quiz.name,
-          maxMarks: user.quizzes[q].marks,
+          marks: user.quizzes[q].marks,
           type: quiz.type
         } as UserQuiz);
       }
