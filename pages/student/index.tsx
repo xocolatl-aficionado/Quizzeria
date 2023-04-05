@@ -25,7 +25,6 @@ export async function getServerSideProps({ req }) {
         marks: 0,
       } as UserQuiz,
     ];
-    console.log("Quizzes retrieved: ", quizzes);
     return {
       props: { quizzes: JSON.parse(JSON.stringify(quizzes)) },
     };

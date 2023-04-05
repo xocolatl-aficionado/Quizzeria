@@ -20,7 +20,6 @@ export default async (req, res) => {
 
     // Extract the quiz ID and marks from the HTTP request
     const { id } = req.query;
-    console.log({id}, "This is the id fetched")
     const { marks } = req.body;
 
     // Update the quiz marks in the "quizes" collection
