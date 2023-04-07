@@ -2,13 +2,13 @@
  * Designing a table view for Admins to display their current quizzes
  */
 import { Table, Thead, Tbody, Tr, Th, Td, Button } from "@chakra-ui/react";
-import Quiz  from "../src/business/models/Quiz";
+import {AdminQuizList}  from "../src/business/models/Quiz";
 
 /**
  * Interface props to define the Quiz using the types defined in tpes/admin_quiz file.
  */
 interface QuizBankProps {
-  quizzes: Quiz[];
+  quizzes: AdminQuizList[];
 }
 
 /**
