@@ -47,6 +47,18 @@ describe("MongoQuizData", () => {
         { subject: "Science", marks: 90 },
       ],
     });
+
+    await db.collection("users").insertOne({
+      name: "Jane",
+      lastname: "Doe",
+      username: "janedoe",
+      email: "jane@example.com",
+      password: "password",
+      role: "student",
+      quizzes: [
+        { subject: "Math", marks: 80 },
+      ],
+    });
     
     await db.collection("questions").insertOne({
       question: "What is the capital of Canada?",
@@ -84,6 +96,15 @@ describe("MongoQuizData", () => {
       expect(quizzes[0].subject).to.deep.equal("Math");
       expect(quizzes[1].name).to.deep.equal("Quiz2");
       expect(quizzes[1].subject).to.deep.equal("Science");
+    });
+  });
+
+  describe("findAllQuizzesWithQuizTakersCount", () => {
+    it("should return the count of the subject", async () => {
+      const quizzes = await quizData.findAllQuizzesWithQuizTakersCount();
+      expect(quizzes).to.have.lengthOf(2);
+      expect(quizzes[0].quizTakers).to.deep.equal(2);
+      expect(quizzes[1].quizTakers).to.deep.equal(1);
     });
   });
 

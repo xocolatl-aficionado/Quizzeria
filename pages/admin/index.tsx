@@ -22,7 +22,7 @@ export async function getServerSideProps() {
   try {
 
     var qd = new MongoQuizData();
-    let quizzes = await qd.findAllQuizzes();
+    let quizzes = await qd.findAllQuizzesWithQuizTakersCount();
 
     return {
       props: {

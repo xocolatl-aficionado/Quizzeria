@@ -1,5 +1,5 @@
 import { MongoClient , InsertOneResult } from "mongodb";
-import Quiz, { UserQuiz } from "../business/models/Quiz";
+import Quiz, { UserQuiz , AdminQuizList} from "../business/models/Quiz";
 import IQuestion from "../business/models/IQuestion";
 import Student from "../business/models/Student";
 import IGetQuizData from "../business/interfaces/IGetQuizData";
@@ -46,6 +46,33 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
         .collection<Quiz>("quizes")
         .find({})
         .toArray();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
+      return quizzes;
+    }
+  }
+
+  async findAllQuizzesWithQuizTakersCount() {
+    const client = new MongoClient(this.uri);
+    var quizzes: AdminQuizList[] | null = null;
+    try {
+      await client.connect();
+
+      quizzes = await client
+        .db("test")
+        .collection<AdminQuizList>("quizes")
+        .find({})
+        .toArray();
+
+      for (const i in quizzes){
+        let userQuiz = await client
+        .db("test")
+        .collection<Student>("users")
+        .countDocuments({ "quizzes.subject": quizzes[i].subject });
+        quizzes[i].quizTakers = userQuiz
+      }
     } catch (err) {
       console.error(err);
     } finally {
