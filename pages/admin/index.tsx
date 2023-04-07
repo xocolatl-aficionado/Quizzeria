@@ -11,11 +11,11 @@ import { Box } from "@chakra-ui/react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import Quiz from "../../src/business/models/Quiz";
+import {AdminQuizList} from "../../src/business/models/Quiz";
 import MongoQuizData from "../../src/data/dbconnection";
 
 interface QuizBankProps {
-  quizzes: Array<Quiz>;
+  quizzes: Array<AdminQuizList>;
 }
 
 export async function getServerSideProps() {
