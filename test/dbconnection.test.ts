@@ -103,7 +103,9 @@ describe("MongoQuizData", () => {
     it("should return the count of the subject", async () => {
       const quizzes = await quizData.findAllQuizzesWithQuizTakersCount();
       expect(quizzes).to.have.lengthOf(2);
+      expect(quizzes[0].subject).to.deep.equal("Math");
       expect(quizzes[0].quizTakers).to.deep.equal(2);
+      expect(quizzes[1].subject).to.deep.equal("Science");
       expect(quizzes[1].quizTakers).to.deep.equal(1);
     });
   });
