@@ -4,13 +4,14 @@ import IQuestion from "../business/models/IQuestion";
 import Student from "../business/models/Student";
 import IGetQuizData from "../business/interfaces/IGetQuizData";
 import IGetQuestionData from "../business/interfaces/IGetQuestionData";
+import IGetUserData from "../business/interfaces/IGetUserData";
 
 import Questions from "../business/models/question";
 
 /*
  * Concrete class that implements IGetQuizData and serves up data from MongoDB
  */
-export default class MongoQuizData implements IGetQuizData, IGetQuestionData {
+export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IGetUserData {
   uri = process.env.MONGODB_URI ??"";
 
   async findQuiz(id: string) {
@@ -199,6 +200,35 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData {
           .db("test")
           .collection<Student>("users")
           .findOne({ email: email })) ?? dummyUser;
+    }catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
+      return user;
+    }
+  }
+
+  async addUser(name: string, email: string, password: string, role: string) {
+    const client = new MongoClient(this.uri);
+    var dummyUser = {
+      name: "NotFound",
+      email: "NotFound",
+      password: "NotFound",
+      role: "NotFound",
+      quizzes: [{ subject: "NotFound", marks: 100 }],
+    };
+
+    var user: Student = dummyUser
+    try {
+      await client.connect();
+      //first get the quiz subjects that the user has taken. Refer: https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/read-operations/project/
+      
+      const data = { name: name, email: email, password: password, role: role, quizzes:[] };
+      user =
+        (await client
+          .db("test")
+          .collection<Student>("users")
+          .insertOne(data));
     }catch (err) {
       console.error(err);
     } finally {
