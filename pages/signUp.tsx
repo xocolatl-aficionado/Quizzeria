@@ -11,8 +11,8 @@ import { Box,useColorModeValue,SimpleGrid,Button,Image,chakra,Stack } from "@cha
 import { MdSupervisorAccount, MdPerson, MdAppRegistration } from 'react-icons/md'
 import type { NextPage } from "next";
 import PasswordCheck from '../src/business/validation/passCheck'
-
-
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
 /**
  * Creates a User interface for Sign up.
  * A form will appear asking for user input i.e. full name, email, password, confirm password and role.
@@ -30,7 +30,7 @@ const signUp: NextPage = () => {
     const toast = useToast();
 
     const router = useRouter();
-
+    const { data: session, status } = useSession();
 
     const handleSubmit = async (e: any) => {
  
@@ -99,7 +99,25 @@ const signUp: NextPage = () => {
         }
     }
 
-    return (
+    useEffect(() => {
+        const userRole = (session: any) => {
+          let role = session?.user?.role;
+          if (role) return role;
+          return null;
+        };
+    
+        if (status === "authenticated") {
+          var role: any = userRole(session);
+          if (role == "admin") {
+            router.replace("/admin");
+          } else if (role == "student") {
+            router.replace("/student");
+          }
+        }
+      }, [status]);
+    
+      if (status === "unauthenticated")
+        return (
         <>
             <Box mx="auto" h={"100vh"} bg={"yellow.100"}>
                 <Head>
