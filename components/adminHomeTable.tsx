@@ -11,6 +11,10 @@ interface QuizBankProps {
   quizzes: AdminQuizList[];
 }
 
+const handleClick = (value)  => {
+  console.log(value)
+};
+
 /**
  * To define the table and map it with the quiz data object
  * @param param0 : Quiz object created with the types for loading data
@@ -47,7 +51,7 @@ const QuizTable =  ({ quizzes }: QuizBankProps) => {
               <Button colorScheme="orange">Edit</Button>
             </Td>
             <Td textAlign={"right"}>
-              <Button colorScheme="orange">Delete</Button>
+              <Button colorScheme="orange" onClick={() => handleClick(quiz.subject)}>Delete</Button>
             </Td>
           </Tr>
         ))}
