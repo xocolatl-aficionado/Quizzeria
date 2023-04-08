@@ -35,6 +35,28 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
     }
   }
 
+  async deleteQuiz(id: string) {
+    const client = new MongoClient(this.uri);
+    var quiz: Quiz | null = null;
+    try {
+      await client.connect();
+
+      const database = client.db("test");
+      const quizzes = database.collection("quizes");
+
+      const query = { subject: id };
+
+      const result = await quizzes.deleteOne(query);
+      quiz = JSON.parse(JSON.stringify(result));
+    } catch (err) {
+      console.error(err);
+      return false;
+    } finally {
+      await client.close();
+      return true;
+    }
+  }
+
   async findAllQuizzes() {
     const client = new MongoClient(this.uri);
     var quizzes: Quiz[] | null = null;
@@ -144,6 +166,32 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
       const query = { qid: qid };
 
       const result = await questions.findOne(query);
+      question = JSON.parse(JSON.stringify(result));
+    } catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
+      return question;
+    }
+  }
+
+  async setQuestionSubNull(subject: string) {
+    const client = new MongoClient(this.uri);
+    var question: IQuestion | null = null;
+    try {
+      await client.connect();
+
+      const database = client.db("test");
+      const questions = database.collection("questions");
+
+      const query = { subject: subject };
+
+      const result = await questions.find(query).toArray();;
+      for (const r of result) {
+        const updatedConnection = { ...r, subject: 'null' }; // update the name field
+        await questions.updateOne({ _id: r._id }, { $set: updatedConnection }); // update the document in the collection
+      }
+
       question = JSON.parse(JSON.stringify(result));
     } catch (err) {
       console.error(err);
