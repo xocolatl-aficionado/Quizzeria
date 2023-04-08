@@ -1,27 +1,47 @@
-/**
- * Designing a table view for Admins to display their current quizzes
- */
-import { Table, Thead, Tbody, Tr, Th, Td, Button } from "@chakra-ui/react";
-import {AdminQuizList}  from "../src/business/models/Quiz";
+import { Table, Thead, Tbody, Tr, Th, Td, Button, useToast } from "@chakra-ui/react";
+import { AdminQuizList } from "../src/business/models/Quiz";
+import { useRouter } from 'next/router'
 
-/**
- * Interface props to define the Quiz using the types defined in tpes/admin_quiz file.
- */
-interface QuizBankProps {
+interface QuizTableProps {
   quizzes: AdminQuizList[];
 }
 
-const handleClick = (value)  => {
-  console.log(value)
-};
+export default function QuizTable({quizzes}: QuizTableProps) {
+  const router = useRouter();
+  const toast = useToast();
 
-/**
- * To define the table and map it with the quiz data object
- * @param param0 : Quiz object created with the types for loading data
- * @returns a table of quiz data related to the admin
- */
-const QuizTable =  ({ quizzes }: QuizBankProps) => {
-  console.log({ quizzes })
+  const handleClick = async (subject: string) => {
+    const response = await fetch("/api/admin/deleteQuiz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ subject }),
+    });
+    
+    if (response.status == 200) {
+      toast({
+        title: "Success",
+        description: 'Successfully deleted the quiz',
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        colorScheme: "gray",
+      });
+      router.replace("/admin")
+    }
+    else {
+      toast({
+        title: "Error",
+        description: 'Something went wrong.',
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+        colorScheme: "gray",
+      });
+    }
+  };
+
   return (
     <Table variant="striped">
       <Thead>
@@ -58,7 +78,4 @@ const QuizTable =  ({ quizzes }: QuizBankProps) => {
       </Tbody>
     </Table>
   );
-};
-
-
-export default QuizTable;
+}
