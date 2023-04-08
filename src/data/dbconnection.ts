@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient , InsertOneResult } from "mongodb";
 import Quiz, { UserQuiz } from "../business/models/Quiz";
 import IQuestion from "../business/models/IQuestion";
 import Student from "../business/models/Student";
@@ -219,16 +219,20 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
     };
 
     var user: Student = dummyUser
+    var newUser: InsertOneResult<Student>;
     try {
       await client.connect();
       //first get the quiz subjects that the user has taken. Refer: https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/read-operations/project/
       
       const data = { name: name, email: email, password: password, role: role, quizzes:[] };
-      user =
+      newUser =
         (await client
           .db("test")
           .collection<Student>("users")
           .insertOne(data));
+      const insertedId = newUser.insertedId;
+      user = await client.db("test").collection<Student>("users").findOne({_id: insertedId}) ?? dummyUser; // get the inserted document using findOne method
+
     }catch (err) {
       console.error(err);
     } finally {
