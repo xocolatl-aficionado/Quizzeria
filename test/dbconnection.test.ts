@@ -241,4 +241,20 @@ describe("MongoQuizData", () => {
 
   });
 
+  describe("deleteQuiz", () => {
+    it("should delete a quiz object when given a valid subject", async () => {
+      const quiz = await quizData.deleteQuiz("Geography");
+      expect(quiz).to.deep.equal(true);
+    });
+
+  });
+
+  describe("setQuestionSubNull", () => {
+    it("should set questions subject to null", async () => {
+      const question = await quizData.setQuestionSubNull("Geography");
+      expect(question[0].subject).to.deep.equal('null');
+    });
+
+  });
+
 });
