@@ -195,6 +195,19 @@ describe("MongoQuizData", () => {
 
   });
 
+  describe("addUser", () => {
+    it("should enter the new user and return the user", async () => {
+      const user = await quizData.addUser("Test" , "test@test.com" , "1234" , "student");
+
+      expect(user.name).to.deep.equal("Test");
+      expect(user.email).to.deep.equal("test@test.com");
+      expect(user.password).to.deep.equal("1234");
+      expect(user.role).to.deep.equal("student");
+      
+    });
+
+  });
+
   describe("checkQuesAns", () => {
     it("should return true when given a correct answer", async () => {
       const quesAns = await quizData.checkQuesAns("Geography" , "What is the capital of Canada?" , "Ottawa");
