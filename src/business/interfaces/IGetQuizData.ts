@@ -6,6 +6,7 @@ import Quiz from "../../business/models/Quiz";
  */
 export default interface IGetQuizData {
   findQuiz: (id: string) => Promise<Quiz | null>;
+  deleteQuiz: (id: string) => Promise<boolean | null>;
   findAllQuizzes: () => Promise<Quiz[] | null>;
   checkQuesAns: (subject: string , question: string , userAns: string) => Promise<boolean>;
 }
