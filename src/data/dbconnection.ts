@@ -186,13 +186,15 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
 
       const query = { subject: subject };
 
-      const result = await questions.find(query).toArray();;
-      for (const r of result) {
-        const updatedConnection = { ...r, subject: 'null' }; // update the name field
-        await questions.updateOne({ _id: r._id }, { $set: updatedConnection }); // update the document in the collection
+      let results = await questions.find(query).toArray();
+      for (let r = 0; r < results.length; r++) {
+        const result = results[r];
+        const updatedResults = { ...result, subject: 'null' }; // update the name field
+        await questions.updateOne({ _id: result._id }, { $set: updatedResults }); // update the document in the collection
+        results[r] = updatedResults
       }
-
-      question = JSON.parse(JSON.stringify(result));
+      question = JSON.parse(JSON.stringify(results));
+      
     } catch (err) {
       console.error(err);
     } finally {
