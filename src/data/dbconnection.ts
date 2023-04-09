@@ -192,8 +192,6 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
     var user: Student = dummyUser
     try {
       await client.connect();
-      //first get the quiz subjects that the user has taken. Refer: https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/read-operations/project/
-      
 
       user =
         (await client
@@ -222,7 +220,6 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
     var newUser: InsertOneResult<Student>;
     try {
       await client.connect();
-      //first get the quiz subjects that the user has taken. Refer: https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/read-operations/project/
       
       const data = { name: name, email: email, password: password, role: role, quizzes:[] };
       newUser =
