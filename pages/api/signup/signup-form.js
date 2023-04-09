@@ -6,7 +6,7 @@ export default async (req, res) => {
     var qd = new MongoQuizData();
     let user = await qd.findUser(req.body.email);
 
-    if (user.username === 'NotFound'){
+    if (user.email === 'NotFound'){
       qd.addUser(req.body.name, req.body.email, req.body.password, req.body.role)
       res.status(200).json();
     }
