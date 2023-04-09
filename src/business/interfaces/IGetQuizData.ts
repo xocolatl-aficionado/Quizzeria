@@ -7,7 +7,5 @@ import Quiz from "../../business/models/Quiz";
 export default interface IGetQuizData {
   findQuiz: (id: string) => Promise<Quiz | null>;
   findAllQuizzes: () => Promise<Quiz[] | null>;
-  // findQuizzesTakenByUser: (name: string) => Promise<Quiz[] | null>;
-  // findUser: (email: string) => Promise<Student | null>;
   checkQuesAns: (subject: string , question: string , userAns: string) => Promise<boolean>;
 }
