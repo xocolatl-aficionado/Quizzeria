@@ -35,7 +35,7 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
     }
   }
 
-  async deleteQuiz(id: string) {
+  async deleteQuiz(subject: string) {
     const client = new MongoClient(this.uri);
     var quiz: Quiz | null = null;
     try {
@@ -44,7 +44,7 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
       const database = client.db("test");
       const quizzes = database.collection("quizes");
 
-      const query = { subject: id };
+      const query = { subject: subject };
 
       const result = await quizzes.deleteOne(query);
       quiz = JSON.parse(JSON.stringify(result));
