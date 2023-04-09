@@ -51,7 +51,6 @@ describe("MongoQuizData", () => {
     await db.collection("users").insertOne({
       name: "Jane",
       lastname: "Doe",
-      username: "janedoe",
       email: "jane@example.com",
       password: "password",
       role: "student",
