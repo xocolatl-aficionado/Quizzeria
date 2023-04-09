@@ -20,7 +20,6 @@ import { useSession } from "next-auth/react";
 */
 
 const signUp: NextPage = () => {
-// export default function signUp() {
     const cardStyle = {
         opacity: 0.95
     }
@@ -41,10 +40,7 @@ const signUp: NextPage = () => {
         const confirmPassword: string = e.target.confirmPassword.value;
         const role: string = e.target.role.value;
         let passcheck = new PasswordCheck(password)
-        // var qd = new MongoQuizData();
-        // let quizzes = await qd.findUser(email);
-        
-        
+
         if (password !== confirmPassword){
             toast({
                 title: "Error",
