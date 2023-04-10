@@ -1,5 +1,5 @@
 import Student from "../models/Student";
-import Question from "../models/question";
+import Quiz from "../../business/models/Quiz";
 
 /**
  * The interface that all quiz data sources will adhere to
@@ -7,7 +7,5 @@ import Question from "../models/question";
 export default interface IGetQuizData {
   findQuiz: (id: string) => Promise<Quiz | null>;
   findAllQuizzes: () => Promise<Quiz[] | null>;
-  findQuizzesTakenByUser: (name: string) => Promise<Quiz[] | null>;
-  findUser: (email: string) => Promise<Student | null>;
   checkQuesAns: (subject: string , question: string , userAns: string) => Promise<boolean>;
 }

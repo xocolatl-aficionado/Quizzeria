@@ -39,7 +39,6 @@ describe("MongoQuizData", () => {
     await db.collection("users").insertOne({
       name: "John",
       lastname: "Doe",
-      username: "johndoe",
       email: "john@example.com",
       password: "password",
       role: "student",
@@ -179,7 +178,6 @@ describe("MongoQuizData", () => {
 
       expect(user.name).to.deep.equal("John");
       expect(user.lastname).to.deep.equal("Doe");
-      expect(user.username).to.deep.equal("johndoe");
       expect(user.role).to.deep.equal("student");
       
     });
@@ -188,8 +186,20 @@ describe("MongoQuizData", () => {
       const user = await quizData.findUser("wrongEmail@example.com");
       expect(user.name).to.deep.equal("NotFound");
       expect(user.lastname).to.deep.equal("NotFound");
-      expect(user.username).to.deep.equal("NotFound");
       expect(user.role).to.deep.equal("NotFound");
+      
+    });
+
+  });
+
+  describe("addUser", () => {
+    it("should enter the new user and return the user", async () => {
+      const user = await quizData.addUser("Test" , "test@test.com" , "1234" , "student");
+
+      expect(user.name).to.deep.equal("Test");
+      expect(user.email).to.deep.equal("test@test.com");
+      expect(user.password).to.deep.equal("1234");
+      expect(user.role).to.deep.equal("student");
       
     });
 
