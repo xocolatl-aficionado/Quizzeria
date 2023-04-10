@@ -2,16 +2,16 @@ import { MongoClient , InsertOneResult } from "mongodb";
 import Quiz, { UserQuiz , AdminQuizList} from "../business/models/Quiz";
 import IQuestion from "../business/models/IQuestion";
 import Student from "../business/models/Student";
-import IGetQuizData from "../business/interfaces/IHandleQuizData";
+import IHandleQuizData from "../business/interfaces/IHandleQuizData";
 import IGetQuestionData from "../business/interfaces/IGetQuestionData";
 import IGetUserData from "../business/interfaces/IGetUserData";
 
 import Questions from "../business/models/question";
 
 /*
- * Concrete class that implements IGetQuizData and serves up data from MongoDB
+ * Concrete class that implements IHandleQuizData and serves up data from MongoDB
  */
-export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IGetUserData {
+export default class MongoQuizData implements IHandleQuizData, IGetQuestionData, IGetUserData {
   uri = process.env.MONGODB_URI ??"";
 
   async findQuiz(id: string) {
@@ -175,7 +175,7 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
     }
   }
 
-  async setQuestionSubNull(subject: string) {
+  async unlinkQuestionFromQuiz(subject: string) {
     const client = new MongoClient(this.uri);
     var question: IQuestion | null = null;
     try {
