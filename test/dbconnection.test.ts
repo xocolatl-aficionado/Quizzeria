@@ -248,9 +248,9 @@ describe("MongoQuizData", () => {
 
   });
 
-  describe("setQuestionSubNull", () => {
+  describe("unlinkQuestionFromQuiz", () => {
     it("should set questions subject to null", async () => {
-      const question = await quizData.setQuestionSubNull("Geography");
+      const question = await quizData.unlinkQuestionFromQuiz("Geography");
       expect(question[0].subject).to.deep.equal('null');
     });
 
