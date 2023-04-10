@@ -2,7 +2,7 @@ import { MongoClient , InsertOneResult } from "mongodb";
 import Quiz, { UserQuiz , AdminQuizList} from "../business/models/Quiz";
 import IQuestion from "../business/models/IQuestion";
 import Student from "../business/models/Student";
-import IGetQuizData from "../business/interfaces/IGetQuizData";
+import IGetQuizData from "../business/interfaces/IHandleQuizData";
 import IGetQuestionData from "../business/interfaces/IGetQuestionData";
 import IGetUserData from "../business/interfaces/IGetUserData";
 

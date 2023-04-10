@@ -1,5 +1,5 @@
 import Student from "../models/Student";
-import Quiz from "../../business/models/Quiz";
+import Quiz from "../models/Quiz";
 
 /**
  * The interface that all quiz data sources will adhere to
