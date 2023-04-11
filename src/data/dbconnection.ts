@@ -1,17 +1,17 @@
 import { MongoClient , InsertOneResult } from "mongodb";
-import Quiz, { UserQuiz } from "../business/models/Quiz";
+import Quiz, { UserQuiz , AdminQuizList} from "../business/models/Quiz";
 import IQuestion from "../business/models/IQuestion";
 import Student from "../business/models/Student";
-import IGetQuizData from "../business/interfaces/IGetQuizData";
+import IHandleQuizData from "../business/interfaces/IHandleQuizData";
 import IGetQuestionData from "../business/interfaces/IGetQuestionData";
 import IGetUserData from "../business/interfaces/IGetUserData";
 
 import Questions from "../business/models/question";
 
 /*
- * Concrete class that implements IGetQuizData and serves up data from MongoDB
+ * Concrete class that implements IHandleQuizData and serves up data from MongoDB
  */
-export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IGetUserData {
+export default class MongoQuizData implements IHandleQuizData, IGetQuestionData, IGetUserData {
   uri = process.env.MONGODB_URI ??"";
 
   async findQuiz(id: string) {
@@ -35,6 +35,28 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
     }
   }
 
+  async deleteQuiz(subject: string) {
+    const client = new MongoClient(this.uri);
+    var quiz: Quiz | null = null;
+    try {
+      await client.connect();
+
+      const database = client.db("test");
+      const quizzes = database.collection("quizes");
+
+      const query = { subject: subject };
+
+      const result = await quizzes.deleteOne(query);
+      quiz = JSON.parse(JSON.stringify(result));
+    } catch (err) {
+      console.error(err);
+      return false;
+    } finally {
+      await client.close();
+      return true;
+    }
+  }
+
   async findAllQuizzes() {
     const client = new MongoClient(this.uri);
     var quizzes: Quiz[] | null = null;
@@ -46,6 +68,33 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
         .collection<Quiz>("quizes")
         .find({})
         .toArray();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
+      return quizzes;
+    }
+  }
+
+  async findAllQuizzesWithQuizTakersCount() {
+    const client = new MongoClient(this.uri);
+    var quizzes: AdminQuizList[] | null = null;
+    try {
+      await client.connect();
+
+      quizzes = await client
+        .db("test")
+        .collection<AdminQuizList>("quizes")
+        .find({})
+        .toArray();
+
+      for (const i in quizzes){
+        let userQuiz = await client
+        .db("test")
+        .collection<Student>("users")
+        .countDocuments({ "quizzes.subject": quizzes[i].subject });
+        quizzes[i].quizTakers = userQuiz
+      }
     } catch (err) {
       console.error(err);
     } finally {
@@ -118,6 +167,34 @@ export default class MongoQuizData implements IGetQuizData, IGetQuestionData, IG
 
       const result = await questions.findOne(query);
       question = JSON.parse(JSON.stringify(result));
+    } catch (err) {
+      console.error(err);
+    } finally {
+      await client.close();
+      return question;
+    }
+  }
+
+  async unlinkQuestionFromQuiz(subject: string) {
+    const client = new MongoClient(this.uri);
+    var question: IQuestion | null = null;
+    try {
+      await client.connect();
+
+      const database = client.db("test");
+      const questions = database.collection("questions");
+
+      const query = { subject: subject };
+
+      let results = await questions.find(query).toArray();
+      for (let r = 0; r < results.length; r++) {
+        const result = results[r];
+        const updatedResults = { ...result, subject: 'null' }; // update the name field
+        await questions.updateOne({ _id: result._id }, { $set: updatedResults }); // update the document in the collection
+        results[r] = updatedResults
+      }
+      question = JSON.parse(JSON.stringify(results));
+      
     } catch (err) {
       console.error(err);
     } finally {
