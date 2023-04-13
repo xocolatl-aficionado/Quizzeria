@@ -12,19 +12,16 @@ This document highlights the individual tasks done, the approaches that were use
 
 As per the discussion with the team, I was assigned the following tasks. The issue links are also embedded in the headlines.
 
-- **[Implemented User Session](#implemented-user-session) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/87) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/88)):** Adds the functionality to prevent unwanted access to protected page with correctly logged in.
+- **[Integrated Student Dashboard and Quizbank with the backend](#implemented-user-session) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/120) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/135)):** 
 
-- **[Implemented Backend for QuizBank](#implemented-backend-for-quizbank) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/104) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/109)):** Added the backend functionality for the UI to show DB data.
+- **[Integrated Backend for the Admin Dashboard](#implemented-backend-for-quizbank) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/153) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/154)):** Added the backend functionality for the UI to show DB data.
 
-- **[Integrate Student Dashboard and Quizbank with the backend](#integrate-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/120) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/135)):** Rebase the  integration branch with the master.
+- **[Integrated backend for Sign Up Page](#integrate-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/155) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/158)):** Rebase the  integration branch with the master.
 
-- **[Password Checker](#password-checker) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** A separate class to check the user password and to make sure all the proper conventions are followed.
-
-- **[Added methods in the data layer](#added-methods-in-the-data-layer) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** Added new functions in the data layer to enhance functionality.
 
 - **[Unit Testing](#unit-testing) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** Wrote unit test for differnet compopent of data layer and other classes.
 
-- **[Update the Readme File](#update-the-readme-file) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/136) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/137)):** Updated the group readme file for sprint 2 and assignment 3.
+- **[Updated the Readme File](#update-the-readme-file) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/170) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/172)):** Updated the group readme file for sprint 3 and assignment 4.
 
 - **[Participated in solving issues and code review](#participated-in-solving-issues-and-code-review)**
 

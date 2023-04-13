@@ -11,6 +11,7 @@ This readme contains details for the quiz app, team members, meeting minutes, ho
   - [Team Members \& Roles](#team-members--roles)
   - [Meeting Minutes](#meeting-minutes)
   - [Team Processes](#team-processes)
+  - [Code Reviews Process](#code-reviews-process)
   - [Individual Contributions](#individual-contributions)
   - [How To Run](#how-to-run)
     - [Credentials to Use](#credentials-to-use)
@@ -123,15 +124,44 @@ The following are links to the meeting minutes.
 
 Details regarding the team contributions and team processes can be found [here](docs/Team%20Processes/Team_Processes.md)
 
+## Code Reviews Process
+
+- A PR shall not be merged until all devs approve(either via commenting on the PR for code work and commenting on the story for non-code work)
+- Any suggestions on the PR must be resolved before the PR can be merged.
+- Code will be reviewed as per the DRY (Don't Repeat Yourself) and SOLID principles.
+
+### Checklist for Code Review
+
+#### The Pull Request Process
+
+Once the branch is ready to merge in the master, a PR should be created for that and on the mean time the task from **in Progress**  will be moved to **Reviewed** on the kanboard.
+Then the **request for changes** will be initiated on the same PR by adding comments to the PR, and have discussion related to that. Once the is changes the done, it's again committied on the same branch and the PR is updated accordingly.
+Once all the suggestions/reviews are done, than **Approved** status is given to that PR, and it's moved from to **Done** tasks on the board.
+Below is the rough draft of what's happening actually in terms of github.
+
+![PR Process](/public/img/pr_process.png)
+(The figure has been collected from [here](https://www.swarmia.com/blog/a-complete-guide-to-code-reviews/))
+
+#### Code Review Guidlines
+To maintain code review standards across developers, it's a good idea to have guidelines for what to focus on in code reviews. Here's what we recommend focusing on:
+
+**Functionality:** Does the code behave as the PR author likely intended? Does the code behave as users would expect?<br>
+**Complexity:** Would another developer be able to easily understand and use the code?<br>
+**Tests:** Does the PR have correct and well-designed automated tests?<br>
+**Naming:** Are names for variables, functions, etc. descriptive?<br>
+**Comments:** Are the comments clear and useful?<br>
+**Documentation:** Did the author also update relevant documentation?<br>
+Developers shouldn't spend their time reviewing things that can be automatically checked. Like for the pdf files or .md files, there's no need for this check list as it is specifically for the Dev tasks.
+
 ## Individual Contributions
 
 The individual contributions for each team member can be found here:
 
-- [Adithya](docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md)
-- [Mehadi](docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md)
-- [Majid](docs/Individual%20Contributions/Assignment%203/Majid_Burki.md)
-- [Heshani](docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md)
-- [Sumrish](docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md)
+- [Adithya](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md)
+- [Mehadi](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md)
+- [Majid](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md)
+- [Heshani](docs/Individual%20Contributions/Assignment%204/Heshani_Hattiarachchi.md)
+- [Sumrish](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md)
 
 <table>
     <tr>
