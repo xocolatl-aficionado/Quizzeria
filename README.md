@@ -115,6 +115,10 @@ The following are links to the meeting minutes.
 - [25 Mar 2023](docs/Meeting%20Minutes/Meeting_Minutes_25-March-2023.md)
 - [29 Mar 2023](docs/Meeting%20Minutes/Meeting_Minutes_29-March-2023.md)
 
+### Sprint 3
+
+- [05 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_05-April-2023.md)
+
 ## Team Processes
 
 Details regarding the team contributions and team processes can be found [here](docs/Team%20Processes/Team_Processes.md)
