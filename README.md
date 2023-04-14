@@ -251,7 +251,7 @@ The individual contributions for Assignment 4 / Sprint 3 of each team member can
         <td>Yes</td>
     </tr>
     <tr>
-        <td><a href = './docs/Individual%20Contributions/Assignment%204/Heshani_Hattiarachchi.md'>Heshani</a>
+        <td><a href = './docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md'>Heshani</a>
         <td>Integrate Take a Quiz UI with database using data layer (https://github.com/MUN-COMP6905/project-hteam/issues/156)</td>
         <td>Yes</td>
     </tr>
