@@ -251,57 +251,42 @@ The individual contributions for Assignment 4 / Sprint 3 of each team member can
     </tr>
     <tr>
         <td><a href = './docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md'>Sumrish</a></td>
-        <td>Create a Figma UI for Quiz Results Screen (https://github.com/MUN-COMP6905/project-hteam/issues/81)</td>
+        <td>Removing the hardcoded parameters from the Take Quiz Scenario (https://github.com/MUN-COMP6905/project-hteam/issues/171)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Implementation of Quiz Result UI for students (https://github.com/MUN-COMP6905/project-hteam/issues/83)</td>
+        <td>Implement the functionality to read quiz answers from student input, check correct answer, submit quiz result to DB. (https://github.com/MUN-COMP6905/project-hteam/issues/157)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Modification of SignUp Page and Forgot Password Pages. Added documentation for user flow UI. (https://github.com/MUN-COMP6905/project-hteam/issues/99)</td>
+        <td>Implement routing to Result page, fetch the quiz results to display to quiz result page and redirect to student dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/159)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Add tests for Sign Up page (https://github.com/MUN-COMP6905/project-hteam/issues/110)</td>
+        <td>Added unit test cases for Quiz submission and fetching marks from DB (https://github.com/MUN-COMP6905/project-hteam/issues/169)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Add tests for Login Page (https://github.com/MUN-COMP6905/project-hteam/issues/111)</td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Add tests for forgot password flow (https://github.com/MUN-COMP6905/project-hteam/issues/113)</td>
+        <td>Integration branch of take a Quiz flow to be merged in master (https://github.com/MUN-COMP6905/project-hteam/issues/179)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td><a href = './docs/Individual%20Contributions/Assignment%204/Heshani_Hattiarachchi.md'>Heshani</a>
-        <td>Design wireframes for Take a Quiz UI (https://github.com/MUN-COMP6905/project-hteam/issues/76)</td>
+        <td>Integrate Take a Quiz UI with database using data layer (https://github.com/MUN-COMP6905/project-hteam/issues/156)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Implement Quiz Bank UI for students (https://github.com/MUN-COMP6905/project-hteam/issues/45)</td>
+        <td>Connecting QuizBank UI's Take Quiz button with Take Quiz UI passing required data  (https://github.com/MUN-COMP6905/project-hteam/issues/167)</td>
         <td>Yes</td>
     </tr>
      <tr>
         <td></td>
-        <td>Implement Take a Quiz UI for students (https://github.com/MUN-COMP6905/project-hteam/issues/77)</td>
-        <td>Yes</td>
-    </tr>
-     <tr>
-        <td></td>
-        <td>Add Pagination for Student Dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/116)</td>
-        <td>No</td>
-    </tr>
-     <tr>
-        <td></td>
-        <td>Test Cases for UI in Student Screens (https://github.com/MUN-COMP6905/project-hteam/issues/129)</td>
+        <td>Adding Uint test to the task - Integrating Take Quiz UI with database using data layer (https://github.com/MUN-COMP6905/project-hteam/issues/168)</td>
         <td>Yes</td>
     </tr>
 </table>
