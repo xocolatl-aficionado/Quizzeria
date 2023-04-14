@@ -12,14 +12,14 @@ This document highlights the individual tasks done, the approaches that were use
 
 As per the discussion with the team, I was assigned the following tasks. The issue links are also embedded in the headlines.
 
-- **[Integrated Student Dashboard and Quizbank with the backend](#implemented-user-session) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/120) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/135)):** 
+- **[Integrated Student Dashboard and Quizbank with the backend](#implemented-user-session) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/120) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/135))** 
 
-- **[Integrated Backend for the Admin Dashboard](#implemented-backend-for-quizbank) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/153) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/154)):** Added the backend functionality for the UI to show DB data.
+- **[Integrated Backend for the Admin Dashboard](#implemented-backend-for-quizbank) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/153) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/154))**
 
-- **[Integrated backend for Sign Up Page](#integrate-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/155) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/158)):** Rebase the  integration branch with the master.
+- **[Integrated backend for Sign Up Page](#integrate-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/155) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/158))**
 
 
-- **[Unit Testing](#unit-testing) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/126) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/134)):** Wrote unit test for differnet compopent of data layer and other classes.
+- **[Unit Testing](#unit-testing)**
 
 - **[Updated the Readme File](#update-the-readme-file) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/170) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/172)):** Updated the group readme file for sprint 3 and assignment 4.
 
