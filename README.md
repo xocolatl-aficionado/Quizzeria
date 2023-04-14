@@ -13,6 +13,7 @@ This readme contains details for the quiz app, team members, meeting minutes, ho
     - [Sprint 1](#sprint-1)
     - [Sprint 2](#sprint-2)
     - [Sprint 3](#sprint-3)
+  - [Project Architecture](#project-architecture)
   - [Team Processes](#team-processes)
   - [Code Reviews Process](#code-reviews-process)
     - [Checklist for Code Review](#checklist-for-code-review)
@@ -51,7 +52,6 @@ The following is the list of technologies that have been used in building this p
 
 ## Team Members & Roles
 
-
 <table>
   <tr>
    <td><strong>Member Name</strong>
@@ -67,7 +67,7 @@ The following is the list of technologies that have been used in building this p
    </td>
    <td><strong>Team Facilitator</strong>
 <p>
-<strong>Back-End Developer</strong>
+<strong>Backend Developer</strong>
    </td>
   </tr>
   <tr>
@@ -75,7 +75,7 @@ The following is the list of technologies that have been used in building this p
    </td>
    <td><strong>202287115</strong>
    </td>
-   <td><strong>Back-End Developer</strong>
+   <td><strong>Backend Developer</strong>
    </td>
   </tr>
   <tr>
@@ -91,7 +91,7 @@ The following is the list of technologies that have been used in building this p
    </td>
    <td><strong>202292233</strong>
    </td>
-   <td><strong>Front-End Developer</strong>
+   <td><strong>Frontend / Backend Developer</strong>
    </td>
   </tr>
   <tr>
@@ -99,7 +99,7 @@ The following is the list of technologies that have been used in building this p
    </td>
    <td><strong>202196728</strong>
    </td>
-   <td><strong>Front-End Developer & Designer</strong>
+   <td><strong>Frontend / Backend Developer & Designer</strong>
    </td>
   </tr>
 </table>
@@ -130,6 +130,10 @@ The following are links to the meeting minutes.
 - [05 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_05-April-2023.md)
 - [12 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_12-April-2023.md)
 
+## Project Architecture
+
+TODO
+
 ## Team Processes
 
 Details regarding the team contributions and team processes can be found [here](docs/Team%20Processes/Team_Processes.md)
@@ -153,25 +157,29 @@ Below is the rough draft of what's happening actually in terms of github.
 (The figure has been collected from [here](https://www.swarmia.com/blog/a-complete-guide-to-code-reviews/))
 
 #### Code Review Guidlines
+
 To maintain code review standards across developers, it's a good idea to have guidelines for what to focus on in code reviews. Here's what we recommend focusing on:
 
-**Functionality:** Does the code behave as the PR author likely intended? Does the code behave as users would expect?<br>
-**Complexity:** Would another developer be able to easily understand and use the code?<br>
-**Tests:** Does the PR have correct and well-designed automated tests?<br>
-**Naming:** Are names for variables, functions, etc. descriptive?<br>
-**Comments:** Are the comments clear and useful?<br>
-**Documentation:** Did the author also update relevant documentation?<br>
+- [x] **Functionality:** Does the code behave as the PR author likely intended? Does the code behave as users would expect?
+- [x] **Complexity:** Would another developer be able to easily understand and use the code?
+- [x] **Tests:** Does the PR have correct and well-designed automated tests?
+- [x] **Naming:** Are names for variables, functions, etc. descriptive?
+- [x] **Comments:** Are the comments clear and useful?
+- [x] **Documentation:** Did the author also update relevant documentation?
+
 Developers shouldn't spend their time reviewing things that can be automatically checked. Like for the pdf files or .md files, there's no need for this check list as it is specifically for the Dev tasks.
 
 ## Individual Contributions
 
 The individual contributions for each team member can be found here:
 
-- [Adithya](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md) |[Assignment 02](docs/Individual%20Contributions/Assignment%202/Adithya_Sudhan.md)
-- [Mehadi](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Mehadi_Hassan.md)
-- [Majid](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Majid_Burki.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Majid_Burki.md)
-- [Heshani](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Heshani_Hattiarachchi.md)
-- [Sumrish](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Sumrish_Hanif.md)
+- [Adithya](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Adithya_Sudhan.md) | [Kanban Board](https://github.com/orgs/MUN-COMP6905/projects/11/views/2)
+- [Mehadi](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Mehadi_Hassan.md) | [Kanban Board](https://github.com/orgs/MUN-COMP6905/projects/11/views/1)
+- [Majid](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Majid_Burki.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Majid_Burki.md) | [Kanban Board](https://github.com/orgs/MUN-COMP6905/projects/11/views/10)
+- [Heshani](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Heshani_Hattiarachchi.md) | [Kanban Board](https://github.com/orgs/MUN-COMP6905/projects/11/views/9)
+- [Sumrish](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Sumrish_Hanif.md) | [Kanban Board](https://github.com/orgs/MUN-COMP6905/projects/11/views/8)
+
+All Done Tasks on the Kanban Board Grouped by User are available [here](https://github.com/orgs/MUN-COMP6905/projects/11/views/7)
 <br>
 <br>
 <table>
@@ -273,8 +281,9 @@ The individual contributions for each team member can be found here:
 
 ### On the cloud
 
-Simply visit our [codesandbox deployment](https://0mj3mq-3000.csb.app/) and use [these](#credentials-to-use) credentials.<br>
-To view the sprint 2 codebase on CodeSandbox - [Click Here](https://codesandbox.io/p/github/mehadihn/software-engineering-project/master)
+- To view the project running on Codesandbox [Click Here](#) and use [these](#credentials-to-use) credentials.
+- To view the Sprint 3 codebase on CodeSandbox [Click Here](https://codesandbox.io/p/github/mehadihn/software-engineering-project/master)
+
 ### Locally
 
 To run the code locally, you’ll need to define your environment variables through the `.env.local` file or creating a `.env` file first. For a sample `.env` file, refer to `.env.example`. Use the same mongodb url (since it is set to the team mongodb instance url) and use your appropriate localhost url for the nextauth and host keys.
@@ -308,19 +317,19 @@ npm test
 
 Sign in with the credentials:
 
-- Admin: `username: mehadi@mun.ca` and  `password: 1234`
-- Student: `username: adi@mun.com` and  `password: 1234`
+- Admin: Email: `mehadi@mun.ca` and  password: `1234`
+- Student: Email: `adi@mun.com` and  password: `1234`
 
 ## UML Diagrams
 
-Previous UML diagram for Sprint 01
+**UML diagram for Sprint 01**
 ![UML Diagram Sprint 01](docs/UML/UML_Sprint_1.png)
 
-Current UML diagram for Sprint 02
+**UML diagram for Sprint 02**
 ![UML Diagram Sprint 02](docs/UML/UML_Sprint_2.png)
 
-- A data layer was added to separate the UI code from the backend. 
-- UI layer now needs to import a concrete MongoQuizData obejct to reach the database. Therefore, the db code has been removed from the UI code. 
+- A data layer was added to separate the UI code from the backend.
+- UI layer now needs to import a concrete MongoQuizData obejct to reach the database. Therefore, the db code has been removed from the UI code.
 - The data layer implements two interfaces so that in the future we can replace mongo with another db client which implements the same interface.
 - Quiz, Questions and User collection has been used in the MongoDB to support the application.
 - Unit tests were written for the data layer as well as other business class that yet to be integrated end to end.
@@ -336,7 +345,6 @@ Current UML diagram for Sprint 02
 - If the user presses `Take a quiz` from the navbar it will show all the available quizzes and upon pressing `Take Quiz` button the user will taken to the quiz page
 - From the quiz page user will be available to answer the questions and upon submission it will show the results.
 - User session has been implemented where user can login, logout and cannot access protected pages without being logged in with the right account.
-
 
 ## Available Screens
 
@@ -364,9 +372,11 @@ Current UML diagram for Sprint 02
 ## Performance Review
 
 You can find the performance reviews [here](docs/Performance%20Review/Review.pdf)
+
 ## Issue Tracker or Kanban Board
 
 You can find the issue tracker/kanban board for the project [here](https://github.com/orgs/MUN-COMP6905/projects/11/).
+
 ## Attributions
 
 Inspiration for this project was taken from the following resources:

@@ -22,11 +22,12 @@ git rebase will be executed to align the branch and maintain a clean history
 ## Testing
 
 - codesandbox.io wil be used to test code so that everyone can ensure their code runs uniformly w/o local issues.
+- Mocha unit tests will be added to ensure the developers tasks are working properly at the same time it is not breaking any previous implementations.
 
 ## Deployment
 
 - codesandbox.io can be used to 'deliver' code so that
-- Devs can use the link to attach to the PR to prove working code and
+- Devs can use the link to attach to the PR to prove working code
 - The marker can use a url to test the final product and see the code.
 
 ## Deadlines
