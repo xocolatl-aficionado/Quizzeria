@@ -128,6 +128,7 @@ The following are links to the meeting minutes.
 ### Sprint 3
 
 - [05 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_05-April-2023.md)
+- [12 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_12-April-2023.md)
 
 ## Team Processes
 
