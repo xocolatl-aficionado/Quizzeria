@@ -12,20 +12,19 @@ This document highlights the individual tasks done, the approaches that were use
 
 As per the discussion with the team, I was assigned the following tasks. The issue links are also embedded in the headlines.
 
-- **[Integrated Student Dashboard and Quizbank with the backend](#implemented-user-session) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/120) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/135))** 
+- **[Integrated Student Dashboard and Quizbank with the backend](#integrated-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/120) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/135))** 
 
-- **[Integrated Backend for the Admin Dashboard](#implemented-backend-for-quizbank) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/153) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/154))**
+- **[Integrated Backend for the Admin Dashboard](#integrated-backend-for-the-admin-dashboard) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/153) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/154))**
 
-- **[Integrated backend for Sign Up Page](#integrate-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/155) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/158))**
+- **[Integrated backend for Sign Up Page](#integrated-backend-for-sign-up-page) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/155) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/158))**
 
-- **[Bugfix: Fixed the issue with empty input field and mark calculation](#integrate-student-dashboard-and-quizbank-with-the-backend) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/177) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/180))**
+- **[Bugfix: Fixed the issue with empty input field and mark calculation](#bugfix-fixed-the-issue-with-empty-input-field-and-mark-calculation) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/177) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/180))**
 
+- **[Unit Testing](#unit-testing-and-documentations)**
 
-- **[Unit Testing](#unit-testing)**
+- **[Participated in solving issues and code reviews](#participated-in-solving-issues-and-code-reviews)**
 
-- **[Updated the Readme File](#update-the-readme-file) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/170) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/172))**
-
-- **[Participated in solving issues and code reviews](#participated-in-solving-issues-and-code-review)**
+- **[Updated the Readme File](#updated-the-readme-file) ([Issue](https://github.com/MUN-COMP6905/project-hteam/issues/170) / [PR](https://github.com/MUN-COMP6905/project-hteam/pull/172))**
 
 ## Approaches
 
@@ -45,6 +44,17 @@ We had a sign up page for users but there were no backend integrated for that. I
 
 When the other developers made the quiz ui there was a bug identified where if the user skips one of the questions the marks were not properly calculated and all the other parameters were showing wrong. I decided to solve the issue. I went over thoroughly of that part and tried to understand what is causing the issue. What I found was the question indexes were being passed as `input0` , `input1` and so on, but when we move to the next page of the same quiz, the index/key again starts from `input0` instead of increasing from the last page, which shouldn't be the case.  When formulating the answers given by the user into the array, only the typed values have been inserted without any track of which question answer it is.  When checking the answers, it was being checked sequentially with the question's answer with the user answers but the user answer array was only inserting the values of typed instances. So checking them sequentially won't work. I tried to solve this issue by introducing an index parameter `ansGivenByUserIndexes` which will hold all the indexes of the questions and when the answers were being matched with the actual answers, I modified the logic to only match the indexes with the indexes of the questions that user answered. This way the function was properly calculating the marks and the other parameters.
 
+### Unit Testing and documentations
+
+Added unit testing for different components. All the functionalities that I have added comes with mocha unit tests which ensures the new functionalities are working as intended and not breaking any previous tasks or existing codebase.
+
+### Participated in solving issues and code reviews
+
+When there were new issues created by other developers or requested help in tasks, I tried to solve them from my expertise. Two of the developers were new to the backend functionalities and I helped them in solving issues. Also, commented on developers code bases when they created a new Pull Request and asked for changes when necessary.
+
+### [Updated the Readme File](https://github.com/MUN-COMP6905/project-hteam/pull/172)
+
+Updated the main readme file for this sprint and documented all the links and changes. 
 
 ## State of Completion
 
@@ -58,6 +68,20 @@ The added task have been successfully merged into the master hence in the projec
 
 ### [Integrated backend for Sign Up Page](#integrated-backend-for-sign-up-page)
 
-The task has been successfully completed and merged into the project. Now any user can create an account has an admin or student. New admin can access the functionalities of the admin dashboard whereas the studnets can create an account to check the quizzes they attempted and also take new quizzes.
+The task has been successfully completed and merged into the project. Now any user can create an account has an admin or student. New admin can access the functionalities of the admin dashboard whereas the students can create an account to check the quizzes they attempted and also take new quizzes.
 
 ### [Bugfix: Fixed the issue with empty input field and mark calculation](#bugfix-fixed-the-issue-with-empty-input-field-and-mark-calculation)
+
+The bugfix has been tested by all the other developers and has successfully been merged into the integration branch of the take a quiz which has been later merged into the master. As a result, this task has been completed and resolved the bug in the other developers code.
+
+### [Unit Testing](#unit-testing-and-documentations)
+
+All the unit testing codes have been merged into the projects and have been successfully completed.
+
+## Design Principles
+
+The project is done using NextJS which enforces one to use SOLID architecture in a sense and makes the user put all the data in specific folder architecture. Also the data layer that we worked on and I added couple of methods to it as well is interfaced and separated form the UI part. All the functions that I wrote does one specific tasks and are not dependent one each other. In summary it follows the SOLID design as there are interface and abstractions which are either implemented or extended and each functionalities are independent and decoupled from each other.
+
+## Code Review Process
+
+All the working modules were first tested on the local machine and then were put on Codesandbox so that it could be assured that the code would work on other devices. The codesandbox URL were shared on the PR(s) for other developers to check, After that, the pull requests were made and the other project members reviewed the codes. The codes were reviewed on Functionality, Complexity, Naming, Comments, Documentations. Once everyone has done reviewing with there and given there approvals it was merged into the main branch. There were unit tests to ensure the codes functionalities as well.
