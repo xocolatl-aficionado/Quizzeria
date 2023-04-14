@@ -196,30 +196,6 @@ The individual contributions for Assignment 4 / Sprint 3 of each team member can
     </tr>
     <tr>
         <td></td>
-        <td>Support for Multiple Choice and Multiple Answer Questions (https://github.com/MUN-COMP6905/project-hteam/issues/130)
-        </td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Connect Users to their Own Quiz (https://github.com/MUN-COMP6905/project-hteam/issues/78)
-        </td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Add Email Check (https://github.com/MUN-COMP6905/project-hteam/issues/128)
-        </td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>UML Diagram (https://github.com/MUN-COMP6905/project-hteam/issues/127)
-        </td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td></td>
         <td>Issues with Student Dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/94)
         </td>
         <td>Yes</td>
@@ -241,12 +217,12 @@ The individual contributions for Assignment 4 / Sprint 3 of each team member can
     </tr>
     <tr>
         <td></td>
-        <td>Wrting Unit Test for DB Connection and Other Classes (https://github.com/MUN-COMP6905/project-hteam/issues/126)</td>
+        <td>Bugfix: Fixed the issue with empty input field and mark calculation (https://github.com/MUN-COMP6905/project-hteam/pull/180)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Bugfix: Fixed the issue with empty input field and mark calculation (https://github.com/MUN-COMP6905/project-hteam/pull/180)</td>
+        <td>Updated the main Readme file (https://github.com/MUN-COMP6905/project-hteam/issues/170)</td>
         <td>Yes</td>
     </tr>
     <tr>
