@@ -170,7 +170,7 @@ The individual contributions for Assignment 4 / Sprint 3 of each team member can
 - [Adithya](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md)
 - [Mehadi](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md)
 - [Majid](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md)
-- [Heshani](docs/Individual%20Contributions/Assignment%204/Heshani_Hattiarachchi.md)
+- [Heshani](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md)
 - [Sumrish](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md)
 
 <table>
