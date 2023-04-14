@@ -364,13 +364,14 @@ Current UML diagram for Sprint 02
 ## What works?
 
 - The user starts at the landing page.
-- A new user can create an account with the role of Admin or Student 
+- A new user can create an account with the role of Admin or Student
 - Signs in with the credentials. If you log in using the Admin credentials (`username: mehadi@mehadi.com` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`username: Adi@Adi.com` and  `password: 4321`) the user will be redirected to the student dashboard.
 - If logged in as admin; user can see the list of available quizzes and delete the quizzes if required
 - If logged in as student; user can see all the quizzes that they has taken (New users will see empty table).
 - If there are existing quiz that the user has taken before, pressing the `Retake Quiz` button will allow the user to retake the quiz
 - If the user presses `Take a quiz` from the navbar it will show all the available quizzes and upon pressing `Take Quiz` button the user will taken to the quiz page
 - From the quiz page user will be available to answer the questions and upon submission it will show the results.
+- User session has been implemented where user can login, logout and cannot access protected pages without being logged in with the right account.
 
 
 ## Available Screens
