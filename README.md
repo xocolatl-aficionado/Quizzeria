@@ -165,15 +165,17 @@ Developers shouldn't spend their time reviewing things that can be automatically
 
 ## Individual Contributions
 
-The individual contributions for Assignment 4 / Sprint 3 of each team member can be found here:
+The individual contributions for each team member can be found here:
 
-- [Adithya](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md)
-- [Mehadi](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md)
-- [Majid](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md)
-- [Heshani](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md)
-- [Sumrish](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md)
-
+- [Adithya](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md) |[Assignment 02](docs/Individual%20Contributions/Assignment%202/Adithya_Sudhan.md)
+- [Mehadi](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Mehadi_Hassan.md)
+- [Majid](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Majid_Burki.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Majid_Burki.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Majid_Burki.md)
+- [Heshani](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Heshani_Hettiarachchi.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Heshani_Hattiarachchi.md)
+- [Sumrish](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md) - [Assignment 04](docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md) | [Assignment 03](docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md) | [Assignment 02](docs/Individual%20Contributions/Assignment%202/Sumrish_Hanif.md)
+<br>
+<br>
 <table>
+    <caption><b>Table: Issue List for Assignment 04</b></caption>
     <tr>
         <td>Name</td>
         <td>Issue</td>
