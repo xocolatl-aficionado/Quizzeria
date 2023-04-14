@@ -374,28 +374,26 @@ Current UML diagram for Sprint 02
 
 ## Available Screens
 
-1. Student Dashboard
-- This is the initial screen for a student logged in to the system successfully.<br/>
-![student dashboard](docs/UI_Screenshots/Students/student-dashboard.png)
+1. **Login Page**: This is the login page where both the admin and students can sign in to their accounts.<br/>
+![Login Page](docs/UI_Screenshots/Assignment_4/01_Signin.png)
 
-2. Student Quiz Bank
-- This is the second tab in the Main Menu.
-- This contains unattempted quizzes for the student logged in. 
-- Student can select a quiz and attempt the quiz by clicking on the "Take Quiz" button along with it. <br/>
-![student quizbank](docs/UI_Screenshots/Students/student-quizbank.png)
+2. **Sign up Page**: This is the sign up page where both the admin and students can create a new account.<br/>
+![Sign up Page](docs/UI_Screenshots/Assignment_4/02_Signup.png)
 
-3. Student - Take a Quiz
-- When a student clicks on the "Take a Quiz" button after picking a quiz to attempt, that student is redirected to this screen. 
-- The default quiz contains short answer questions. <br/>
-![student take a quiz](docs/UI_Screenshots/Students/student-take-a-quiz.png)
+3. **Admin Dashboard**: This the the dashboard that an admin sees when they login.<br/>
+![Admin Dashboard](docs/UI_Screenshots/Assignment_4/03_AdminDashboard.png)
 
-3. [Student - Login Signin, signup, forgot Pages](/docs/Figma%20UI%20Wireframes/Figma_SignUp_SignIn_ForgotPassword_UI.pdf)
+4. **Student Dashboard**: This the the dashboard that a Student sees when they login.<br/>
+![Student Dashboard](docs/UI_Screenshots/Assignment_4/04_StudentDashboard.png)
 
-4. [Student - Quiz Result](/docs/Figma%20UI%20Wireframes/Quiz_Result_Figma_UI.pdf)
+5. **Quiz Bank**: This the the quizbank page where the students can see available quizzes that they can participate.<br/>
+![Quizbank](docs/UI_Screenshots/Assignment_4/05_Quizbank.png)
 
-5. [Screens for student section](/docs/Figma%20UI%20Wireframes/Quizzeria%20UI%20prototype%20for%20students%20-%20take%20a%20quiz.pdf)
+6. **Take Quiz**: This the the  page where the students can see participate in taking the quiz and submit there answers.<br/>
+![Take Quiz](docs/UI_Screenshots/Assignment_4/06_Takequiz.png)
 
-All the wireframes can be found [here](/docs/Figma%20UI%20Wireframes/).
+7. **Result Page**: This the the  page where the students can see there results once they submit the quiz.<br/>
+![Result Page](docs/UI_Screenshots/Assignment_4/07_Result.png)
 
 ## Performance Review
 
