@@ -10,13 +10,22 @@ This readme contains details for the quiz app, team members, meeting minutes, ho
   - [Technologies Used](#technologies-used)
   - [Team Members \& Roles](#team-members--roles)
   - [Meeting Minutes](#meeting-minutes)
+    - [Sprint 1](#sprint-1)
+    - [Sprint 2](#sprint-2)
+    - [Sprint 3](#sprint-3)
   - [Team Processes](#team-processes)
   - [Code Reviews Process](#code-reviews-process)
+    - [Checklist for Code Review](#checklist-for-code-review)
+      - [The Pull Request Process](#the-pull-request-process)
+      - [Code Review Guidlines](#code-review-guidlines)
   - [Individual Contributions](#individual-contributions)
   - [How To Run](#how-to-run)
+    - [On the cloud](#on-the-cloud)
+    - [Locally](#locally)
     - [Credentials to Use](#credentials-to-use)
   - [UML Diagrams](#uml-diagrams)
   - [What works?](#what-works)
+  - [Available Screens](#available-screens)
   - [Performance Review](#performance-review)
   - [Issue Tracker or Kanban Board](#issue-tracker-or-kanban-board)
   - [Attributions](#attributions)
@@ -155,7 +164,7 @@ Developers shouldn't spend their time reviewing things that can be automatically
 
 ## Individual Contributions
 
-The individual contributions for each team member can be found here:
+The individual contributions for Assignment 4 / Sprint 3 of each team member can be found here:
 
 - [Adithya](docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md)
 - [Mehadi](docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md)
@@ -170,27 +179,17 @@ The individual contributions for each team member can be found here:
         <td>Merged to Master?</td>
     </tr>
     <tr>
-        <td><a href = './docs/Individual%20Contributions/Assignment%203/Adithya_Sudhan.md'>Adithya</a>
-        <td>Admin page routing (https://github.com/MUN-COMP6905/project-hteam/issues/61)</td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%204/Adithya_Sudhan.md'>Adithya</a>
+        <td>Protect the master branch! (https://github.com/MUN-COMP6905/project-hteam/issues/149)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Git + codesandbox strategy (https://github.com/MUN-COMP6905/project-hteam/issues/84)</td>
+        <td>Decouple data layer via a middle layer to conform to DDD paradigm (https://github.com/MUN-COMP6905/project-hteam/issues/165)</td>
         <td>Yes</td>
     </tr>
     <tr>
-        <td></td>
-        <td>Data layer (https://github.com/MUN-COMP6905/project-hteam/issues/65)</td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Add unit tests (https://github.com/MUN-COMP6905/project-hteam/issues/131)</td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td><a href = './docs/Individual%20Contributions/Assignment%203/Majid_Burki.md'>Majid</a></td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%204/Majid_Burki.md'>Majid</a></td>
         <td>Add Test Cases for Question Data (https://github.com/MUN-COMP6905/project-hteam/issues/139)</td>
         <td>Yes</td>
     </tr>
@@ -225,19 +224,19 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td><a href = 'docs/Individual%20Contributions/Assignment%203/Mehadi_Hassan.md'>Mehadi</a></td>
-        <td>Implement User Session (https://github.com/MUN-COMP6905/project-hteam/issues/87)</td>
+        <td><a href = 'docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md'>Mehadi</a></td>
+        <td>Integrate Student Dashboard and Quizbank with the backend  (https://github.com/MUN-COMP6905/project-hteam/issues/135)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Adding backend functionalities for &quot;Quiz Bank&quot; (https://github.com/MUN-COMP6905/project-hteam/issues/104)</td>
+        <td>Integrating Backend for the Admin Dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/153)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Integrate Student Dashboard and Quizbank with the backend (https://github.com/MUN-COMP6905/project-hteam/issues/120)</td>
-        <td>No</td>
+        <td>Integrating backend for Sign Up Page (https://github.com/MUN-COMP6905/project-hteam/issues/155)</td>
+        <td>Yes</td>
     </tr>
     <tr>
         <td></td>
@@ -246,11 +245,11 @@ The individual contributions for each team member can be found here:
     </tr>
     <tr>
         <td></td>
-        <td>Updated the Readme File of the project (https://github.com/MUN-COMP6905/project-hteam/issues/136)</td>
+        <td>Bugfix: Fixed the issue with empty input field and mark calculation (https://github.com/MUN-COMP6905/project-hteam/pull/180)</td>
         <td>Yes</td>
     </tr>
     <tr>
-        <td><a href = './docs/Individual%20Contributions/Assignment%203/Sumrish_Hanif.md'>Sumrish</a></td>
+        <td><a href = './docs/Individual%20Contributions/Assignment%204/Sumrish_Hanif.md'>Sumrish</a></td>
         <td>Create a Figma UI for Quiz Results Screen (https://github.com/MUN-COMP6905/project-hteam/issues/81)</td>
         <td>Yes</td>
     </tr>
@@ -280,7 +279,7 @@ The individual contributions for each team member can be found here:
         <td>Yes</td>
     </tr>
     <tr>
-        <td><a href = './docs/Individual%20Contributions/Assignment%203/Heshani_Hattiarachchi.md'>Heshani</a>
+        <td><a href = './docs/Individual%20Contributions/Assignment%204/Heshani_Hattiarachchi.md'>Heshani</a>
         <td>Design wireframes for Take a Quiz UI (https://github.com/MUN-COMP6905/project-hteam/issues/76)</td>
         <td>Yes</td>
     </tr>
@@ -361,16 +360,19 @@ Current UML diagram for Sprint 02
 - Quiz, Questions and User collection has been used in the MongoDB to support the application.
 - Unit tests were written for the data layer as well as other business class that yet to be integrated end to end.
 
-
 ## What works?
 
 - The user starts at the landing page.
-- Signs in with the credentials. If you log in using the Admin credentials (`username: mehadi@mehadi.com` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`username: Adi@Adi.com` and  `password: 4321`) the user will be redirected to the studnet dashboard.
-- Clicking the `Retake Quiz` button will no longer reset the score as we will change the architecture around that button in the next sprint.
-- Although we have a few new UI pages as well as backend for them we are yet to merge some of this changes to the master due to git conflict resolutions that are still pending.
+- A new user can create an account with the role of Admin or Student 
+- Signs in with the credentials. If you log in using the Admin credentials (`username: mehadi@mehadi.com` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`username: Adi@Adi.com` and  `password: 4321`) the user will be redirected to the student dashboard.
+- If logged in as admin; user can see the list of available quizzes and delete the quizzes if required
+- If logged in as student; user can see all the quizzes that they has taken (New users will see empty table).
+- If there are existing quiz that the user has taken before, pressing the `Retake Quiz` button will allow the user to retake the quiz
+- If the user presses `Take a quiz` from the navbar it will show all the available quizzes and upon pressing `Take Quiz` button the user will taken to the quiz page
+- From the quiz page user will be available to answer the questions and upon submission it will show the results.
 
 
-## Available Screens for students
+## Available Screens
 
 1. Student Dashboard
 - This is the initial screen for a student logged in to the system successfully.<br/>
