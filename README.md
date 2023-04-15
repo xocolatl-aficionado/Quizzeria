@@ -338,7 +338,7 @@ Sign in with the credentials:
 
 - The user starts at the landing page.
 - A new user can create an account with the role of Admin or Student
-- Signs in with the credentials. If you log in using the Admin credentials (`username: mehadi@mun.ca` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`username: adi@mun.ca` and  `password: 1234`) the user will be redirected to the student dashboard.
+- Signs in with the credentials. If you log in using the Admin credentials (`email: mehadi@mun.ca` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`email: adi@mun.ca` and  `password: 1234`) the user will be redirected to the student dashboard.
 - If logged in as admin; user can see the list of available quizzes and delete the quizzes if required
 - If logged in as student; user can see all the quizzes that they has taken (New users will see empty table).
 - If there are existing quiz that the user has taken before, pressing the `Retake Quiz` button will allow the user to retake the quiz
@@ -370,6 +370,12 @@ Sign in with the credentials:
 ![Result Page](docs/UI_Screenshots/Assignment_4/07_Result.png)
 
 ## Performance Review
+
+Each developer reviewed the other developers performaces out of 1 to 5 in the following criteria -
+
+- Communication: How willing the team member was in communicating with others and was updated on all the team discussions
+- Technical Contribution: How sound the team member was in the technical part
+- Timely Delivery: How efficiently the team member submitted on time.
 
 You can find the performance reviews [here](docs/Performance%20Review/Review.pdf)
 
