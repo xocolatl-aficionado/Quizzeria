@@ -201,14 +201,32 @@ All Done Tasks on the Kanban Board Grouped by User are available [here](https://
     </tr>
     <tr>
         <td><a href = './docs/Individual%20Contributions/Assignment%204/Majid_Burki.md'>Majid</a></td>
-        <td>Add Test Cases for Question Data (https://github.com/MUN-COMP6905/project-hteam/issues/139)</td>
+        <td>Implement Functionality for the Quiz Retake Button (https://github.com/MUN-COMP6905/project-hteam/issues/162)</td>
         <td>Yes</td>
     </tr>
     <tr>
         <td></td>
-        <td>Issues with Student Dashboard (https://github.com/MUN-COMP6905/project-hteam/issues/94)
+        <td>Connect Email Check Functionality with Front-End Sign Up Page (https://github.com/MUN-COMP6905/project-hteam/issues/161)
         </td>
         <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Test Cases for Email Verification Class (https://github.com/MUN-COMP6905/project-hteam/issues/174)
+        </td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Create Architecture Diagram for Project (https://github.com/MUN-COMP6905/project-hteam/issues/175)
+        </td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Passing Objects to the UI (https://github.com/MUN-COMP6905/project-hteam/issues/173)
+        </td>
+        <td>No</td>
     </tr>
     <tr>
         <td><a href = 'docs/Individual%20Contributions/Assignment%204/Mehadi_Hassan.md'>Mehadi</a></td>
