@@ -20,7 +20,7 @@ This user story was supposed to fix the team process of building and deploying o
 
 [Issue](https://github.com/orgs/MUN-COMP6905/projects/11/views/1?pane=issue&itemId=25484153)
 
-[PR](https://github.com/MUN-COMP6905/project-hteam/pull/166)
+[PR](https://github.com/MUN-COMP6905/project-hteam/pull/183)
 
 This user story was intended to fix the prior version of our decoupling work which,as mentioned in the submission last time, had a drawback.
 
