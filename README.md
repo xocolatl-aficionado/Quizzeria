@@ -389,11 +389,11 @@ Sign in with the credentials:
 
 ## Performance Review
 
-Each developer reviewed the other developers performaces out of 1 to 5 in the following criteria -
+Each developer reviewed the other developers performances out of 1 to 5 in the following criteria -
 
-- Communication: How willing the team member was in communicating with others and was updated on all the team discussions
-- Technical Contribution: How sound the team member was in the technical part
-- Timely Delivery: How efficiently the team member submitted on time.
+- **Communication**: How willing the team member was in communicating with others and was updated on all the team discussions
+- **Technical Contribution**: How sound the team member was in the technical part
+- **Timely Delivery**: How efficiently the team member submitted on time.
 
 You can find the performance reviews [here](docs/Performance%20Review/Review.pdf)
 
