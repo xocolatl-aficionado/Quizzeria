@@ -308,29 +308,33 @@ All Done Tasks on the Kanban Board Grouped by User are available [here](https://
 
 To run the code locally, you’ll need to define your environment variables through the `.env.local` file or creating a `.env` file first. For a sample `.env` file, refer to `.env.example`. Use the same mongodb url (since it is set to the team mongodb instance url) and use your appropriate localhost url for the nextauth and host keys.
 
+Update the `NEXTAUTH_URL` on the `.env.local` file to the appropriate host URL that the terminal gives after running the project.
+
+For example if the project is being run on the port 3000 locally then the changes will look like this -
+```shell
+NEXTAUTH_URL ='http://localhost:3000'
+```
+
 Once done, go to your console and run the following commands in the order specified.
 
 This command will install all the prerequisite packages defined in the `package.json` file required to run the project.
 
 ```javascript
-
 npm install 
 ```
 
 This command will run the project in dev mode:
 
 ```javascript
-
 npm run dev
-
 ```
 
-To run the test cases
+(make sure to update the env file with the correct `NEXTAUTH_URL`)
+
+To run the test cases:
 
 ```javascript
-
 npm run test
-
 ```
 
 ### Credentials to Use
