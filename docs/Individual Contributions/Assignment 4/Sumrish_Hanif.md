@@ -6,6 +6,8 @@ As per the team's decision, the role assigned to me was of back-end developer. T
 Once all the code is mergerd into the integration branch and is working according to the requirement than merging of integration branch to master branch was done. [Integration Branch merged into Master Branch](https://github.com/orgs/MUN-COMP6905/projects/11?pane=issue&itemId=25674596).
 While doing the merging I come to know about a bug which occurs when I skip a user input, so it just make marks calculation and correct question calculation bugy. I have open a bug corresponding to that bug following the software processes related to bugs. [Calculation Bug](https://github.com/orgs/MUN-COMP6905/projects/11/views/1?pane=issue&itemId=25610669)
 
+Also I was assigned to document the [Minutes of meeting 3](https://github.com/orgs/MUN-COMP6905/projects/11?pane=issue&itemId=25764208)
+
 ## Test Cases
 
 **Test Cases** for each feature has been added where possible. As I was dealing with the backend integration, So I started with writing the unit test cases related to the functionality of storing the quiz marks in database and also fetching the marks of the corresponding user. [Unit Test](https://github.com/orgs/MUN-COMP6905/projects/11/views/1?pane=issue&itemId=25576892)
