@@ -317,7 +317,7 @@ NEXTAUTH_URL ='http://localhost:3000'
 
 Once done, go to your console and run the following commands in the order specified.
 
-This command will install all the prerequisite packages defined in the `package.json` file required to run the project.
+This command will install all the prerequisite packages defined in the `package.json` file required to run the project and perform the testings.
 
 ```javascript
 npm install 
@@ -331,7 +331,7 @@ npm run dev
 
 (make sure to update the env file with the correct `NEXTAUTH_URL`)
 
-To run the test cases:
+To run the test cases make sure you have install all the libraries and then:
 
 ```javascript
 npm run test
@@ -389,7 +389,7 @@ Sign in with the credentials:
 - If the student user navigates to the Take a Quiz tab from the student dashboard, and takes a quiz that already appears on the student dashboard, then a new quiz with the score obtained on the latest attempt is added to the student dashboard.
 - If the student user navigates to the Home tab of the student dashboard, and 'retakes' a quiz, then a new quiz with the score obtained on the latest attempt is added to the student dashboard and the older attempt's score is invalidated, i.e, set to -1.
 - If the user presses `Take a quiz` from the navbar it will show all the available quizzes and upon pressing `Take Quiz` button the user will taken to the quiz page
-- From the quiz page user will be available to answer the questions and upon submission it will show the results.
+- From the quiz page user will be available to answer the questions and upon submission it will show the results on the result screen. Upon clicking "Main Menu" from here, it will take the quiz taker back to the student dashboard, where a new row will have been added with the same score as shown on the result screen.
 - User session has been implemented where user can login, logout and cannot access protected pages without being logged in with the right account.
 
 ## Available Screens
