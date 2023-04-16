@@ -382,7 +382,7 @@ Sign in with the credentials:
 ## What works?
 
 - The user starts at the landing page.
-- A new user can create an account with the role of Admin or Student
+- A new user can create an account with the role of Admin or Student. Emails with domain ending at `mun.ca` are allowed to register.
 - Signs in with the credentials. If you log in using the Admin credentials (`email: mehadi@mun.ca` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`email: adi@mun.ca` and  `password: 1234`) the user will be redirected to the student dashboard.
 - If logged in as admin; user can see the list of available quizzes and delete the quizzes if required
 - If logged in as student; user can see all the quizzes that they has taken (New users will see empty table).
