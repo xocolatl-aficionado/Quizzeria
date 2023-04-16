@@ -386,7 +386,8 @@ Sign in with the credentials:
 - Signs in with the credentials. If you log in using the Admin credentials (`email: mehadi@mun.ca` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`email: adi@mun.ca` and  `password: 1234`) the user will be redirected to the student dashboard.
 - If logged in as admin; user can see the list of available quizzes and delete the quizzes if required
 - If logged in as student; user can see all the quizzes that they has taken (New users will see empty table).
-- If there are existing quiz that the user has taken before, pressing the `Retake Quiz` button will allow the user to retake the quiz. When the user retakes a quiz, the old entry doesn't get deleted. On the dashboard it will show two entries of the same quiz one with a quiz's marks set to -1 and the other one with the marks depending on how your quiz went.
+- If the student user navigates to the Take a Quiz tab from the student dashboard, and takes a quiz that already appears on the student dashboard, then a new quiz with the score obtained on the latest attempt is added to the student dashboard.
+- If the student user navigates to the Home tab of the student dashboard, and 'retakes' a quiz, then a new quiz with the score obtained on the latest attempt is added to the student dashboard and the older attempt's score is invalidated, i.e, set to -1.
 - If the user presses `Take a quiz` from the navbar it will show all the available quizzes and upon pressing `Take Quiz` button the user will taken to the quiz page
 - From the quiz page user will be available to answer the questions and upon submission it will show the results.
 - User session has been implemented where user can login, logout and cannot access protected pages without being logged in with the right account.
