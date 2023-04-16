@@ -19,7 +19,7 @@ This document highlights the individual tasks done, the approaches that were use
 
 As per the discussion with the team, I was assigned the following tasks.
 
-- **Quiz Retake Functionality:** [Issue](https://github.com/MUN-COMP6905/project-hteam/issues/162). Wrote code for the user to be able to able to retake a quiz. This works when the user clicks on the **Retake** button next to the quizzes displayed on the *Student Dashboard*. Once the user has clicked this button, the marks for the quiz (that the user clicked the button against) are set to zero and the user is redirected to the cooresponding quiz page where the user can then retake that quiz.
+- **Quiz Retake Functionality:** [Issue](https://github.com/MUN-COMP6905/project-hteam/issues/162). Wrote code for the user to be able to able to retake a quiz. This works when the user clicks on the **Retake** button next to the quizzes displayed on the *Student Dashboard*. Once the user has clicked this button, the marks for the quiz (that the user clicked the button against) are set to zero and the user is redirected to the cooresponding quiz page where the user can then retake that quiz. [Check the PR by clicking here](https://github.com/MUN-COMP6905/project-hteam/pull/188)
 
 - **Email Validation:** [Issue](https://github.com/MUN-COMP6905/project-hteam/issues/161). Can be found under `/src/business/validation/emailCheck.ts`. Worked on this in Sprint 2 as well, however in this sprint, made some slight modifications to this code. [Check the PR by clicking here](https://github.com/MUN-COMP6905/project-hteam/pull/163)
 
