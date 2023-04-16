@@ -414,7 +414,7 @@ Sign in with the credentials:
 
 Here is a video presentation on how to run the project and navigate throughout the application
 
-[![Project Demo](https://img.youtube.com/vi/2T6PEtq0ir0/0.jpg)](https://www.youtube.com/watch?v=2T6PEtq0ir0){:target="_blank"}
+[![Project Demo](https://img.youtube.com/vi/2T6PEtq0ir0/0.jpg)](https://www.youtube.com/watch?v=2T6PEtq0ir0)
 
 ## Performance Review
 
