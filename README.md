@@ -331,7 +331,7 @@ npm run dev
 
 (make sure to update the env file with the correct `NEXTAUTH_URL`)
 
-To run the test cases make sure you have install all the libraries and then:
+To run the test cases make sure you have installed all the libraries and then:
 
 ```javascript
 npm run test
