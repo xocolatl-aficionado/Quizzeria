@@ -395,7 +395,7 @@ Each developer reviewed the other developers performances out of 1 to 5 in the f
 - **Technical Contribution**: How sound the team member was in the technical part
 - **Timely Delivery**: How efficiently the team member submitted on time.
 
-You can find the performance reviews [here](docs/Performance%20Review/Review.pdf)
+You can find the performance reviews [here](docs/Performance%20Review/Performance_Review_Sprint3.pdf)
 
 ## Issue Tracker or Kanban Board
 
