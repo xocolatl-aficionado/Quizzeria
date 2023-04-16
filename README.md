@@ -27,6 +27,7 @@ This readme contains details for the quiz app, team members, meeting minutes, ho
   - [UML Diagrams](#uml-diagrams)
   - [What works?](#what-works)
   - [Available Screens](#available-screens)
+  - [Demo](#demo)
   - [Performance Review](#performance-review)
   - [Issue Tracker or Kanban Board](#issue-tracker-or-kanban-board)
   - [Attributions](#attributions)
@@ -387,6 +388,10 @@ Sign in with the credentials:
 
 7. **Result Page**: This the the  page where the students can see there results once they submit the quiz.<br/>
 ![Result Page](docs/UI_Screenshots/Assignment_4/07_Result.png)
+
+## Demo
+
+TODO
 
 ## Performance Review
 
