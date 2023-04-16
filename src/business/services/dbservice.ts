@@ -1,12 +1,29 @@
+/**
+ * @fileOverview Container class that makes the db calls for all possible quiz data operations supported by the interfaces it implements * 
+ * @module QuizDataService
+ * @requires MongoQuizData
+ * @requires IHandleQuizData
+ * @requires IGetQuestionData
+ * @requires IGetUserData
+ * @requires ObjectId
+ */
+
 import MongoQuizData from "../../../src/data/dbconnection";
 import IHandleQuizData from "../../business/interfaces/IHandleQuizData";
 import IGetQuestionData from "../../business/interfaces/IGetQuestionData";
 import IGetUserData from "../../business/interfaces/IGetUserData";
 import { ObjectId } from "mongodb";
 
+/**
+ * Container class that makes the db calls for all possible quiz data operations supported by the interfaces it implements
+ * @class
+ * @implements IHandleQuizData
+ * @implements IGetQuestionData
+ * @implements IGetUserData
+ */
+
 class QuizDataService
-  implements IHandleQuizData, IGetQuestionData, IGetUserData
-{
+  implements IHandleQuizData, IGetQuestionData, IGetUserData {
   private _instance: QuizDataService;
   private _mongoQuizData: MongoQuizData;
   constructor() {
@@ -54,7 +71,7 @@ class QuizDataService
     return this._mongoQuizData.unlinkQuestionFromQuiz(subject);
   }
 
-  async findQuestionListOfAQuiz(subject: string){
+  async findQuestionListOfAQuiz(subject: string) {
     return this._mongoQuizData.findQuestionListOfAQuiz(subject);
   }
 
@@ -82,9 +99,14 @@ class QuizDataService
     return this._mongoQuizData.getAuthorizedUser(email, password);
   }
 
-  async resetUserMarks(email:string, subject:string, marks:number){
-    return this._mongoQuizData.resetUserMarks(email, subject,marks);
+  async resetUserMarks(email: string, subject: string, marks: number) {
+    return this._mongoQuizData.resetUserMarks(email, subject, marks);
   }
 }
+
+/**
+ QuizDataServiceInstance is the singleton object of the QuizDataService class that is exported and made available to callers. 
+ It exists to ensure the callers don't inadvertently make n objects for the sake of n db calls
+ */
 
 export const QuizDataServiceInstance = QuizDataService.getSingleton();
