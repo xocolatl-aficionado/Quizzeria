@@ -27,7 +27,9 @@ As per the discussion with the team, I was assigned the following tasks.
 
 - **Integrate Email Validation Code Into Sign Up Page:** [Issue](https://github.com/MUN-COMP6905/project-hteam/issues/161). Integrated the email validation code, found under `/src/business/validation/emailCheck.ts`, into the main sign up page. After this integration, the user will not be able to enter an email that doesn't belong to blocked domains by the organization and the user will only be able to sign up using approved email domains. [Check the PR by clicking here](https://github.com/MUN-COMP6905/project-hteam/pull/163)
 
-- **Architecture Diagram:** [Issue](https://github.com/MUN-COMP6905/project-hteam/issues/175). Collaborated with Adithya to create an architecture diagram for this project. The architecture that we are using is an  **Onion** architecture and the diagram seems to depict that quite accurately.
+- **Architecture Diagram:** [Issue](https://github.com/MUN-COMP6905/project-hteam/issues/175). Collaborated with Adithya to create an architecture diagram for this project. The architecture that we are using is an  **Onion** architecture and the diagram seems to depict that quite accurately.<br>
+![Onion Architecture](docs/Architecture/onion.png)
+(The figure has been collected from [here](https://dzone.com/articles/onion-architecture-is-interesting))
 
 - **Passing Objects to the UI:** [Issue](https://github.com/MUN-COMP6905/project-hteam/issues/173). The theory here was to  pass objects instead of plain models to the UI. The reason for doing this was to incorporate different questions type into the UI with ease. However, this was not completed due to time constraints, but substantial effort was made.
 

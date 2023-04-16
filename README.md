@@ -362,7 +362,7 @@ Sign in with the credentials:
 - The UML attempts to provide a glimpse of the 3 layered architecture we've decided on. They are: the UI, the middle/business layer and finally the data layer. Each of them ideally stay separate and decoupled. We acheive this using the Domain Driven Design (DDD) paradigm, where the core of the project is the domain (which is independent of all else), around which everything else, including the app layer and data layer circles, in the shape of an onion, giving the DDD paradigm its pseudonym called the "onion" architecture.
 
 ![Onion Architecture](docs/Architecture/onion.png)
-(The figure has been collected from [here]( https://dzone.com/articles/onion-architecture-is-interesting))
+(The figure has been collected from [here](https://dzone.com/articles/onion-architecture-is-interesting))
 
 - In our project, the UI layer only depends on the QuizDataService, which lies in the domain(middle) layer. The datalayer, which contains code that calls MongoDB apis, also depends on this same domain layer. Thus, we're able to make both the app layer and data layer independent of each other by making them function via the implementing the same interfaces. An object of the class QuizDataService is imported and made available to any caller who wants to call the datalayer to get the data it needs, without ever knowing anything about MongoDB. Thus, this data layer can be implemented using any db technology. 
 
