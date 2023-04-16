@@ -13,7 +13,6 @@ This readme contains details for the quiz app, team members, meeting minutes, ho
     - [Sprint 1](#sprint-1)
     - [Sprint 2](#sprint-2)
     - [Sprint 3](#sprint-3)
-  - [Project Architecture](#project-architecture)
   - [Team Processes](#team-processes)
   - [Code Reviews Process](#code-reviews-process)
     - [Checklist for Code Review](#checklist-for-code-review)
@@ -25,6 +24,11 @@ This readme contains details for the quiz app, team members, meeting minutes, ho
     - [Locally](#locally)
     - [Credentials to Use](#credentials-to-use)
   - [UML Diagrams](#uml-diagrams)
+    - [UML diagram for Sprint 01](#uml-diagram-for-sprint-01)
+    - [UML diagram for Sprint 02](#uml-diagram-for-sprint-02)
+    - [UML diagram for Sprint 03](#uml-diagram-for-sprint-03)
+  - [Architecture discussion](#architecture-discussion)
+    - [How would we replace the database tech stack?](#how-would-we-replace-the-database-tech-stack)
   - [What works?](#what-works)
   - [Available Screens](#available-screens)
   - [Demo](#demo)
@@ -131,10 +135,6 @@ The following are links to the meeting minutes.
 - [05 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_05-April-2023.md)
 - [12 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_12-April-2023.md)
 - [13 Apr 2023](docs/Meeting%20Minutes/Meeting_Minutes_13-April-2023.md)
-
-## Project Architecture
-
-TODO
 
 ## Team Processes
 
@@ -342,10 +342,10 @@ Sign in with the credentials:
 
 ## UML Diagrams
 
-**UML diagram for Sprint 01**
+### UML diagram for Sprint 01
 ![UML Diagram Sprint 01](docs/UML/UML_Sprint_1.png)
 
-**UML diagram for Sprint 02**
+### UML diagram for Sprint 02
 ![UML Diagram Sprint 02](docs/UML/UML_Sprint_2.png)
 
 - A data layer was added to separate the UI code from the backend.
@@ -354,6 +354,27 @@ Sign in with the credentials:
 - Quiz, Questions and User collection has been used in the MongoDB to support the application.
 - Unit tests were written for the data layer as well as other business class that yet to be integrated end to end.
 
+### UML diagram for Sprint 03
+![UML Diagram Sprint 03](docs/UML/UML_Sprint_2.png)
+
+## Architecture discussion
+
+- The UML attempts to provide a glimpse of the 3 layered architecture we've decided on. They are: the UI, the middle/business layer and finally the data layer. Each of them ideally stay separate and decoupled. We acheive this using the Domain Driven Design (DDD) paradigm, where the core of the project is the domain (which is independent of all else), around which everything else, including the app layer and data layer circles, in the shape of an onion, giving the DDD paradigm its pseudonym called the "onion" architecture.
+
+![Onion Architecture](docs/UML/UML_Sprint_2.png)
+(Picture Collected from [here](https://dzone.com/articles/onion-architecture-is-interesting))
+
+- In our project, the UI layer only depends on the QuizDataService, which lies in the domain(middle) layer. The datalayer, which contains code that calls MongoDB apis, also depends on this same domain layer. Thus, we're able to make both the app layer and data layer independent of each other by making them function via the implementing the same interfaces. An object of the class QuizDataService is imported and made available to any caller who wants to call the datalayer to get the data it needs, without ever knowing anything about MongoDB. Thus, this data layer can be implemented using any db technology. 
+
+- "In the Layered Architecture, as understood by the majority of people, virtually all layers can depend on the infrastructure layer. This causes some bad coupling. A change in the infrastructure layer like changing some library or switching a database provider could spill changes all over your business logic. Onion Architecture is about protecting the business logic, hence the dependency rule."  - https://dzone.com/articles/onion-architecture-is-interesting
+- We have therefore, by using the Onion principle, resorted to the Dependency Inversion principle from an architectural layer perspective. Thus, the most important code in our application (domain layer) depends on nothing, and instead, everything depends on the domain layer. This is, therefore, controlled and directed coupling. 
+
+### How would we replace the database tech stack?
+- For example, we'd make a SQLServerQuizData class that implements the same interfaces that currently is implemented by MongoQuizData(the concrete implementation that contains mongo code). 
+- Then, in dbservice(in the middle layer), we modify the body of the methods in QuizDataService class to use the SQLServerQuizData import (and property) instead of the MongoQuizData import. 
+- Thus by replacing what is returned form the middle layer(dbservice), the UI never needs to know the data layer implementation ever changed to use SQLServer.
+
+
 ## What works?
 
 - The user starts at the landing page.
@@ -361,7 +382,7 @@ Sign in with the credentials:
 - Signs in with the credentials. If you log in using the Admin credentials (`email: mehadi@mun.ca` and  `password: 1234`) it should redirect to the Admin home page and if logged in with the student credentials (`email: adi@mun.ca` and  `password: 1234`) the user will be redirected to the student dashboard.
 - If logged in as admin; user can see the list of available quizzes and delete the quizzes if required
 - If logged in as student; user can see all the quizzes that they has taken (New users will see empty table).
-- If there are existing quiz that the user has taken before, pressing the `Retake Quiz` button will allow the user to retake the quiz
+- If there are existing quiz that the user has taken before, pressing the `Retake Quiz` button will allow the user to retake the quiz. When the user retakes a quiz, the old entry doesn't get deleted. On the dashboard it will show two entries of the same quiz one with a quiz's marks set to -1 and the other one with the marks depending on how your quiz went.
 - If the user presses `Take a quiz` from the navbar it will show all the available quizzes and upon pressing `Take Quiz` button the user will taken to the quiz page
 - From the quiz page user will be available to answer the questions and upon submission it will show the results.
 - User session has been implemented where user can login, logout and cannot access protected pages without being logged in with the right account.
@@ -391,7 +412,9 @@ Sign in with the credentials:
 
 ## Demo
 
-TODO
+Here is a video presentation on how to run the project and navigate throughout the application
+
+[![Project Demo](https://img.youtube.com/vi/2T6PEtq0ir0/0.jpg)](https://www.youtube.com/watch?v=2T6PEtq0ir0)
 
 ## Performance Review
 
