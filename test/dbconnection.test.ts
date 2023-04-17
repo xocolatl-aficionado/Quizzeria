@@ -58,14 +58,20 @@ describe("MongoQuizData", () => {
         { subject: "Math", marks: 80 },
       ],
     });
-    
-    await db.collection("questions").insertOne({
-      question: "What is the capital of Canada?",
-      answer: "Ottawa",
-      subject: "Geography",
-      type: "SingleAnswer",
-    });
-
+    await db.collection("questions").insertMany([
+      {
+        question: "What is the capital of Canada?",
+        answer: "Ottawa",
+        subject: "Geography",
+        type: "SingleAnswer",
+      },
+      {
+        question: "What is 10/2",
+        answer: "5",
+        subject: "IQ",
+        type: "SingleAnswer",
+      },
+    ]);
   });
 
   after(async () => {
@@ -255,5 +261,38 @@ describe("MongoQuizData", () => {
     });
 
   });
+  
+  describe("findQuestionListOfAQuiz", () => {
+    it("should return an array of questions for a given subject", async () => {
+      const questions = await quizData.findQuestionListOfAQuiz("IQ");
+      expect(questions).to.have.lengthOf(1);
+      expect(questions[0].subject).to.equal("IQ");
+    });
 
+    it("should return null if no questions found for a given subject", async () => {
+      const questions = await quizData.findQuestionListOfAQuiz("NotaSubject");
+      expect(questions).to.have.lengthOf(0);
+    });
+  });
+  
+  describe('addMarks', () => {
+    it('Sumrish - should successfully add marks to DB corresponding to the specific user', async () => {
+      const studentId = "john@example.com";
+      const subject = "Biology";
+      const marks = 90;
+      const marksAdded = await quizData.addMarks(studentId, subject,marks);
+      expect(marksAdded.acknowledged).to.deep.equal(true);
+   });
+  });
+
+  describe('fetchMarks', () => {
+    it('Sumrish - should return the added quiz marks corresponding to the specific user', async () => {
+      const user = await quizData.findUser("john@example.com");
+      expect(user.name).to.deep.equal("John");
+      expect(user.lastname).to.deep.equal("Doe");
+      expect(user.role).to.deep.equal("student");
+      expect(user.quizzes[2].subject).to.deep.equal("Biology");
+      expect(user.quizzes[2].marks).to.deep.equal(90);
+   });
+  });
 });
