@@ -333,6 +333,7 @@ npm run dev
 To run the test cases make sure you have installed all the libraries and then:
 
 ```javascript
+npm install
 npm run test
 ```
 
