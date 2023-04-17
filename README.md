@@ -301,8 +301,7 @@ All Done Tasks on the Kanban Board Grouped by User are available [here](https://
 
 ### On the cloud
 
-- To view the project running on Codesandbox [Click Here](#) and use [these](#credentials-to-use) credentials.
-- To view the Sprint 3 codebase on CodeSandbox [Click Here](https://codesandbox.io/p/github/mehadihn/software-engineering-project/master)
+- To view the project running on Codesandbox [Click Here](https://0mj3mq-3000.csb.app) and use [these](#credentials-to-use) credentials.
 
 ### Locally
 
