@@ -1,3 +1,5 @@
+### This was a group project made for coursework (Software Engineering). Please find details on process, technical discussion and individual contribution below. 
+
 # Team H Quiz App
 
 This readme contains details for the quiz app, team members, meeting minutes, how to run the code the UML diagrams, and the attributions section.
